@@ -1,0 +1,232 @@
+.titlebar {
+  position: relative;
+  background-image: linear-gradient(135deg, rgba(0,51,102,0.92) 0%, rgba(0,102,204,0.82) 100%), url('/assets/images/titlebar-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0 60px;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.titlebar::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  pointer-events: none;
+}
+
+.titlebar h1 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.breadcrumb {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.breadcrumb a {
+  color: rgba(255,255,255,0.7);
+}
+
+.breadcrumb span {
+  color: rgba(255,255,255,0.4);
+  margin: 0;
+}
+
+.breadcrumb strong {
+  color: #ffffff;
+}
+
+/* Page Layout */
+.contentArea {
+  padding: 80px 0 100px;
+  background-color: var(--bg-color-secondary);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+}
+
+/* Sidebar Filter */
+.sidebar {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 32px 28px;
+  align-self: start;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.filterGroup {
+  margin-bottom: 28px;
+}
+
+.filterGroup:last-child {
+  margin-bottom: 0;
+}
+
+.filterGroup h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  margin-bottom: 12px;
+  outline: none;
+  background-color: #f7f9fc;
+  color: var(--text-primary);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--primary-color);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0,102,204,0.08);
+}
+
+.select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  background-color: #f7f9fc;
+  color: var(--text-primary);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.select:focus {
+  border-color: var(--primary-color);
+}
+
+/* Jobs Listings */
+.listings {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.resultsMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.jobCard {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 102, 204, 0.15);
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 51, 102, 0.04);
+  transition: all 0.2s ease;
+}
+
+.jobCard:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 102, 204, 0.08);
+}
+
+.jobDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.jobTitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.jobMeta {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.jobTags {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.tag {
+  background-color: #f7f9fc;
+  color: var(--text-secondary);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.tagPrimary {
+  background-color: rgba(0,102,204,0.08);
+  color: var(--primary-color);
+}
+
+.noResults {
+  text-align: center;
+  padding: 80px 40px;
+  background: #ffffff;
+  border: 2px dashed var(--border-color);
+  border-radius: 20px;
+}
+
+.noResultsIcon {
+  font-size: 50px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: relative;
+  }
+  .jobCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .jobCard a {
+    width: 100%;
+    text-align: center;
+  }
+}

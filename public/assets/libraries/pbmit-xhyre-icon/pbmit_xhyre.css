@@ -1,0 +1,183 @@
+@font-face {
+	font-family: "pbmit_xhyre";
+	src: url("./pbmit_xhyre.woff2?c33a5f338ac59d5e96a8d3626845407c") format("woff2"),
+url("./pbmit_xhyre.woff?c33a5f338ac59d5e96a8d3626845407c") format("woff"),
+url("./pbmit_xhyre.eot?c33a5f338ac59d5e96a8d3626845407c#iefix") format("embedded-opentype"),
+url("./pbmit_xhyre.ttf?c33a5f338ac59d5e96a8d3626845407c") format("truetype"),
+url("./pbmit_xhyre.svg?c33a5f338ac59d5e96a8d3626845407c#pbmit_xhyre") format("svg")
+}
+i[class^="pbmit_xhyre-"]:before, i[class*="pbmit-xhyre-icon-"]:before {
+	font-family: pbmit_xhyre !important;
+	font-style: normal;
+	font-weight: normal !important;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.pbmit-xhyre-icon-job-search:before {
+	content: "\f101";
+}
+.pbmit-xhyre-icon-people:before {
+	content: "\f102";
+}
+.pbmit-xhyre-icon-cv:before {
+	content: "\f103";
+}
+.pbmit-xhyre-icon-job-search-1:before {
+	content: "\f104";
+}
+.pbmit-xhyre-icon-job-description:before {
+	content: "\f105";
+}
+.pbmit-xhyre-icon-part-time:before {
+	content: "\f106";
+}
+.pbmit-xhyre-icon-job-search-2:before {
+	content: "\f107";
+}
+.pbmit-xhyre-icon-unemployed:before {
+	content: "\f108";
+}
+.pbmit-xhyre-icon-recruiment:before {
+	content: "\f109";
+}
+.pbmit-xhyre-icon-recruitment:before {
+	content: "\f10a";
+}
+.pbmit-xhyre-icon-recruitment-1:before {
+	content: "\f10b";
+}
+.pbmit-xhyre-icon-recruitment-2:before {
+	content: "\f10c";
+}
+.pbmit-xhyre-icon-selection-process:before {
+	content: "\f10d";
+}
+.pbmit-xhyre-icon-job-offer:before {
+	content: "\f10e";
+}
+.pbmit-xhyre-icon-recruitment-3:before {
+	content: "\f10f";
+}
+.pbmit-xhyre-icon-human-resources:before {
+	content: "\f110";
+}
+.pbmit-xhyre-icon-talent-management:before {
+	content: "\f111";
+}
+.pbmit-xhyre-icon-talent-search:before {
+	content: "\f112";
+}
+.pbmit-xhyre-icon-job-announcement:before {
+	content: "\f113";
+}
+.pbmit-xhyre-icon-recruitment-human:before {
+	content: "\f114";
+}
+.pbmit-xhyre-icon-strategy:before {
+	content: "\f115";
+}
+.pbmit-xhyre-icon-professional:before {
+	content: "\f116";
+}
+.pbmit-xhyre-icon-check:before {
+	content: "\f117";
+}
+.pbmit-xhyre-icon-leadership:before {
+	content: "\f118";
+}
+.pbmit-xhyre-icon-vacant:before {
+	content: "\f119";
+}
+.pbmit-xhyre-icon-assessment:before {
+	content: "\f11a";
+}
+.pbmit-xhyre-icon-cv-1:before {
+	content: "\f11b";
+}
+.pbmit-xhyre-icon-job-interview:before {
+	content: "\f11c";
+}
+.pbmit-xhyre-icon-staffing:before {
+	content: "\f11d";
+}
+.pbmit-xhyre-icon-part:before {
+	content: "\f11e";
+}
+.pbmit-xhyre-icon-achievement:before {
+	content: "\f11f";
+}
+.pbmit-xhyre-icon-management:before {
+	content: "\f120";
+}
+.pbmit-xhyre-icon-skills:before {
+	content: "\f121";
+}
+.pbmit-xhyre-icon-staffing-1:before {
+	content: "\f122";
+}
+.pbmit-xhyre-icon-talent-recognition:before {
+	content: "\f123";
+}
+.pbmit-xhyre-icon-competence:before {
+	content: "\f124";
+}
+.pbmit-xhyre-icon-communication:before {
+	content: "\f125";
+}
+.pbmit-xhyre-icon-hr-manager:before {
+	content: "\f126";
+}
+.pbmit-xhyre-icon-administrator:before {
+	content: "\f127";
+}
+.pbmit-xhyre-icon-factory:before {
+	content: "\f128";
+}
+.pbmit-xhyre-icon-healthcare:before {
+	content: "\f129";
+}
+.pbmit-xhyre-icon-tower-crane:before {
+	content: "\f12a";
+}
+.pbmit-xhyre-icon-accountant:before {
+	content: "\f12b";
+}
+.pbmit-xhyre-icon-bellboy:before {
+	content: "\f12c";
+}
+.pbmit-xhyre-icon-container:before {
+	content: "\f12d";
+}
+.pbmit-xhyre-icon-puzzle:before {
+	content: "\f12e";
+}
+.pbmit-xhyre-icon-mission:before {
+	content: "\f12f";
+}
+.pbmit-xhyre-icon-award:before {
+	content: "\f130";
+}
+.pbmit-xhyre-icon-target:before {
+	content: "\f131";
+}
+.pbmit-xhyre-icon-support:before {
+	content: "\f132";
+}
+.pbmit-xhyre-icon-quote:before {
+	content: "\f133";
+}
+.pbmit-xhyre-icon-phone:before {
+	content: "\f134";
+}
+.pbmit-xhyre-icon-search:before {
+	content: "\f135";
+}
+.pbmit-xhyre-icon-shopping-bag:before {
+	content: "\f136";
+}
+.pbmit-xhyre-icon-telegram:before {
+	content: "\f137";
+}

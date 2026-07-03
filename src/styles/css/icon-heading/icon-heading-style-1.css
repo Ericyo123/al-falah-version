@@ -1,0 +1,78 @@
+.pbmit-ihbox-style-1 .pbmit-icon-type-icon,
+.pbmit-ihbox-style-1 .pbmit-ihbox-svg-wrapper,
+.pbmit-ihbox-style-1 .pbmit-ihbox-icon-type-text,
+.pbmit-ihbox-style-1 {
+	-webkit-transition: all .5s ease-in-out 0s;
+	-moz-transition: all .5s ease-in-out 0s;
+	-ms-transition: all .5s ease-in-out 0s;
+	-o-transition: all .5s ease-in-out 0s;
+	transition: all .5s ease-in-out 0s;
+}
+.pbmit-ihbox-style-1:hover .pbmit-icon-type-icon,
+.pbmit-ihbox-style-1:hover .pbmit-ihbox-svg-wrapper,
+.pbmit-ihbox-style-1:hover .pbmit-ihbox-icon-type-text {
+	transform: rotateY(360deg);
+}
+.pbmit-ihbox-style-1:hover {
+	transform: translate(0, -5px);
+}
+.pbmit-element-viewtype-carousel .pbmit-ihbox-style-1 {
+	padding-top: 5px;
+}
+.pbmit-ihbox-style-1 .pbmit-ihbox-svg-wrapper,
+.pbmit-ihbox-style-1 .pbmit-ihbox-icon {
+	margin-bottom: 25px;
+	display: inline-block;
+}
+.pbmit-ihbox-style-1 .pbmit-icon-type-icon,
+.pbmit-ihbox-style-1 .pbmit-ihbox-svg-wrapper,
+.pbmit-ihbox-style-1 .pbmit-ihbox-icon-type-text {
+	width: 65px;
+	height: 65px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 36px;
+	line-height: 36px;
+	fill: var(--pbmit-xhyre-global-color);
+	color: var(--pbmit-xhyre-global-color);
+	background-color: var(--pbmit-xhyre-light-bg-color);
+}
+.pbmit-ihbox-style-1 .pbmit-ihbox-icon-type-text {
+	font-size: 24px;
+}
+.pbmit-ihbox-style-1 .pbmit-ihbox-icon-type-image img {
+	width: 70px;
+	height: auto;
+	border-radius: 6px;
+}
+.pbmit-ihbox-style-1 .pbmit-element-title {
+	font-size: 20px;
+	line-height: 20px;
+	margin-bottom: 25px;
+}
+.pbmit-ihbox-style-1 .pbmit-element-subtitle {
+	font-size: 14px;
+	line-height: 18px;
+	margin-bottom: 5px;
+}
+.pbmit-ihbox-style-1 .pbmit-heading-desc {
+	margin: 0;
+}
+.pbmit-infobox-right .pbmit-ihbox-style-1 .pbmit-ihbox-headingicon {
+	text-align: right;
+}
+/* Bg Color */
+.pbmit-elementor-bg-color-light .pbmit-ihbox-style-1 .pbmit-icon-type-icon,
+.pbmit-elementor-bg-color-light .pbmit-ihbox-style-1 .pbmit-ihbox-svg-wrapper,
+.pbmit-elementor-bg-color-light .pbmit-ihbox-style-1 .pbmit-ihbox-icon-type-text {
+	background-color: var(--pbmit-xhyre-white-color);
+}
+@media (max-width: 1024px) {
+	.pbmit-infobox-right .pbmit-ihbox-style-1 .pbmit-ihbox-headingicon {
+		text-align: left;
+	}
+}

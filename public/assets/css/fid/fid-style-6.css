@@ -1,0 +1,86 @@
+.pbminfotech-ele-fid-style-6 .pbmit-fid-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 30px 20px;
+	border-radius: 6px;
+	background-color: var(--pbmit-xhyre-global-color);
+}
+.pbminfotech-ele-fid-style-6 .pbmit-fid-inner {
+	font-size: 70px;
+	line-height: 70px;
+	margin: 0;
+	font-weight: 800;
+	color: transparent;
+	-webkit-text-stroke: 1px var(--pbmit-xhyre-white-color)
+}
+.pbminfotech-ele-fid-style-6 .pbmit-fid-inner .pbmit-fid-before span {
+	margin-right: -12px;
+}
+.rtl .pbminfotech-ele-fid-style-6 .pbmit-fid-inner .pbmit-fid-before span{
+	margin: 0 0 0 -12px;
+}
+.pbminfotech-ele-fid-style-6 .pbmit-fid-inner .pbmit-fid span {
+	margin-left: -12px;
+}
+.rtl .pbminfotech-ele-fid-style-6 .pbmit-fid-inner .pbmit-fid span{
+	margin: 0 -12px 0 0;
+}
+.pbminfotech-ele-fid-style-6 .pbmit-fid-sub {
+	font-size: 24px;
+	line-height: 26px;
+	margin-left: 10px;
+	text-align: left;
+	color: var(--pbmit-xhyre-white-color);
+}
+.pbminfotech-ele-fid-style-6 .pbmit-fid-inner sub,
+.pbminfotech-ele-fid-style-6 .pbmit-fid-inner sup {
+	font-size: 40px;
+	line-height: 40px;
+	bottom: 0;
+}
+.pbminfotech-ele-fid-style-6 .pbmit-fid-before sup,
+.pbminfotech-ele-fid-style-6 .pbmit-fid sup {
+	top: -30px;
+}
+.pbminfotech-ele-fid-style-6 .pbmit-fid sub,
+.pbminfotech-ele-fid-style-6 .pbmit-fid sup {
+	margin-left: -12px;
+}
+.rtl .pbminfotech-ele-fid-style-6 .pbmit-fid sub,
+.rtl .pbminfotech-ele-fid-style-6 .pbmit-fid sup{
+	margin: 0 -20px 0 0;
+}
+.pbminfotech-ele-fid-style-6 .pbmit-fid-before sup,
+.pbminfotech-ele-fid-style-6 .pbmit-fid-before sub {
+	margin-right: -20px;
+}
+.rtl .pbminfotech-ele-fid-style-6 .pbmit-fid-before sup,
+.rtl .pbminfotech-ele-fid-style-6 .pbmit-fid-before sub{
+	margin: 0 0 0 -20px;
+}
+/* Bg Color */
+.pbmit-elementor-bg-color-gradient .pbminfotech-ele-fid-style-6 .pbmit-fid-content,
+.pbmit-elementor-bg-color-globalcolor .pbminfotech-ele-fid-style-6 .pbmit-fid-content {
+	background-color: var(--pbmit-xhyre-blackish-color);
+}
+@media (max-width: 1550px) {
+	.pbminfotech-ele-fid-style-6 .pbmit-fid-content {
+		padding: 30px 42px;
+	}
+}
+@media (max-width: 1450px) {
+	.pbminfotech-ele-fid-style-6 .pbmit-fid-content {
+		padding: 30px;
+	}
+}
+@media (max-width: 1400px) {
+	.pbminfotech-ele-fid-style-6 .pbmit-fid-content {
+		display: block;
+	}
+	.pbminfotech-ele-fid-style-6 .pbmit-fid-sub {
+		text-align: center;
+		margin: 10px 0 0 0;
+	}
+}
