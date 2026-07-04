@@ -994,13 +994,15 @@ input::placeholder, textarea::placeholder {
 }
 
 .bento-item.warm-beige {
-  background-color: #faf8f5;
-  border-color: rgba(243, 239, 233, 0.9);
+  background-color: var(--white);
+  border-color: rgba(0, 102, 204, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 51, 102, 0.04);
 }
 
 .bento-item.cool-grey {
-  background-color: #f7f9fc;
-  border-color: rgba(235, 239, 245, 0.9);
+  background-color: var(--white);
+  border-color: rgba(0, 102, 204, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 51, 102, 0.04);
 }
 
 /* Image background bento items */
