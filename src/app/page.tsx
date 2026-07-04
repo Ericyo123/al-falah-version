@@ -146,11 +146,22 @@ export default function Home() {
             </div>
 
             {/* Box 2: Vetted & Verified (Col 2, Row 1) */}
-            <div className="bento-item warm-beige">
-              <h4 className="bento-header-text">Vetted & Verified</h4>
-              <p className="bento-desc" style={{ color: "var(--text-secondary)" }}>
-                Rigorous trade tests, medical clearances, and professional interviews ensure that every single candidate is perfectly qualified and ready.
-              </p>
+            <div className="bento-item image-bg">
+              <img 
+                src="/assets/images/vetted_verified_accent.png" 
+                alt="Vetted & Verified" 
+                className="bento-image"
+              />
+              <div className="bento-overlay"></div>
+              <div className="bento-content-overlay">
+                <span className="bento-badge">Vetted & Verified</span>
+                <div>
+                  <h3 className="bento-title">Rigorous Screening</h3>
+                  <p className="bento-desc">
+                    Trade tests, medical clearances, and professional interviews ensure that every single candidate is perfectly qualified and ready.
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Box 3: Global Network (Col 3, Row 1 & 2 - Vertically Elongated) */}
@@ -192,11 +203,22 @@ export default function Home() {
             </div>
 
             {/* Box 5: Decades of Trust (Col 2, Row 2) */}
-            <div className="bento-item cool-grey">
-              <h4 className="bento-header-text">Decades of Trust</h4>
-              <p className="bento-desc" style={{ color: "var(--text-secondary)" }}>
-                Over 25 years of compliant recruitment across GCC nations. Built on absolute transparency, zero hidden charges, and legal integrity.
-              </p>
+            <div className="bento-item image-bg">
+              <img 
+                src="/assets/images/decades_of_trust_accent.png" 
+                alt="Decades of Trust" 
+                className="bento-image"
+              />
+              <div className="bento-overlay"></div>
+              <div className="bento-content-overlay">
+                <span className="bento-badge">Decades of Trust</span>
+                <div>
+                  <h3 className="bento-title">Over 25 Years of Excellence</h3>
+                  <p className="bento-desc">
+                    Compliant recruitment across GCC nations. Built on absolute transparency, zero hidden charges, and legal integrity.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
