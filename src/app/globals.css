@@ -1085,9 +1085,14 @@ input::placeholder, textarea::placeholder {
   color: rgba(255, 255, 255, 0.85) !important;
 }
 
-/* Column spans */
+/* Column & Row spans */
 .col-span-2 {
   grid-column: span 2;
+}
+.row-span-2 {
+  grid-row: span 2;
+  min-height: auto !important;
+  height: 100%;
 }
 
 @media (max-width: 991px) {
@@ -1097,6 +1102,10 @@ input::placeholder, textarea::placeholder {
   }
   .col-span-2 {
     grid-column: span 1;
+  }
+  .row-span-2 {
+    grid-row: span 1;
+    height: 380px;
   }
   .bento-item {
     min-height: auto;
