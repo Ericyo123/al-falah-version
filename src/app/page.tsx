@@ -148,13 +148,12 @@ export default function Home() {
             {/* Box 2: Vetted & Verified (Col 2, Row 1) */}
             <div className="bento-item image-bg">
               <img 
-                src="/assets/images/vetted_verified_accent.png" 
+                src="/assets/images/screening.jpg" 
                 alt="Vetted & Verified" 
                 className="bento-image"
               />
               <div className="bento-overlay"></div>
-              <div className="bento-content-overlay">
-                <span className="bento-badge">Vetted & Verified</span>
+              <div className="bento-content-overlay justify-end">
                 <div>
                   <h3 className="bento-title">Rigorous Screening</h3>
                   <p className="bento-desc">
@@ -186,13 +185,12 @@ export default function Home() {
             {/* Box 4: Deployment Speed (Col 1, Row 2) */}
             <div className="bento-item image-bg">
               <img 
-                src="/assets/images/fast_sourcing_accent.png" 
+                src="/assets/images/zerodelays.jpg" 
                 alt="Deployment Speed" 
                 className="bento-image"
               />
               <div className="bento-overlay"></div>
-              <div className="bento-content-overlay">
-                <span className="bento-badge">Deployment Speed</span>
+              <div className="bento-content-overlay justify-end">
                 <div>
                   <h3 className="bento-title">Zero Delays Sourcing</h3>
                   <p className="bento-desc">
@@ -210,8 +208,7 @@ export default function Home() {
                 className="bento-image"
               />
               <div className="bento-overlay"></div>
-              <div className="bento-content-overlay">
-                <span className="bento-badge">Decades of Trust</span>
+              <div className="bento-content-overlay justify-end">
                 <div>
                   <h3 className="bento-title">Over 25 Years of Excellence</h3>
                   <p className="bento-desc">
