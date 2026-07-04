@@ -6,6 +6,8 @@ import HeroSlider from "@/components/HeroSlider";
 import RecruitmentProcess from "@/components/RecruitmentProcess";
 
 export default function Home() {
+  const [activeIndustry, setActiveIndustry] = React.useState(0);
+
   const companies = [
     "AL NOOSY", "SHULALAIL HOTEL", "AFIFI WOOD", "SCMC",
     "AL HIJAZI RESTAURANT", "AL HOOR MARBLE FACTORY", "JAWADHA", "JALAL OTHAIBI",
@@ -202,69 +204,238 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SECTION 3: SPECIALIZED INDUSTRIES ===== */}
-      <section style={{ padding: "100px 0", backgroundColor: "var(--bg-color-secondary)" }}>
-        <div className="widescreen-container">
+      {/* ===== SECTION 3: SPECIALIZED INDUSTRIES (DYNAMIC BACKGROUND LIST) ===== */}
+      <section style={{ position: "relative", padding: "70px 0 50px", backgroundColor: "#050a11", overflow: "hidden" }}>
+        
+        {/* Dynamic Backgrounds */}
+        {[
+          { num: "01", name: "Hospitality & Service", desc: "Chefs, stewards, baristas, room attendants & drivers.", img: "industry_hospitality.png" },
+          { num: "02", name: "Construction & Civil", desc: "Civil engineers, supervisors, electricians & welders.", img: "industry_construction.png" },
+          { num: "03", name: "Production & Industrial", desc: "Machine operators, packers, mechanics & general labors.", img: "industry_production.png" },
+          { num: "04", name: "Transport & Logistics", desc: "Heavy machine drivers, delivery riders & dispatchers.", img: "industry_transport.png" },
+          { num: "05", name: "Corporate & Executive", desc: "Project engineers, estimators, accountants & admins.", img: "industry_corporate.png" },
+          { num: "06", name: "Healthcare & Support", desc: "Registered nurses, clinic caregivers & nursing aides.", img: "industry_healthcare.png" }
+        ].map((sec, i) => (
+          <div 
+            key={i}
+            style={{
+              position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
+              backgroundImage: `url(/assets/images/${sec.img})`,
+              backgroundSize: "cover", backgroundPosition: "center",
+              opacity: activeIndustry === i ? 1 : 0,
+              transform: activeIndustry === i ? "scale(1)" : "scale(1.05)",
+              transition: "opacity 0.8s ease, transform 1.5s ease",
+              zIndex: 0
+            }}
+          ></div>
+        ))}
+
+        {/* Dark Overlay for Text Readability */}
+        <div style={{
+          position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
+          background: "linear-gradient(to right, rgba(5,10,17,0.95) 0%, rgba(5,10,17,0.85) 40%, rgba(5,10,17,0.7) 100%)",
+          zIndex: 1
+        }}></div>
+
+        <div className="container" style={{ position: "relative", zIndex: 2, width: "100%" }}>
           <div className="row align-items-center">
-            {/* Left Column: Image with Industry Collages */}
-            <div className="col-lg-5 mb-5 mb-lg-0">
-              <div style={{
-                position: "relative",
-                borderRadius: "24px",
-                overflow: "hidden",
-                boxShadow: "0 15px 40px rgba(0, 51, 102, 0.08)",
-                border: "1px solid rgba(0, 102, 204, 0.1)",
-                height: "560px"
-              }}>
-                <img src="/assets/images/specialized_industries_banner.png" alt="Our Specialized Manpower Sectors" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                <div style={{
-                  position: "absolute",
-                  top: 0, left: 0, width: "100%", height: "100%",
-                  background: "linear-gradient(to top, rgba(0, 51, 102, 0.8) 0%, rgba(0, 51, 102, 0.15) 100%)",
-                  pointerEvents: "none"
-                }}></div>
-                <div style={{
-                  position: "absolute", bottom: "36px", left: "36px", right: "36px", color: "#fff"
-                }}>
-                  <span className="accent-pill-label" style={{ backgroundColor: "rgba(255,255,255,0.2)", border: "1px solid rgba(255,255,255,0.3)", color: "#fff", marginBottom: "12px", display: "inline-flex" }}>Globally Vetted</span>
-                  <h3 style={{ fontSize: "28px", fontWeight: 800, margin: 0, textShadow: "0 2px 4px rgba(0,0,0,0.2)", color: "#fff" }}>Specialized Talents</h3>
-                  <p style={{ fontSize: "14.5px", opacity: 0.9, marginTop: "8px", margin: "8px 0 0" }}>Deploying qualified workers aligned with international standards.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Title & Typography-driven Clean Sectors list (No Clip-Art Icons) */}
-            <div className="col-lg-7" style={{ paddingLeft: "40px" }}>
-              <span className="accent-pill-label" style={{ marginBottom: "16px", display: "inline-flex" }}>Sectors We Serve</span>
-              <h2 style={{ fontSize: "40px", fontWeight: 900, color: "var(--text-primary)", letterSpacing: "-1px", lineHeight: "1.2", margin: "12px 0 20px" }}>
-                Our Specialized Industries
+            
+            {/* Left Column: Massive Typography List */}
+            <div className="col-lg-7">
+              <span className="accent-pill-label" style={{ backgroundColor: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#ffffff", marginBottom: "20px", display: "inline-flex", backdropFilter: "blur(4px)" }}>
+                Sectors We Serve
+              </span>
+              <h2 className="text-white-force" style={{ fontSize: "46px", fontWeight: 900, letterSpacing: "-1.5px", lineHeight: "1.1", margin: "0 0 24px" }}>
+                Our Specialized <br/><span style={{ color: "var(--primary-color)" }}>Industries</span>
               </h2>
-              <p style={{ fontSize: "16px", color: "var(--text-secondary)", marginBottom: "36px", lineHeight: "1.8" }}>
-                We supply vetted, trade-tested personnel to match the diverse demands of global industries. Our candidates undergo rigorous compliance checks to meet exact project guidelines.
-              </p>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
+              <div style={{ display: "flex", flexDirection: "column" }}>
                 {[
-                  { num: "01", name: "Hospitality & Service", desc: "Chefs, stewards, baristas, room attendants & drivers." },
-                  { num: "02", name: "Construction & Civil", desc: "Civil engineers, supervisors, electricians & welders." },
-                  { num: "03", name: "Production & Industrial", desc: "Machine operators, packers, mechanics & general labors." },
-                  { num: "04", name: "Transport & Logistics", desc: "Heavy machine drivers, delivery riders & dispatchers." },
-                  { num: "05", name: "Corporate & Executive", desc: "Project engineers, estimators, accountants & admins." },
-                  { num: "06", name: "Healthcare & Support", desc: "Registered nurses, clinic caregivers & nursing aides." }
+                  { num: "01", name: "Hospitality & Service", desc: "Chefs, stewards, baristas, room attendants & drivers.", img: "industry_hospitality.png" },
+                  { num: "02", name: "Construction & Civil", desc: "Civil engineers, supervisors, electricians & welders.", img: "industry_construction.png" },
+                  { num: "03", name: "Production & Industrial", desc: "Machine operators, packers, mechanics & general labors.", img: "industry_production.png" },
+                  { num: "04", name: "Transport & Logistics", desc: "Heavy machine drivers, delivery riders & dispatchers.", img: "industry_transport.png" },
+                  { num: "05", name: "Corporate & Executive", desc: "Project engineers, estimators, accountants & admins.", img: "industry_corporate.png" },
+                  { num: "06", name: "Healthcare & Support", desc: "Registered nurses, clinic caregivers & nursing aides.", img: "industry_healthcare.png" }
                 ].map((sec, i) => (
-                  <div key={i} className="industry-text-block">
-                    <div style={{
-                      fontSize: "13px", fontWeight: 800, color: "var(--primary-color)",
-                      backgroundColor: "rgba(0, 102, 204, 0.06)",
-                      display: "inline-flex", padding: "4px 8px", borderRadius: "6px",
-                      marginBottom: "12px", letterSpacing: "1px"
-                    }}>{sec.num}</div>
-                    <h4 style={{ fontSize: "17px", fontWeight: 800, margin: "0 0 6px", color: "var(--text-primary)" }}>{sec.name}</h4>
-                    <p style={{ fontSize: "13.5px", color: "var(--text-secondary)", margin: 0, lineHeight: "1.5" }}>{sec.desc}</p>
+                  <div 
+                    key={i}
+                    onMouseEnter={() => setActiveIndustry(i)}
+                    onClick={() => setActiveIndustry(i)}
+                    style={{
+                      padding: "14px 0",
+                      borderBottom: "1px solid rgba(255,255,255,0.1)",
+                      cursor: "pointer",
+                      display: "flex", alignItems: "center", gap: "20px",
+                      opacity: activeIndustry === i ? 1 : 0.4,
+                      transform: activeIndustry === i ? "translateX(20px)" : "translateX(0)",
+                      transition: "all 0.4s cubic-bezier(0.25, 1, 0.5, 1)"
+                    }}
+                  >
+                    <span className="text-white-force" style={{ fontSize: "16px", fontWeight: 600, transition: "color 0.4s ease", color: activeIndustry === i ? "var(--primary-color)" : "" }}>
+                      {sec.num}
+                    </span>
+                    <div>
+                      <h3 className="text-white-force" style={{ fontSize: "24px", fontWeight: 600, margin: "0", letterSpacing: "-0.5px" }}>
+                        {sec.name}
+                      </h3>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
+
+            {/* Right Column: Dynamic Description Panel */}
+            <div className="col-lg-5">
+               {(() => {
+                 const current = [
+                  {
+                    name: "Hospitality & Service",
+                    longDesc: "Al Falah provides world-class staffing solutions for luxury hotels, resorts, and fine dining establishments globally. Our candidates undergo rigorous service training and background verification to ensure 5-star standard delivery.",
+                    roles: ["Executive Chefs", "F&B Managers", "Baristas", "Housekeeping Staff"]
+                  },
+                  {
+                    name: "Construction & Civil",
+                    longDesc: "We partner with leading global contractors to deploy highly skilled technical manpower for mega-infrastructure projects. Every candidate is trade-tested to meet strict international safety and engineering standards.",
+                    roles: ["Civil Engineers", "Site Supervisors", "Certified Welders", "Heavy Equipment Operators"]
+                  },
+                  {
+                    name: "Production & Industrial",
+                    longDesc: "From high-tech manufacturing to heavy industrial processing, we supply reliable, efficient, and safety-conscious personnel trained to operate in fast-paced production environments.",
+                    roles: ["Machine Operators", "Industrial Mechanics", "QA Inspectors", "Assembly Line Technicians"]
+                  },
+                  {
+                    name: "Transport & Logistics",
+                    longDesc: "Keep your global supply chain moving efficiently with our vetted logistics professionals. We specialize in sourcing licensed drivers, dispatchers, and warehouse personnel familiar with modern inventory systems.",
+                    roles: ["Heavy Duty Drivers", "Logistics Coordinators", "Warehouse Managers", "Delivery Fleets"]
+                  },
+                  {
+                    name: "Corporate & Executive",
+                    longDesc: "Secure top-tier talent for your boardroom and back-office. We headhunt experienced professionals who bring strategic leadership, financial acumen, and administrative excellence to your corporate headquarters.",
+                    roles: ["Project Managers", "Financial Accountants", "HR Executives", "Administrative Leads"]
+                  },
+                  {
+                    name: "Healthcare & Support",
+                    longDesc: "Delivering compassionate and certified healthcare professionals to medical facilities worldwide. Our rigorous vetting ensures all medical staff meet international licensing and ethical care standards.",
+                    roles: ["Registered Nurses", "Clinical Caregivers", "Medical Technicians", "Hospital Admins"]
+                  }
+                 ][activeIndustry];
+
+                 return (
+                   <div className="industry-panel-wrapper">
+                     
+                     {/* Watermark Number */}
+                     <div style={{
+                       position: "absolute", top: "-40px", right: "0",
+                       fontSize: "180px", fontWeight: 900, lineHeight: 0.8,
+                       color: "transparent", WebkitTextStroke: "2px rgba(255,255,255,0.05)",
+                       zIndex: 0, pointerEvents: "none"
+                     }}>
+                       0{activeIndustry + 1}
+                     </div>
+
+                     <div style={{ position: "relative", zIndex: 1 }}>
+
+                       
+                       {/* Description - Thinner, more elegant */}
+                       <p className="text-white-force-85" style={{ fontSize: "16px", fontWeight: 300, lineHeight: "1.8", marginBottom: "24px", fontStyle: "italic" }}>
+                         "{current.longDesc}"
+                       </p>
+      
+                       {/* Premium Roles List */}
+                       <div style={{ marginBottom: "30px" }}>
+                         <span className="text-white-force-75" style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", display: "block", marginBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: "8px" }}>
+                           Highly Sought Roles
+                         </span>
+                         
+                         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                           {current.roles.map((role, idx) => (
+                             <div key={idx} style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "24px", height: "24px", borderRadius: "50%", backgroundColor: "rgba(0,102,204,0.15)", border: "1px solid rgba(0,102,204,0.3)" }}>
+                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                   <polyline points="20 6 9 17 4 12"></polyline>
+                                 </svg>
+                               </div>
+                               <span className="text-white-force" style={{ fontSize: "15px", fontWeight: 600 }}>{role}</span>
+                             </div>
+                           ))}
+                         </div>
+                       </div>
+      
+                       {/* Creative CTAs */}
+                       <div style={{ display: "flex", alignItems: "center", gap: "24px", flexWrap: "wrap" }}>
+                         
+                         {/* Employer CTA */}
+                         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                           <Link href="/contact" style={{
+                             display: "flex", alignItems: "center", justifyContent: "center",
+                             width: "50px", height: "50px", borderRadius: "50%",
+                             backgroundColor: "var(--primary-color)", color: "#ffffff",
+                             transition: "all 0.4s cubic-bezier(0.25, 1, 0.5, 1)",
+                             boxShadow: "0 10px 30px rgba(0, 102, 204, 0.3)"
+                           }}
+                           onMouseEnter={(e) => {
+                             e.currentTarget.style.transform = "scale(1.1)";
+                             e.currentTarget.style.backgroundColor = "#ffffff";
+                             e.currentTarget.style.color = "var(--primary-color)";
+                           }}
+                           onMouseLeave={(e) => {
+                             e.currentTarget.style.transform = "scale(1)";
+                             e.currentTarget.style.backgroundColor = "var(--primary-color)";
+                             e.currentTarget.style.color = "#ffffff";
+                           }}
+                           >
+                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                               <line x1="5" y1="12" x2="19" y2="12"></line>
+                               <polyline points="12 5 19 12 12 19"></polyline>
+                             </svg>
+                           </Link>
+                           <div style={{ display: "flex", flexDirection: "column" }}>
+                             <span className="text-white-force" style={{ fontSize: "15px", fontWeight: 800 }}>Start Hiring</span>
+                             <span className="text-white-force-75" style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px" }}>For Employers</span>
+                           </div>
+                         </div>
+
+                         {/* Candidate CTA */}
+                         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                           <Link href="/contact" style={{
+                             display: "flex", alignItems: "center", justifyContent: "center",
+                             width: "50px", height: "50px", borderRadius: "50%",
+                             backgroundColor: "transparent", color: "#ffffff", border: "2px solid rgba(255,255,255,0.2)",
+                             transition: "all 0.4s cubic-bezier(0.25, 1, 0.5, 1)"
+                           }}
+                           onMouseEnter={(e) => {
+                             e.currentTarget.style.transform = "scale(1.1)";
+                             e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)";
+                             e.currentTarget.style.borderColor = "#ffffff";
+                           }}
+                           onMouseLeave={(e) => {
+                             e.currentTarget.style.transform = "scale(1)";
+                             e.currentTarget.style.backgroundColor = "transparent";
+                             e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)";
+                           }}
+                           >
+                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                               <polyline points="14 2 14 8 20 8"></polyline>
+                               <line x1="16" y1="13" x2="8" y2="13"></line>
+                               <line x1="16" y1="17" x2="8" y2="17"></line>
+                               <polyline points="10 9 9 9 8 9"></polyline>
+                             </svg>
+                           </Link>
+                           <div style={{ display: "flex", flexDirection: "column" }}>
+                             <span className="text-white-force" style={{ fontSize: "15px", fontWeight: 800 }}>Apply Now</span>
+                             <span className="text-white-force-75" style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px" }}>For Candidates</span>
+                           </div>
+                         </div>
+
+                       </div>
+                     </div>
+                   </div>
+                 );
+               })()}
+            </div>
+
           </div>
         </div>
       </section>
@@ -326,37 +497,109 @@ export default function Home() {
       </section>
 
       {/* ===== SECTION 10: ACCREDITATIONS & STATS ===== */}
-      <section style={{ padding: "100px 0", backgroundColor: "var(--secondary-color)", color: "#fff" }}>
-        <div className="widescreen-container">
+      <section style={{ padding: "100px 0", backgroundColor: "var(--secondary-color)", color: "#ffffff", position: "relative", overflow: "hidden" }}>
+        
+        {/* Decorative Background Elements & Geometric Shapes */}
+        <div style={{ position: "absolute", top: "-20%", left: "-10%", width: "50%", height: "150%", background: "radial-gradient(ellipse at center, rgba(0, 102, 204, 0.15) 0%, transparent 70%)", pointerEvents: "none" }}></div>
+        <div style={{ position: "absolute", bottom: "-30%", right: "-10%", width: "40%", height: "100%", background: "radial-gradient(circle at center, rgba(255, 255, 255, 0.03) 0%, transparent 70%)", pointerEvents: "none" }}></div>
+        
+        {/* Top-right large circle outline */}
+        <svg style={{ position: "absolute", top: "-15%", right: "-5%", width: "450px", height: "450px", opacity: 0.03, pointerEvents: "none" }} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="48" fill="none" stroke="#ffffff" strokeWidth="1.5" />
+        </svg>
+        
+        {/* Bottom-left dotted grid */}
+        <div style={{
+          position: "absolute", bottom: "5%", left: "3%", width: "180px", height: "180px", opacity: 0.04, pointerEvents: "none",
+          backgroundImage: "radial-gradient(#ffffff 2px, transparent 2px)", backgroundSize: "24px 24px"
+        }}></div>
+        
+        {/* Center floating triangle */}
+        <svg style={{ position: "absolute", top: "30%", left: "45%", width: "120px", height: "120px", opacity: 0.02, pointerEvents: "none", transform: "rotate(15deg)" }} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,10 90,90 10,90" fill="none" stroke="#ffffff" strokeWidth="2.5" />
+        </svg>
+        
+        {/* Right side angled lines */}
+        <svg style={{ position: "absolute", bottom: "10%", right: "35%", width: "160px", height: "160px", opacity: 0.03, pointerEvents: "none", transform: "rotate(-30deg)" }} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <line x1="10" y1="20" x2="90" y2="20" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" />
+          <line x1="30" y1="40" x2="70" y2="40" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" />
+          <line x1="20" y1="60" x2="80" y2="60" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" />
+        </svg>
+
+        <div className="widescreen-container" style={{ position: "relative", zIndex: 1 }}>
           <div className="row align-items-center">
             {/* Left Side: Rating & Award details */}
             <div className="col-lg-5 mb-5 mb-lg-0 text-center text-lg-start">
-              <span className="accent-pill-label" style={{ backgroundColor: "rgba(255,255,255,0.15)", color: "#fff" }}>Accreditation</span>
-              <h2 style={{ fontSize: "40px", fontWeight: 900, color: "#fff !important", margin: "15px 0 20px", letterSpacing: "-1px" }}>SLBFE 3-Star Golden Award</h2>
-              <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.85) !important", marginBottom: "30px", lineHeight: "1.8" }}>
+              <span className="accent-pill-label text-white-force" style={{ backgroundColor: "rgba(255,255,255,0.1)", border: "1px solid rgba(255, 255, 255, 0.2)", backdropFilter: "blur(4px)" }}>Accreditation</span>
+              <h2 className="text-white-force" style={{ fontSize: "40px", fontWeight: 900, margin: "15px 0 20px", letterSpacing: "-1px" }}>SLBFE 3-Star Golden Award</h2>
+              <p className="text-white-force-85" style={{ fontSize: "16px", marginBottom: "30px", lineHeight: "1.8" }}>
                 Proud recipient of the prestigious Sri Lanka Bureau of Foreign Employment (SLBFE) 3-Star Golden Award for outstanding performance and compliance in overseas consultancy — 2022/2023.
               </p>
               
-              <div style={{ display: "inline-flex", flexDirection: "column", gap: "8px", backgroundColor: "rgba(255,255,255,0.06)", padding: "20px 30px", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.1)", textAlign: "left" }}>
-                <span style={{ fontSize: "15px", fontWeight: 700 }}>Google Reviewed Agency</span>
-                <div style={{ color: "#ffb400", fontSize: "20px", letterSpacing: "2px" }}>★★★★★</div>
-                <span style={{ fontSize: "14px", fontWeight: 600, opacity: 0.8 }}>4.8 / 5 Rating</span>
+              <div style={{ 
+                display: "inline-flex", 
+                alignItems: "center", 
+                gap: "20px", 
+                backgroundColor: "#ffffff", 
+                padding: "16px 28px", 
+                borderRadius: "100px", 
+                boxShadow: "0 15px 35px rgba(0, 0, 0, 0.15)", 
+                border: "1px solid rgba(0,0,0,0.05)",
+                textAlign: "left",
+                marginTop: "10px"
+              }}>
+                {/* Colorful Google Icon SVG */}
+                <div style={{ flexShrink: 0, width: "36px", height: "36px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <svg width="100%" height="100%" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.7 17.74 9.5 24 9.5z"/>
+                    <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.14 7.09-10.36 7.09-17.65z"/>
+                    <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                    <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                  </svg>
+                </div>
+
+                <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                    <span style={{ fontSize: "19px", fontWeight: 900, color: "#202124", lineHeight: 1 }}>4.8</span>
+                    <div style={{ color: "#FBBC04", fontSize: "19px", letterSpacing: "2px", lineHeight: 1 }}>
+                      ★★★★★
+                    </div>
+                  </div>
+                  <span style={{ fontSize: "14px", fontWeight: 600, color: "#5f6368" }}>Google Reviewed Agency</span>
+                </div>
               </div>
             </div>
 
             {/* Right Side: Key Placement Numbers (Stats) */}
             <div className="col-lg-7 ps-lg-5">
-              <div className="row text-center">
+              <div className="row text-center g-4">
                 {[
                   { value: "1,200+", label: "Candidates Placed" },
                   { value: "350+", label: "Partner Companies" },
                   { value: "12+", label: "Industries Served" },
                   { value: "98%", label: "Retention Rate" },
                 ].map((stat, i) => (
-                  <div key={i} className="col-sm-6 mb-4">
-                    <div style={{ padding: "40px 20px", borderRadius: "16px", backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                      <h3 style={{ fontSize: "44px", fontWeight: 800, margin: "0 0 8px", color: "#fff !important" }}>{stat.value}</h3>
-                      <p style={{ fontSize: "15px", margin: 0, color: "rgba(255,255,255,0.75) !important" }}>{stat.label}</p>
+                  <div key={i} className="col-sm-6">
+                    <div style={{ 
+                      padding: "45px 20px", 
+                      borderRadius: "20px", 
+                      backgroundColor: "rgba(255,255,255,0.06)", 
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.08)",
+                      backdropFilter: "blur(4px)",
+                      transition: "transform 0.3s ease, background-color 0.3s ease",
+                      cursor: "default"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-5px)";
+                      e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.09)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.06)";
+                    }}>
+                      <h3 className="text-white-force" style={{ fontSize: "48px", fontWeight: 900, margin: "0 0 10px" }}>{stat.value}</h3>
+                      <p className="text-white-force-85" style={{ fontSize: "16px", fontWeight: 500, margin: 0 }}>{stat.label}</p>
                     </div>
                   </div>
                 ))}

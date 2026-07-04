@@ -68,8 +68,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--bg-color) !important;
-  color: var(--text-primary) !important;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.7;
@@ -83,17 +83,28 @@ main {
 
 /* ===== TYPOGRAPHY ===== */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading) !important;
-  color: var(--text-primary) !important;
+  font-family: var(--font-heading);
+  color: var(--text-primary);
   line-height: 1.25;
   font-weight: 700;
 }
 
 
 p {
-  color: var(--text-secondary) !important;
+  color: var(--text-secondary);
   line-height: 1.8;
   font-weight: 400;
+}
+
+/* ===== UTILITY CLASSES TO OVERRIDE LEGACY STYLES ===== */
+.text-white-force {
+  color: #e6eef5 !important;
+}
+.text-white-force-85 {
+  color: rgba(230, 238, 245, 0.85) !important;
+}
+.text-white-force-75 {
+  color: rgba(230, 238, 245, 0.75) !important;
 }
 
 a {
@@ -1696,5 +1707,21 @@ input::placeholder, textarea::placeholder {
     min-width: 0;
     padding-top: 16px;
     border-top: 1px solid rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* ===== INDUSTRIES PANEL MOBILE OPTIMIZATION ===== */
+.industry-panel-wrapper {
+  position: relative;
+  padding: 0 40px 0 50px;
+  border-left: 1px solid rgba(255,255,255,0.15);
+}
+
+@media (max-width: 991px) {
+  .industry-panel-wrapper {
+    padding: 30px 0 0 0 !important;
+    border-left: none !important;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.15);
   }
 }
