@@ -95,45 +95,45 @@ export default function AboutPage() {
               <div className={styles.sectionHeaderAlt}>
                 <span className={styles.subtitleAlt}>/ WHO ARE WE /</span>
                 <h2 className={styles.titleAlt}>
-                  Building Success <span className={styles.textBlueAlt}>Together,</span><br/>
-                  <span className={styles.textBlueAlt}>hr Solution</span> at Time.
+                  Global Manpower <span className={styles.textBlueAlt}>Recruitment</span><br/>
+                  <span className={styles.textBlueAlt}>Agency</span> in Sri Lanka.
                 </h2>
               </div>
               <p className={styles.descAlt}>
-                The Candidate Experience process is simple and our research team guide you along the way, then receive full access to all their data and the data in each region where they participate via secure login access to our technology
+                AL-FALAH TRAVELS & TOURS is one of the fastest-growing recruitment agencies, providing unrivaled human resource and talent management solutions to meet overseas recruitment needs. It offers a flexible recruitment service that can be availed on both a retained and non-retained basis.
               </p>
               
               <div className={styles.tabsArea}>
                 <div className={styles.tabsList}>
-                  <div className={`${styles.tabItem} ${activeTab === 1 ? styles.tabActive : ''}`} onClick={() => setActiveTab(1)}>01. The Great Mission</div>
-                  <div className={`${styles.tabItem} ${activeTab === 2 ? styles.tabActive : ''}`} onClick={() => setActiveTab(2)}>02. Amazing Vision</div>
-                  <div className={`${styles.tabItem} ${activeTab === 3 ? styles.tabActive : ''}`} onClick={() => setActiveTab(3)}>03. Our Destination</div>
+                  <div className={`${styles.tabItem} ${activeTab === 1 ? styles.tabActive : ''}`} onClick={() => setActiveTab(1)}>01. Our Mission</div>
+                  <div className={`${styles.tabItem} ${activeTab === 2 ? styles.tabActive : ''}`} onClick={() => setActiveTab(2)}>02. Our Vision</div>
+                  <div className={`${styles.tabItem} ${activeTab === 3 ? styles.tabActive : ''}`} onClick={() => setActiveTab(3)}>03. Our Expertise</div>
                 </div>
                 <div className={styles.tabContentPanel}>
                   {activeTab === 1 && (
                     <>
-                      <p>Portfolio management for accelerators integrated in one platform to track progress, manage deal flow.</p>
+                      <p>We will achieve our vision by partnering with our clients to recruit, manage and retain their workforce using our outstanding knowledge.</p>
                       <ul className={styles.checkList}>
-                        <li><i className="fas fa-check"></i> Explore job roles based of your study</li>
-                        <li><i className="fas fa-check"></i> Get job recommendations directly</li>
+                        <li><i className="fas fa-check"></i> Source the most talented candidates</li>
+                        <li><i className="fas fa-check"></i> Outstanding industry knowledge</li>
                       </ul>
                     </>
                   )}
                   {activeTab === 2 && (
                     <>
-                      <p>Shine through the noise with thought leadership content and prestigious and well-recognized awards.</p>
+                      <p>We work hard to achieve our goals together as a team with a clear shared purpose. We adapt to our clients changing needs as well as changes in the market.</p>
                       <ul className={styles.checkList}>
-                        <li><i className="fas fa-check"></i> Cultures of recognition and wellbeing</li>
-                        <li><i className="fas fa-check"></i> Improving workplace with leadership</li>
+                        <li><i className="fas fa-check"></i> Shared team purpose and goals</li>
+                        <li><i className="fas fa-check"></i> Business of growth and success</li>
                       </ul>
                     </>
                   )}
                   {activeTab === 3 && (
                     <>
-                      <p>Our innovative platform processes and improves overall organizational performance see the difference.</p>
+                      <p>Thanks to extensive industry experience, our recruiters are adept at finding the right candidate for your organization—someone who possesses the right skill set.</p>
                       <ul className={styles.checkList}>
-                        <li><i className="fas fa-check"></i> Get job recommendations directly</li>
-                        <li><i className="fas fa-check"></i> Cultures of recognition and wellbeing</li>
+                        <li><i className="fas fa-check"></i> Extensive industry experience</li>
+                        <li><i className="fas fa-check"></i> Aligns with your company's culture</li>
                       </ul>
                     </>
                   )}
@@ -145,14 +145,14 @@ export default function AboutPage() {
                   <div className={styles.contactIcon}><i className="fas fa-paper-plane"></i></div>
                   <div className={styles.contactInfo}>
                     <span className={styles.contactLabel}>Email Us</span>
-                    <span className={styles.contactValue}>info@example.com</span>
+                    <span className={styles.contactValue}>alfalah.overseas@gmail.com</span>
                   </div>
                 </div>
                 <div className={styles.contactBlock}>
                   <div className={styles.contactIcon}><i className="fas fa-phone-volume"></i></div>
                   <div className={styles.contactInfo}>
-                    <span className={styles.contactLabel}>Have question?</span>
-                    <span className={styles.contactValue}>Explore our faq section</span>
+                    <span className={styles.contactLabel}>Call Us</span>
+                    <span className={styles.contactValue}>+94 112 669 489</span>
                   </div>
                 </div>
               </div>
@@ -222,13 +222,12 @@ export default function AboutPage() {
 
           {/* Center Content */}
           <div className={styles.orbitalCenter}>
-            <span className={styles.subtitleAlt} style={{ display: 'inline-block', marginBottom: '15px' }}>/ LEADERSHIP /</span>
+            <span className={styles.subtitleAlt} style={{ display: 'inline-block', marginBottom: '15px' }}>/ RECOGNITION /</span>
             <h2 className={styles.titleAlt} style={{ fontSize: '54px', marginBottom: '25px', lineHeight: '1.2' }}>
-              Our Team of <span className={styles.textBlueAlt}>Experts is</span><br/>
-              <span className={styles.textBlueAlt}>Toady</span> to Assist You
+              SLBFE 3-Star <br/><span className={styles.textBlueAlt}>Golden Award</span>
             </h2>
             <p className={styles.descAlt} style={{ maxWidth: '800px', margin: '0 auto 40px', fontSize: '15px' }}>
-              Recruitment services, often provided by specialized agencies or firms, offer organizations assistance in identifying, attracting, and hiring suitable candidates for their job openings.
+              Proud recipient of the prestigious SLBFE 3-Star Golden Award for outstanding performance and excellence in foreign recruitment consultancy during the year 2023/2022. This reflects our dedication to maintaining the highest standards.
             </p>
             <div className={styles.btnGroupCenter}>
               <Link href="/contact" className={styles.btnPrimary}>Get Consult <i className="fas fa-location-arrow" style={{ transform: 'rotate(45deg)', fontSize: '12px' }}></i></Link>
@@ -286,7 +285,7 @@ export default function AboutPage() {
           <div className={styles.sectionHeaderCentered} style={{ marginBottom: '60px' }}>
             <span className={styles.subtitleAlt} style={{ display: 'inline-block', marginBottom: '15px' }}>/ WHY CHOOSE US? /</span>
             <h2 className={styles.titleAlt} style={{ fontSize: '42px', margin: '0', lineHeight: '1.2' }}>
-              We choose a human resources?
+              Why Choose Al Falah Travels & Tours?
             </h2>
           </div>
 
@@ -296,24 +295,24 @@ export default function AboutPage() {
             <div className="col-lg-4">
               <div className={styles.featureItemLeft}>
                 <div className={styles.featTextBox}>
-                  <h4 className={styles.featTitleBox}>Corporate Programs</h4>
-                  <p className={styles.featDescBox}>Insights by consulting an expert Knowledge Advisor through call, email or chat.</p>
+                  <h4 className={styles.featTitleBox}>Government-Approved</h4>
+                  <p className={styles.featDescBox}>We are a fully licensed and Government-Approved Recruitment Agency.</p>
                 </div>
-                <div className={styles.featIconBox}><i className="fas fa-users-cog"></i></div>
+                <div className={styles.featIconBox}><i className="fas fa-file-contract"></i></div>
               </div>
               <div className={styles.featureItemLeft}>
                 <div className={styles.featTextBox}>
-                  <h4 className={styles.featTitleBox}>Deeper Talent Pools</h4>
-                  <p className={styles.featDescBox}>Analysis emphasizing HR’s pivotal and strategic significance development resources.</p>
+                  <h4 className={styles.featTitleBox}>Fast & Transparent</h4>
+                  <p className={styles.featDescBox}>Experience a fast, transparent, and hassle-free hiring process.</p>
                 </div>
-                <div className={styles.featIconBox}><i className="fas fa-id-badge"></i></div>
+                <div className={styles.featIconBox}><i className="fas fa-bolt"></i></div>
               </div>
               <div className={styles.featureItemLeft}>
                 <div className={styles.featTextBox}>
-                  <h4 className={styles.featTitleBox}>Leadership Training</h4>
-                  <p className={styles.featDescBox}>Empower your future leaders with our targeted training sessions, designed to build critical skills.</p>
+                  <h4 className={styles.featTitleBox}>Skilled Candidates</h4>
+                  <p className={styles.featDescBox}>We source highly skilled and thoroughly verified candidates for your roles.</p>
                 </div>
-                <div className={styles.featIconBox}><i className="fas fa-user-tie"></i></div>
+                <div className={styles.featIconBox}><i className="fas fa-user-check"></i></div>
               </div>
             </div>
 
@@ -329,32 +328,30 @@ export default function AboutPage() {
             {/* Right Features */}
             <div className="col-lg-4">
               <div className={styles.featureItemRight}>
-                <div className={styles.featIconBox}><i className="fas fa-chart-line"></i></div>
+                <div className={styles.featIconBox}><i className="fas fa-hand-holding-usd"></i></div>
                 <div className={styles.featTextBox}>
-                  <h4 className={styles.featTitleBox}>Increase Efficiencies</h4>
-                  <p className={styles.featDescBox}>Build your skill set and advance your career with award-winning programs Efficiencies.</p>
+                  <h4 className={styles.featTitleBox}>Cost-Effective</h4>
+                  <p className={styles.featDescBox}>We offer highly competitive and cost-effective recruitment packages.</p>
                 </div>
               </div>
               <div className={styles.featureItemRight}>
-                <div className={styles.featIconBox}><i className="fas fa-user-shield"></i></div>
+                <div className={styles.featIconBox}><i className="fas fa-globe-asia"></i></div>
                 <div className={styles.featTextBox}>
-                  <h4 className={styles.featTitleBox}>Onboarding Support</h4>
-                  <p className={styles.featDescBox}>Access essential tool your day-to-day efforts and give you a professional edge, from handbook.</p>
+                  <h4 className={styles.featTitleBox}>Strong Network</h4>
+                  <p className={styles.featDescBox}>Benefit from our massive and strong network across the Middle East.</p>
                 </div>
               </div>
               <div className={styles.featureItemRight}>
-                <div className={styles.featIconBox}><i className="fas fa-search"></i></div>
+                <div className={styles.featIconBox}><i className="fas fa-history"></i></div>
                 <div className={styles.featTextBox}>
-                  <h4 className={styles.featTitleBox}>Recruitment Solutions</h4>
-                  <p className={styles.featDescBox}>We tap into deeper, global talent pools to find the exact specialized candidates you need.</p>
+                  <h4 className={styles.featTitleBox}>Decades of Experience</h4>
+                  <p className={styles.featDescBox}>Leveraging decades of extensive experience in overseas placement.</p>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
-
       {/* 6. Testimonials (Slider Cards) */}
       <section className={styles.testimonialsSection}>
         {/* Decorative Background Elements */}
