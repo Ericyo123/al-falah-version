@@ -3,7 +3,7 @@
 .pageWrapper {
   background-color: #ffffff;
   color: #333;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
 }
 
 /* Page Header */
@@ -74,7 +74,7 @@
 
 .subtitle {
   display: inline-block;
-  color: #3870ff;
+  color: var(--primary-color);
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
@@ -88,18 +88,18 @@
 .title {
   font-size: 42px;
   font-weight: 700;
-  color: #0b1c39;
+  color: var(--text-primary);
   line-height: 1.2;
   margin-bottom: 20px;
 }
 
 .textBlue {
-  color: #3870ff;
+  color: var(--primary-color);
 }
 
 .desc {
   font-size: 16px;
-  color: #666;
+  color: var(--text-muted);
   line-height: 1.8;
   margin-bottom: 30px;
 }
@@ -152,7 +152,7 @@
 }
 
 .experienceBox {
-  background-color: #3870ff;
+  background-color: var(--primary-color);
   border-radius: 8px;
   padding: 30px;
   color: white;
@@ -175,7 +175,7 @@
   font-weight: 800;
   color: transparent;
   -webkit-text-stroke: 2px white;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   letter-spacing: -2px;
 }
 
@@ -201,7 +201,7 @@
 }
 
 .subtitleAlt {
-  color: #3870ff;
+  color: var(--primary-color);
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
@@ -213,18 +213,18 @@
 .titleAlt {
   font-size: 42px;
   font-weight: 700;
-  color: #0b1c39;
+  color: var(--text-primary);
   line-height: 1.2;
   margin: 0;
 }
 
 .textBlueAlt {
-  color: #3870ff;
+  color: var(--primary-color);
 }
 
 .descAlt {
   font-size: 16px;
-  color: #6b7280;
+  color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 40px;
 }
@@ -245,7 +245,7 @@
 
 .tabItem {
   background: #f3f4f6;
-  color: #0b1c39;
+  color: var(--text-primary);
   font-weight: 700;
   font-size: 14px;
   padding: 14px 20px;
@@ -255,7 +255,7 @@
 }
 
 .tabActive {
-  background: #3870ff;
+  background: var(--primary-color);
   color: white;
 }
 
@@ -265,7 +265,7 @@
 }
 
 .tabContentPanel p {
-  color: #6b7280;
+  color: var(--text-secondary);
   font-size: 15px;
   line-height: 1.7;
   margin-bottom: 20px;
@@ -278,7 +278,7 @@
 }
 
 .checkList li {
-  color: #0b1c39;
+  color: var(--text-primary);
   font-weight: 600;
   font-size: 15px;
   margin-bottom: 12px;
@@ -288,7 +288,7 @@
 }
 
 .checkList li i {
-  color: #3870ff;
+  color: var(--primary-color);
   font-size: 14px;
 }
 
@@ -309,7 +309,7 @@
 .contactIcon {
   width: 50px;
   height: 50px;
-  background: #3870ff;
+  background: var(--primary-color);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -324,14 +324,14 @@
 }
 
 .contactLabel {
-  color: #3870ff;
+  color: var(--primary-color);
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 2px;
 }
 
 .contactValue {
-  color: #0b1c39;
+  color: var(--text-primary);
   font-weight: 700;
   font-size: 15px;
 }
@@ -356,7 +356,7 @@
   border-radius: 30px;
   font-size: 14px;
   font-weight: 600;
-  color: #0b1c39;
+  color: var(--text-primary);
   box-shadow: 0 5px 15px rgba(0,0,0,0.02);
 }
 
@@ -368,7 +368,7 @@
 
 .btnPrimary {
   padding: 16px 36px;
-  background: #3870ff;
+  background: var(--primary-color);
   color: #ffffff !important;
   font-weight: 600;
   border-radius: 8px;
@@ -380,12 +380,12 @@
 }
 
 .btnPrimary:hover {
-  background: #0b1c39;
+  background: var(--text-primary);
 }
 
 .btnSecondary {
   padding: 16px 36px;
-  background: #0b1c39;
+  background: var(--text-primary);
   color: #ffffff !important;
   font-weight: 600;
   border-radius: 8px;
@@ -397,13 +397,13 @@
 }
 
 .btnSecondary:hover {
-  background: #3870ff;
+  background: var(--primary-color);
 }
 
 .btnOutline {
   padding: 16px 36px;
   background: transparent;
-  color: #0b1c39 !important;
+  color: var(--text-primary) !important;
   font-weight: 600;
   border-radius: 8px;
   border: 2px solid #eaeaea;
@@ -415,8 +415,8 @@
 }
 
 .btnOutline:hover {
-  border-color: #3870ff;
-  color: #3870ff !important;
+  border-color: var(--primary-color);
+  color: var(--primary-color) !important;
 }
 
 .expertImages {
@@ -446,20 +446,20 @@
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  color: #0b1c39;
+  color: var(--text-primary);
 }
 
 .floatingCard h4 {
   font-size: 16px;
   margin: 0 0 5px;
   font-weight: 700;
-  color: #0b1c39;
+  color: var(--text-primary);
 }
 
 .floatingCard p {
   font-size: 13px;
   margin: 0;
-  color: #666;
+  color: var(--text-muted);
 }
 
 /* How It Works */
@@ -483,7 +483,7 @@
   width: 70px;
   height: 70px;
   background: rgba(56, 112, 255, 0.1);
-  color: #3870ff;
+  color: var(--primary-color);
   font-size: 24px;
   font-weight: 800;
   border-radius: 50%;
@@ -495,20 +495,20 @@
 }
 
 .stepCard:hover .stepNum {
-  background: #3870ff;
+  background: var(--primary-color);
   color: #ffffff;
 }
 
 .stepTitle {
   font-size: 20px;
   font-weight: 700;
-  color: #0b1c39;
+  color: var(--text-primary);
   margin-bottom: 15px;
 }
 
 .stepDesc {
   font-size: 15px;
-  color: #666;
+  color: var(--text-muted);
   line-height: 1.7;
 }
 
@@ -553,7 +553,7 @@
 
 .listStyle li {
   font-size: 16px;
-  color: #0b1c39;
+  color: var(--text-primary);
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -561,7 +561,7 @@
 }
 
 .listStyle li i {
-  color: #3870ff;
+  color: var(--primary-color);
 }
 
 /* Testimonials */
@@ -579,7 +579,7 @@
 }
 
 .quoteIcon {
-  color: #3870ff;
+  color: var(--primary-color);
   font-size: 40px;
   opacity: 0.2;
   margin-bottom: 20px;
@@ -587,7 +587,7 @@
 
 .testimonialText {
   font-size: 16px;
-  color: #666;
+  color: var(--text-muted);
   line-height: 1.8;
   font-style: italic;
   margin-bottom: 30px;
@@ -603,12 +603,12 @@
   margin: 0 0 5px;
   font-size: 18px;
   font-weight: 700;
-  color: #0b1c39;
+  color: var(--text-primary);
 }
 
 .clientMeta span {
   font-size: 14px;
-  color: #3870ff;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
@@ -636,13 +636,13 @@
   font-weight: 800;
   color: transparent;
   -webkit-text-stroke: 1.5px #cbd5e1;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   margin: 0 40px;
 }
 
 .marqueeIcon {
   font-size: 60px;
-  color: #3870ff;
+  color: var(--primary-color);
   line-height: 1;
 }
 
@@ -703,7 +703,7 @@
 }
 
 .btnText {
-  color: #3870ff;
+  color: var(--primary-color);
   font-weight: 600;
   font-size: 15px;
   text-decoration: none;
@@ -714,7 +714,7 @@
 }
 
 .btnText:hover {
-  color: #0b1c39;
+  color: var(--text-primary);
 }
 
 .avatar {
@@ -790,7 +790,7 @@
   left: -50px;
   width: 130px;
   height: 65px;
-  background-color: #3870ff;
+  background-color: var(--primary-color);
   border-bottom-left-radius: 65px;
   border-bottom-right-radius: 65px;
   z-index: 3;
@@ -812,7 +812,7 @@
   gap: 12px;
   font-weight: 500;
   font-size: 16px;
-  color: #0b1c39;
+  color: var(--text-primary);
   z-index: 10;
   transition: transform 0.3s ease;
 }
@@ -830,13 +830,13 @@
   font-weight: 800;
   color: transparent;
   -webkit-text-stroke: 1.5px #cbd5e1;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   margin: 0 40px;
 }
 
 .marqueeIcon {
   font-size: 60px;
-  color: #3870ff;
+  color: var(--primary-color);
   line-height: 1;
 }
 
@@ -852,7 +852,7 @@
 /* Orbital Team Section */
 .orbitalTeam {
   position: relative;
-  padding: 180px 0;
+  padding: 180px 0 80px 0;
   overflow: hidden;
   background: #ffffff;
   display: flex;
@@ -897,7 +897,7 @@
 }
 
 .btnText {
-  color: #3870ff;
+  color: var(--primary-color);
   font-weight: 600;
   font-size: 15px;
   text-decoration: none;
@@ -908,7 +908,7 @@
 }
 
 .btnText:hover {
-  color: #0b1c39;
+  color: var(--text-primary);
 }
 
 .avatar {
@@ -1002,7 +1002,7 @@
   justify-content: center;
   align-items: center;
   font-size: 22px;
-  color: #3870ff;
+  color: var(--primary-color);
   transition: all 0.3s ease;
   flex-shrink: 0;
   margin-top: 5px; /* aligns better with text */
@@ -1010,7 +1010,7 @@
 
 .featureItemLeft:hover .featIconBox,
 .featureItemRight:hover .featIconBox {
-  background-color: #3870ff;
+  background-color: var(--primary-color);
   color: #ffffff;
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(56, 112, 255, 0.2);
@@ -1019,13 +1019,13 @@
 .featTitleBox {
   font-size: 19px;
   font-weight: 700;
-  color: #0b1c39;
+  color: var(--text-primary);
   margin-bottom: 8px;
 }
 
 .featDescBox {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin: 0;
 }
@@ -1119,7 +1119,7 @@
   top: -50px;
   right: 10%;
   font-size: 350px;
-  color: #3870ff;
+  color: var(--primary-color);
   opacity: 0.03;
   z-index: 1;
   pointer-events: none;
@@ -1156,7 +1156,7 @@
   border-radius: 50%;
   border: 1px solid #cbd5e1;
   background: white;
-  color: #0b1c39;
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1168,9 +1168,9 @@
 }
 
 .arrowBtn:hover {
-  background: #3870ff;
+  background: var(--primary-color);
   color: white;
-  border-color: #3870ff;
+  border-color: var(--primary-color);
 }
 
 .testimonialMarqueeContainer {
@@ -1216,7 +1216,7 @@
 
 .quoteIconBlue {
   font-size: 30px;
-  color: #3870ff;
+  color: var(--primary-color);
   opacity: 0.2;
   margin-bottom: 12px;
 }
@@ -1252,13 +1252,13 @@
 .tName {
   font-size: 16px;
   font-weight: 700;
-  color: #0b1c39;
+  color: var(--text-primary);
   margin: 0 0 5px;
 }
 
 .tRole {
   font-size: 13px;
-  color: #3870ff;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
@@ -1270,3 +1270,4 @@
     transform: translateX(-50%);
   }
 }
+

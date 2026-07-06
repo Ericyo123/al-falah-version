@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import RecruitmentProcess from "@/components/RecruitmentProcess";
 import styles from "./about.module.css";
 
 export default function AboutPage() {
@@ -237,46 +238,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. How It Works Section */}
-      <section className={styles.howItWorks}>
-        <div className="container">
-          <div className={styles.sectionHeaderCentered}>
-            <span className={styles.subtitle}>how it works</span>
-            <h2 className={styles.title}>Steps of Recruitment Process</h2>
-          </div>
-          
-          <div className="row">
-            <div className="col-lg-3 col-md-6">
-              <div className={styles.stepCard}>
-                <div className={styles.stepNum}>01</div>
-                <h3 className={styles.stepTitle}>Identifying the Needs</h3>
-                <p className={styles.stepDesc}>Hear from industry leading HR professionals and solution providers in different Needs</p>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <div className={styles.stepCard}>
-                <div className={styles.stepNum}>02</div>
-                <h3 className={styles.stepTitle}>Preparing a Job Description</h3>
-                <p className={styles.stepDesc}>Access to all of your candidate responses and against global aggregate</p>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <div className={styles.stepCard}>
-                <div className={styles.stepNum}>03</div>
-                <h3 className={styles.stepTitle}>Find a Talented Candidate</h3>
-                <p className={styles.stepDesc}>Companies are backing up their strategic decisions with informed and insightful research</p>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <div className={styles.stepCard}>
-                <div className={styles.stepNum}>04</div>
-                <h3 className={styles.stepTitle}>Screening and Shortlisting</h3>
-                <p className={styles.stepDesc}>Make smart decisions with our guide to solution and service an expert Knowledge Advisor through</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 4. Recruitment Process Component */}
+      <RecruitmentProcess />
 
       {/* 5. Why Choose Us (Center Image Layout) */}
       <section className={styles.whyChooseUsCenter}>
