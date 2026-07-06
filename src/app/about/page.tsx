@@ -232,7 +232,6 @@ export default function AboutPage() {
             </p>
             <div className={styles.btnGroupCenter}>
               <Link href="/contact" className={styles.btnPrimary}>Get Consult <i className="fas fa-location-arrow" style={{ transform: 'rotate(45deg)', fontSize: '12px' }}></i></Link>
-              <Link href="/team" className={styles.btnText}>Meet Our Team <i className="fas fa-location-arrow" style={{ transform: 'rotate(45deg)', fontSize: '12px' }}></i></Link>
             </div>
           </div>
         </div>
