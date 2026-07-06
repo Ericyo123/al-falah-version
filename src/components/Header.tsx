@@ -30,6 +30,37 @@ export default function Header() {
   return (
     <header id="masthead" style={{ position: "relative", zIndex: 1000 }}>
 
+            {/* Top Bar (Hidden on Mobile) */}
+      <div className="top-bar-modern" style={{
+        backgroundColor: "#f4f7f9",
+        borderBottom: "1px solid rgba(0,0,0,0.05)",
+        padding: "8px 0",
+        fontSize: "12px",
+        fontWeight: 500,
+        color: "#555"
+      }}>
+        <div className="widescreen-container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div className="top-bar-left" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+            <span>Welcome to AL-FALAH TRAVELS AND TOURS</span>
+            <div className="top-bar-divider" style={{ width: "1px", height: "12px", backgroundColor: "rgba(0,0,0,0.15)" }}></div>
+            <a href="mailto:info@al-falah.lk" style={{ display: "flex", alignItems: "center", gap: "6px", color: "inherit", textDecoration: "none", transition: "color 0.2s" }} onMouseEnter={(e)=>e.currentTarget.style.color="var(--primary-color)"} onMouseLeave={(e)=>e.currentTarget.style.color="inherit"}>
+              <i className="fas fa-envelope" style={{ color: "var(--primary-color)" }}></i> info@al-falah.lk
+            </a>
+          </div>
+          <div className="top-bar-right" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+            <span style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <i className="fas fa-map-marker-alt" style={{ color: "var(--primary-color)" }}></i> #544, 2nd Division, Maradana, Colombo 10
+            </span>
+            <div className="top-bar-divider" style={{ width: "1px", height: "12px", backgroundColor: "rgba(0,0,0,0.15)" }}></div>
+            <div style={{ display: "flex", gap: "14px", fontSize: "14px" }}>
+              <Link href="https://web.facebook.com/alfalahcmb?_rdc=1&_rdr#" target="_blank" style={{ color: "#1877F2", transition: "transform 0.2s" }} onMouseEnter={(e)=>e.currentTarget.style.transform="scale(1.1)"} onMouseLeave={(e)=>e.currentTarget.style.transform="scale(1)"}><i className="fab fa-facebook-f"></i></Link>
+              <Link href="https://www.instagram.com/alfalah_travels_and_tours/" target="_blank" style={{ color: "#E4405F", transition: "transform 0.2s" }} onMouseEnter={(e)=>e.currentTarget.style.transform="scale(1.1)"} onMouseLeave={(e)=>e.currentTarget.style.transform="scale(1)"}><i className="fab fa-instagram"></i></Link>
+              <Link href="https://www.linkedin.com/in/al-falah-travels-and-tours-foreign-employment-agency-colombo-sri-lanka-083690245/" target="_blank" style={{ color: "#0A66C2", transition: "transform 0.2s" }} onMouseEnter={(e)=>e.currentTarget.style.transform="scale(1.1)"} onMouseLeave={(e)=>e.currentTarget.style.transform="scale(1)"}><i className="fab fa-linkedin-in"></i></Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Main Header */}
       <div style={{
         position: isSticky ? "fixed" : "relative",
@@ -53,6 +84,7 @@ export default function Header() {
               <img
                 src="/assets/images/logo.png"
                 alt="Al-Falah Travels and Tours"
+                className="header-logo-img"
                 style={{ height: isSticky ? "48px" : "55px", width: "auto", objectFit: "contain", transition: "height 0.3s ease" }}
               />
             </Link>
@@ -86,30 +118,20 @@ export default function Header() {
             </div>
 
             {/* Right Actions */}
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <Link href="/contact" className="btn-modern" style={{ padding: "12px 28px", fontSize: "14px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+              <div className="header-contact-info" style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "42px", height: "42px", borderRadius: "50%", backgroundColor: "var(--primary-light)", color: "var(--primary-color)" }}>
+                  <i className="fas fa-headset" style={{ fontSize: "18px" }}></i>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                  <div style={{ fontSize: "11px", color: "var(--text-muted)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "2px" }}>Hotline</div>
+                  <a href="tel:+94757311111" style={{ fontSize: "15px", fontWeight: 800, color: "var(--text-primary)", textDecoration: "none" }}>+94 757 311 111</a>
+                </div>
+              </div>
+              <div className="header-divider" style={{ width: "1px", height: "32px", backgroundColor: "rgba(0,0,0,0.08)" }}></div>
+              <Link href="/contact" className="btn-modern header-apply-btn" style={{ padding: "12px 28px", fontSize: "14px" }}>
                 Apply Now
               </Link>
-              <a
-                href="tel:+94112669489"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "44px",
-                  height: "44px",
-                  borderRadius: "50%",
-                  border: "1px solid rgba(0,0,0,0.08)",
-                  backgroundColor: "#ffffff",
-                  color: "var(--text-primary)",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
-                  transition: "all 0.2s ease",
-                  textDecoration: "none"
-                }}
-                className="desktop-phone-btn"
-              >
-                <i className="fas fa-phone-alt" style={{ fontSize: "14px" }}></i>
-              </a>
               <button
                 onClick={toggleMobileMenu}
                 style={{

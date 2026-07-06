@@ -1743,29 +1743,7 @@ input::placeholder, textarea::placeholder {
   margin-top: 4px;
 }
 
-@media (max-width: 991px) {
-  .execora-hero-card {
-    height: auto;
-    padding: 80px 0;
-    background-image: none;
-    background-color: rgba(0, 32, 77, 0.95);
-  }
-  .execora-hero-gradient {
-    display: none;
-  }
-  .execora-hero-content {
-    padding: 0 40px;
-    max-width: 100%;
-  }
-  .execora-hero-title {
-    font-size: 42px;
-  }
-  .execora-floating-glass {
-    position: static;
-    margin-top: 40px;
-    margin-left: 40px;
-  }
-}
+/* Removed bad 991px hero query */
 
 /* ===== RECENT VACANCIES SECTION (SPLIT LAYOUT) ===== */
 .recent-vacancies-section {
@@ -1883,5 +1861,304 @@ input::placeholder, textarea::placeholder {
     border-left: none !important;
     margin-top: 40px;
     border-top: 1px solid rgba(255,255,255,0.15);
+  }
+}
+
+/* ===== INFINITE MARQUEE & CLIENT CARDS ===== */
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 2rem;
+  padding: 2rem 0;
+  mask-image: linear-gradient(
+    to right,
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 10%,
+    hsl(0 0% 0% / 1) 90%,
+    hsl(0 0% 0% / 0)
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 10%,
+    hsl(0 0% 0% / 1) 90%,
+    hsl(0 0% 0% / 0)
+  );
+}
+
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: 2rem;
+  animation: scrollX 40s linear infinite;
+}
+
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes scrollX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 2rem));
+  }
+}
+
+.client-card-modern {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 28px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 51, 102, 0.05);
+  min-width: 320px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: default;
+  overflow: hidden;
+}
+
+.client-card-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(0, 163, 224, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.client-card-modern:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 51, 102, 0.12);
+  border-color: rgba(0, 102, 204, 0.3);
+}
+
+.client-card-modern:hover::before {
+  opacity: 1;
+}
+
+.client-logo-placeholder {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  z-index: 1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.client-logo-placeholder::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(transparent, rgba(255,255,255,0.3), transparent);
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { transform: rotate(45deg) translateY(-100%); }
+  100% { transform: rotate(45deg) translateY(100%); }
+}
+
+.client-info-modern {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.client-name-modern {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+  letter-spacing: -0.2px;
+}
+
+.client-category-modern {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+/* ===== HEADER RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .top-bar-modern {
+    display: none !important;
+  }
+}
+@media (max-width: 991px) {
+  .header-contact-info, .header-divider {
+    display: none !important;
+  }
+  .desktop-nav-wrapper {
+    display: none !important;
+  }
+  .mobile-toggle-btn {
+    display: block !important;
+  }
+}
+@media (max-width: 576px) {
+  .header-apply-btn {
+    display: none !important;
+  }
+}
+
+/* ===== PREMIUM FOOTER UTILITIES ===== */
+.premium-footer-heading {
+  color: #ffffff !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px !important;
+}
+.premium-footer-text {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.premium-cta-heading {
+  color: #ffffff !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 900 !important;
+  font-size: 48px !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1px !important;
+}
+.premium-cta-text {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+@media (max-width: 768px) {
+  .premium-cta-heading {
+    font-size: 32px !important;
+  }
+}
+
+
+/* ===== HERO MOBILE FIXES ===== */
+#hero-glass-counter {
+  right: 60px; 
+  bottom: 60px;
+}
+
+@media (max-width: 991px) {
+  .execora-hero-section .widescreen-container {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  .execora-hero-card {
+    height: calc(100vh - 70px) !important;
+    min-height: 600px !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background-image: url('/assets/images/sri_lankan_workers.png') !important;
+    background-position: center !important;
+    background-size: cover !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+  .execora-hero-gradient {
+    display: block !important;
+    background: linear-gradient(to bottom, rgba(0, 15, 35, 0.4) 0%, rgba(0, 15, 35, 0.7) 50%, rgba(0, 15, 35, 0.95) 100%) !important;
+    border-radius: 0 !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+  }
+  .execora-hero-content {
+    padding: 0 24px !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    position: relative !important;
+    z-index: 5 !important;
+    margin-top: -120px !important; /* shift up to balance the bottom card */
+  }
+  .execora-hero-title {
+    font-size: 38px !important;
+    line-height: 1.15 !important;
+    letter-spacing: -1px !important;
+    margin-bottom: 16px !important;
+    color: #ffffff !important;
+  }
+  .execora-hero-desc {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 30px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+  .execora-hero-btn {
+    width: 100% !important;
+    max-width: 400px !important;
+    justify-content: center !important;
+    padding: 16px 24px !important;
+    font-size: 16px !important;
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 10px 25px rgba(0, 102, 204, 0.4) !important;
+    border-radius: 14px !important;
+  }
+  
+  #hero-glass-counter {
+    position: absolute !important;
+    bottom: 24px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    max-width: 360px !important;
+    width: calc(100% - 48px) !important;
+    padding: 20px !important;
+    border-radius: 20px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    z-index: 10 !important;
+  }
+  .execora-glass-count {
+    color: #ffffff !important;
+    font-size: 28px !important;
+    margin-bottom: 2px !important;
+  }
+  .execora-glass-label {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 13px !important;
+  }
+  .execora-avatar-stack {
+    margin-bottom: 12px !important;
+    justify-content: center !important;
   }
 }

@@ -9,12 +9,80 @@ export default function Home() {
   const [activeIndustry, setActiveIndustry] = React.useState(0);
 
   const companies = [
-    "AL NOOSY", "SHULALAIL HOTEL", "AFIFI WOOD", "SCMC",
-    "AL HIJAZI RESTAURANT", "AL HOOR MARBLE FACTORY", "JAWADHA", "JALAL OTHAIBI",
-    "NIJUMI TRANSPORT", "HAFCOGLABCO", "HASSAN SHAKTHI", "QANNAS",
-    "AJWA AHERA", "KHAFJI", "YANBOO", "WHITE CLOUD ABU THURKI",
-    "AMT", "MOHAIN COMPANY"
+    { name: "AL NOOSY", industry: "Corporate" },
+    { name: "SHULALAIL HOTEL", industry: "Hospitality" },
+    { name: "AFIFI WOOD", industry: "Industrial" },
+    { name: "SCMC", industry: "Healthcare" },
+    { name: "AL HIJAZI RESTAURANT", industry: "Hospitality" },
+    { name: "AL HOOR MARBLE FACTORY", industry: "Industrial" },
+    { name: "JAWADHA", industry: "Corporate" },
+    { name: "JALAL OTHAIBI", industry: "Corporate" },
+    { name: "NIJUMI TRANSPORT", industry: "Transport" },
+    { name: "HAFCOGLABCO", industry: "Industrial" },
+    { name: "HASSAN SHAKTHI", industry: "Construction" },
+    { name: "QANNAS", industry: "Corporate" },
+    { name: "AJWA AHERA", industry: "Corporate" },
+    { name: "KHAFJI", industry: "Industrial" },
+    { name: "YANBOO", industry: "Industrial" },
+    { name: "WHITE CLOUD ABU THURKI", industry: "Corporate" },
+    { name: "AMT", industry: "Corporate" },
+    { name: "MOHAIN COMPANY", industry: "Corporate" }
   ];
+
+  const renderIndustryIcon = (industry: string) => {
+    const main = "var(--primary-color)";
+    const sec = "rgba(0, 102, 204, 0.15)";
+    switch (industry) {
+      case "Hospitality":
+        return (
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 2v7c0 2.21 1.79 4 4 4h0c2.21 0 4-1.79 4-4V2" stroke={main} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M7 2v20" stroke={main} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M21 15V2v13z" fill={sec}/>
+            <path d="M21 15c0-4.42-3.58-8-8-8v15h8v-7z" stroke={main} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        );
+      case "Industrial":
+        return (
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 20h20" stroke={main} strokeWidth="2" strokeLinecap="round"/>
+            <path d="M4 20V8l7-3v15" fill={sec} stroke={main} strokeWidth="2" strokeLinejoin="round"/>
+            <path d="M11 20V5l5 4v11" fill={sec} stroke={main} strokeWidth="2" strokeLinejoin="round"/>
+            <path d="M16 20v-8l4 3v5" fill={sec} stroke={main} strokeWidth="2" strokeLinejoin="round"/>
+          </svg>
+        );
+      case "Transport":
+        return (
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="5" width="14" height="12" rx="1" fill={sec} stroke={main} strokeWidth="2"/>
+            <path d="M16 9h3.8a2 2 0 0 1 1.79 1.1l1.2 2.4a2 2 0 0 1 .21.9V17h-7V9z" fill={sec} stroke={main} strokeWidth="2"/>
+            <circle cx="6" cy="17" r="2" stroke={main} strokeWidth="2"/>
+            <circle cx="18" cy="17" r="2" stroke={main} strokeWidth="2"/>
+          </svg>
+        );
+      case "Healthcare":
+        return (
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" fill={sec} stroke={main} strokeWidth="2"/>
+            <path d="M12 8v8M8 12h8" stroke={main} strokeWidth="2" strokeLinecap="round"/>
+          </svg>
+        );
+      case "Construction":
+        return (
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 22h20M12 2v20M4 12h8M4 17h8M12 10h8M12 15h8M12 5h8" stroke={main} strokeWidth="2" strokeLinecap="round"/>
+            <rect x="4" y="2" width="8" height="20" fill={sec}/>
+          </svg>
+        );
+      default: // Corporate
+        return (
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="16" height="16" rx="2" fill={sec} stroke={main} strokeWidth="2"/>
+            <path d="M12 4v16M4 12h16" stroke={main} strokeWidth="2"/>
+          </svg>
+        );
+    }
+  };
 
   return (
     <>
@@ -31,15 +99,49 @@ export default function Home() {
               <h2 style={{ fontSize: "40px", fontWeight: 900, color: "var(--text-primary)", letterSpacing: "-1px", lineHeight: "1.2", margin: "12px 0 24px" }}>
                 Sri Lanka's Premier <br />Overseas Recruitment Partner
               </h2>
-              <p style={{ fontSize: "16.5px", color: "var(--text-secondary)", lineHeight: "1.8", marginBottom: "20px" }}>
+              <p style={{ fontSize: "16.5px", color: "var(--text-secondary)", lineHeight: "1.8", marginBottom: "20px", textAlign: "justify" }}>
                 <strong>AL-FALAH TRAVELS & TOURS</strong> is a trusted recruitment and manpower consultancy firm approved by the Sri Lanka Bureau of Foreign Employment (<strong>SLBFE License 2888</strong>). For over two decades, we have partnered with foreign employers to bridge local talent with global career opportunities.
               </p>
-              <p style={{ fontSize: "16.5px", color: "var(--text-secondary)", lineHeight: "1.8", marginBottom: "30px" }}>
+              <p style={{ fontSize: "16.5px", color: "var(--text-secondary)", lineHeight: "1.8", marginBottom: "40px", textAlign: "justify" }}>
                 Our rigorous trade vetting, compliance expertise, and client-first commitment ensure a reliable and highly transparent deployment process for professional, technical, and trade categories.
               </p>
-              
+
+              <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+                <Link href="/about" className="btn-modern">Learn More About Us</Link>
+                <Link href="/contact" className="btn-modern-outline">Contact Our Team</Link>
+              </div>
+            </div>
+            
+            {/* Right Column: Office/Corporate Image & Features */}
+            <div className="col-lg-6">
+              <div style={{
+                position: "relative",
+                borderRadius: "24px",
+                overflow: "hidden",
+                boxShadow: "0 15px 40px rgba(0, 51, 102, 0.08)",
+                border: "1px solid rgba(0, 102, 204, 0.1)",
+                height: "360px",
+                marginBottom: "36px"
+              }}>
+                <img src="/assets/images/about_us_corporate.png" alt="Corporate Consultant Consultation" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                
+                {/* Floating badge */}
+                <div style={{
+                  position: "absolute", bottom: "24px", left: "24px",
+                  backgroundColor: "rgba(0, 102, 204, 0.95)",
+                  backdropFilter: "blur(8px)",
+                  borderRadius: "16px",
+                  padding: "16px 24px", color: "#fff",
+                  boxShadow: "0 10px 30px rgba(0, 0, 0, 0.15)",
+                  border: "1px solid rgba(255, 255, 255, 0.1)"
+                }}>
+                  <div style={{ fontSize: "28px", fontWeight: 800, lineHeight: 1 }}>2888</div>
+                  <div style={{ fontSize: "12px", fontWeight: 600, opacity: 0.9, marginTop: "4px" }}>SLBFE Govt. License</div>
+                </div>
+              </div>
+
               {/* Vetted parameters */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", marginBottom: "36px" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
                 <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
                   <div style={{
                     width: "28px", height: "28px", borderRadius: "50%",
@@ -87,39 +189,6 @@ export default function Home() {
                     <h5 style={{ fontSize: "15px", fontWeight: 700, margin: 0, color: "var(--text-primary)" }}>Vetted & Verified Vocation</h5>
                     <p style={{ fontSize: "13.5px", color: "var(--text-muted)", margin: "2px 0 0" }}>Rigorous trade and safety testing.</p>
                   </div>
-                </div>
-              </div>
-
-              <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-                <Link href="/about" className="btn-modern">Learn More About Us</Link>
-                <Link href="/contact" className="btn-modern-outline">Contact Our Team</Link>
-              </div>
-            </div>
-            
-            {/* Right Column: Office/Corporate Image */}
-            <div className="col-lg-6">
-              <div style={{
-                position: "relative",
-                borderRadius: "24px",
-                overflow: "hidden",
-                boxShadow: "0 15px 40px rgba(0, 51, 102, 0.08)",
-                border: "1px solid rgba(0, 102, 204, 0.1)",
-                height: "480px"
-              }}>
-                <img src="/assets/images/about_us_corporate.png" alt="Corporate Consultant Consultation" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                
-                {/* Floating badge */}
-                <div style={{
-                  position: "absolute", bottom: "24px", left: "24px",
-                  backgroundColor: "rgba(0, 102, 204, 0.95)",
-                  backdropFilter: "blur(8px)",
-                  borderRadius: "16px",
-                  padding: "16px 24px", color: "#fff",
-                  boxShadow: "0 10px 30px rgba(0, 0, 0, 0.15)",
-                  border: "1px solid rgba(255, 255, 255, 0.1)"
-                }}>
-                  <div style={{ fontSize: "28px", fontWeight: 800, lineHeight: 1 }}>2888</div>
-                  <div style={{ fontSize: "12px", fontWeight: 600, opacity: 0.9, marginTop: "4px" }}>SLBFE Govt. License</div>
                 </div>
               </div>
             </div>
@@ -431,59 +500,6 @@ export default function Home() {
       {/* ===== RECRUITMENT PROCESS TIMELINE (STAIRCASE timeline) ===== */}
       <RecruitmentProcess />
 
-      {/* ===== SECTION 9: CLIENT NETWORK & ORBIT ===== */}
-      <section style={{ padding: "100px 0", backgroundColor: "var(--bg-color-secondary)", overflow: "hidden" }}>
-        <div className="widescreen-container">
-          <div className="row align-items-center">
-            {/* Left Column: Heading and Network text */}
-            <div className="col-lg-6">
-              <span className="accent-pill-label">Our Client Network</span>
-              <h2 style={{ fontSize: "40px", fontWeight: 900, marginBottom: "20px", lineHeight: "1.2", letterSpacing: "-1px" }}>
-                Connecting across <span className="demo3-highlight">Middle East</span> & Beyond
-              </h2>
-              <p style={{ fontSize: "16px", color: "var(--text-secondary)", lineHeight: "1.8", marginBottom: "30px" }}>
-                We serve leading organizations across Saudi Arabia, UAE, Qatar, Kuwait, and more. Our network consists of esteemed employers in construction, engineering, hospitality, and administrative sectors.
-              </p>
-              
-              {/* Grid of partner companies list */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "30px" }}>
-                {companies.slice(0, 10).map((company, idx) => (
-                  <div key={idx} style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "14px", fontWeight: 600 }}>
-                    <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "var(--primary-color)" }}></span>
-                    {company}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Column: Orbit Visual accent */}
-            <div className="col-lg-6 mt-5 mt-lg-0">
-              <div className="orbit-container-wrapper" style={{ display: "flex", justifyContent: "center" }}>
-                <div className="orbit-container">
-                  <div className="orbit-ring ring-1"></div>
-                  <div className="orbit-ring ring-2"></div>
-                  <div className="orbit-ring ring-3"></div>
-                  
-                  {/* Central branding core */}
-                  <div className="orbit-center">
-                    <img src="/assets/images/logo.png" alt="Branding Core" className="orbit-core-logo" />
-                    <p style={{ margin: 0, fontSize: "14px", fontWeight: 600 }}>Partner Employers</p>
-                  </div>
-                  
-                  {/* Visual profiles placeholder images */}
-                  <div className="orbit-avatar avatar-pos-1"><img src="/assets/images/avatar1.png" alt="Candidate 1" /></div>
-                  <div className="orbit-avatar avatar-pos-2"><img src="/assets/images/avatar2.png" alt="Candidate 2" /></div>
-                  <div className="orbit-avatar avatar-pos-3"><img src="/assets/images/avatar3.png" alt="Candidate 3" /></div>
-                  <div className="orbit-avatar avatar-pos-4"><img src="/assets/images/avatar1.png" alt="Candidate 4" /></div>
-                  <div className="orbit-avatar avatar-pos-5"><img src="/assets/images/avatar2.png" alt="Candidate 5" /></div>
-                  <div className="orbit-avatar avatar-pos-6"><img src="/assets/images/avatar3.png" alt="Candidate 6" /></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ===== SECTION 10: ACCREDITATIONS & STATS ===== */}
       <section style={{ padding: "100px 0", backgroundColor: "var(--secondary-color)", color: "#ffffff", position: "relative", overflow: "hidden" }}>
         
@@ -597,39 +613,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SECTION 12: DUAL CALL TO ACTION ===== */}
-      <section style={{ padding: "100px 0", backgroundColor: "var(--bg-color)" }}>
-        <div className="widescreen-container">
-          <div className="row g-4">
-            {/* Left Card: Newsletter */}
-            <div className="col-md-6">
-              <div className="cta-card-dark">
-                <div className="cta-card-decor"></div>
-                <h3 className="cta-card-title">Subscribe Our Newsletter</h3>
-                <p className="cta-card-desc">Stay updated with our latest job openings, international employment trends, and candidate selection updates.</p>
-                <form onSubmit={(e) => e.preventDefault()} className="cta-input-group">
-                  <input type="email" placeholder="Enter Your Email Address" className="cta-input" required />
-                  <button type="submit" className="cta-submit-btn">SUBSCRIBE ↗</button>
-                </form>
-              </div>
-            </div>
-            
-            {/* Right Card: Contact / Get in Touch */}
-            <div className="col-md-6">
-              <div className="cta-card-dark" style={{ background: "linear-gradient(135deg, #004a99 0%, #0066cc 100%)" }}>
-                <div className="cta-card-decor" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}></div>
-                <h3 className="cta-card-title">Get a Consultation</h3>
-                <p className="cta-card-desc">Need immediate recruitment or manpower placements? Reach out to our consultants today and receive top-tier resumes.</p>
-                <div className="cta-store-buttons">
-                  <Link href="/contact" className="store-btn">
-                    Book Consultation ↗
-                  </Link>
-                  <Link href="/about" className="store-btn-outline">
-                    Learn More
-                  </Link>
+      {/* ===== SECTION 9: CLIENT NETWORK & MARQUEE ===== */}
+      <section style={{ padding: "100px 0", backgroundColor: "var(--bg-color-secondary)", overflow: "hidden" }}>
+        <div className="widescreen-container" style={{ textAlign: "center", marginBottom: "60px" }}>
+          <span className="accent-pill-label">Our Client Network</span>
+          <h2 style={{ fontSize: "40px", fontWeight: 900, marginBottom: "20px", lineHeight: "1.2", letterSpacing: "-1px" }}>
+            Connecting across <span className="demo3-highlight">Middle East</span> & Beyond
+          </h2>
+          <p style={{ fontSize: "16px", color: "var(--text-secondary)", lineHeight: "1.8", maxWidth: "700px", margin: "0 auto" }}>
+            We serve leading organizations across Saudi Arabia, UAE, Qatar, Kuwait, and more. Our network consists of esteemed employers in construction, engineering, hospitality, and administrative sectors.
+          </p>
+        </div>
+
+        {/* Marquee Track 1 */}
+        <div className="marquee-container" style={{ paddingTop: "1rem" }}>
+          <div className="marquee-content">
+            {companies.slice(0, Math.ceil(companies.length / 2)).map((company, idx) => (
+              <div key={idx} className="client-card-modern">
+                <div className="client-logo-placeholder" style={{ background: `linear-gradient(135deg, hsl(${(idx * 40) % 360}, 10%, 95%), #fff)` }}>
+                  {renderIndustryIcon(company.industry)}
+                </div>
+                <div className="client-info-modern">
+                  <h4 className="client-name-modern">{company.name}</h4>
+                  <div className="client-category-modern">{company.industry}</div>
                 </div>
               </div>
-            </div>
+            ))}
+            {/* Duplicate for infinite loop */}
+            {companies.slice(0, Math.ceil(companies.length / 2)).map((company, idx) => (
+              <div key={`dup-${idx}`} className="client-card-modern">
+                <div className="client-logo-placeholder" style={{ background: `linear-gradient(135deg, hsl(${(idx * 40) % 360}, 10%, 95%), #fff)` }}>
+                  {renderIndustryIcon(company.industry)}
+                </div>
+                <div className="client-info-modern">
+                  <h4 className="client-name-modern">{company.name}</h4>
+                  <div className="client-category-modern">{company.industry}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Marquee Track 2 (Reverse direction) */}
+        <div className="marquee-container" style={{ paddingBottom: "1rem", marginTop: "-1rem" }}>
+          <div className="marquee-content" style={{ animationDirection: "reverse", animationDuration: "45s" }}>
+            {companies.slice(Math.ceil(companies.length / 2)).map((company, idx) => (
+              <div key={idx} className="client-card-modern">
+                <div className="client-logo-placeholder" style={{ background: `linear-gradient(135deg, hsl(${((idx + 10) * 40) % 360}, 10%, 95%), #fff)` }}>
+                  {renderIndustryIcon(company.industry)}
+                </div>
+                <div className="client-info-modern">
+                  <h4 className="client-name-modern">{company.name}</h4>
+                  <div className="client-category-modern">{company.industry}</div>
+                </div>
+              </div>
+            ))}
+            {/* Duplicate for infinite loop */}
+            {companies.slice(Math.ceil(companies.length / 2)).map((company, idx) => (
+              <div key={`dup2-${idx}`} className="client-card-modern">
+                <div className="client-logo-placeholder" style={{ background: `linear-gradient(135deg, hsl(${((idx + 10) * 40) % 360}, 10%, 95%), #fff)` }}>
+                  {renderIndustryIcon(company.industry)}
+                </div>
+                <div className="client-info-modern">
+                  <h4 className="client-name-modern">{company.name}</h4>
+                  <div className="client-category-modern">{company.industry}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
