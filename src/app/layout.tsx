@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${rethinkSans.variable} ${roboto.variable}`}>
-      <body>
+      <body suppressHydrationWarning>
         <Header />
         <main style={{ flex: 1, minHeight: "60vh" }}>
           {children}
