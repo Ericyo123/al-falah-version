@@ -279,11 +279,11 @@ export default function AboutPage() {
             </div>
 
             {/* Center Image */}
-            <div className="col-lg-4">
+            <div className="col-lg-4 px-4 px-lg-0 mt-5 mt-lg-0 mb-5 mb-lg-0">
               <div className={styles.centerImageWrapper}>
                 <div className={styles.bgShape1}></div>
                 <div className={styles.bgShape2}></div>
-                <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/about02-img-03.jpg" alt="Center Human Resources" className={styles.centerImg} />
+                <img src="/assets/images/why_choose_us.png" alt="Center Human Resources" className={styles.centerImg} />
               </div>
             </div>
 

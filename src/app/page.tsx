@@ -91,13 +91,13 @@ export default function Home() {
       <HeroSlider />
 
       {/* ===== SECTION 2: WHO WE ARE (ABOUT US) ===== */}
-      <section style={{ padding: "120px 0 60px", backgroundColor: "var(--bg-color)" }}>
+      <section style={{ padding: "clamp(60px, 8vw, 120px) 0 clamp(40px, 6vw, 60px)", backgroundColor: "var(--bg-color)" }}>
         <div className="widescreen-container">
           <div className="row align-items-center">
             {/* Left Column: Corporate Content */}
             <div className="col-lg-6 mb-5 mb-lg-0" style={{ paddingRight: "40px" }}>
               <span className="accent-pill-label" style={{ marginBottom: "16px", display: "inline-flex" }}>Who we are</span>
-              <h2 style={{ fontSize: "40px", fontWeight: 900, color: "var(--text-primary)", letterSpacing: "-1px", lineHeight: "1.2", margin: "12px 0 24px" }}>
+              <h2 style={{ fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "var(--text-primary)", letterSpacing: "-1px", lineHeight: "1.2", margin: "12px 0 24px" }}>
                 Sri Lanka's Premier <br />Overseas Recruitment Partner
               </h2>
               <p style={{ fontSize: "16.5px", color: "var(--text-secondary)", lineHeight: "1.8", marginBottom: "20px", textAlign: "justify" }}>
@@ -114,7 +114,7 @@ export default function Home() {
             </div>
             
             {/* Right Column: Office/Corporate Image */}
-            <div className="col-lg-6">
+            <div className="col-lg-6 px-4 px-lg-0 mt-5 mt-lg-0">
               <div style={{
                 position: "relative",
                 borderRadius: "24px",
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
 
             {/* Center Image */}
-            <div className="col-lg-4">
+            <div className="col-lg-4 px-4 px-lg-0 mt-5 mt-lg-0 mb-5 mb-lg-0">
               <div className={styles.centerImageWrapper}>
                 <div className={styles.bgShape1}></div>
                 <div className={styles.bgShape2}></div>
-                <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/about02-img-03.jpg" alt="Center Human Resources" className={styles.centerImg} />
+                <img src="/assets/images/why_choose_us.png" alt="Center Human Resources" className={styles.centerImg} />
               </div>
             </div>
 
@@ -210,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* ===== SECTION 3: SPECIALIZED INDUSTRIES (DYNAMIC BACKGROUND LIST) ===== */}
-      <section style={{ position: "relative", padding: "120px 0", backgroundColor: "#050a11", overflow: "hidden" }}>
+      <section style={{ position: "relative", padding: "clamp(60px, 8vw, 120px) 0", backgroundColor: "#050a11", overflow: "hidden" }}>
         
         {/* Dynamic Backgrounds */}
         {[
@@ -250,7 +250,7 @@ export default function Home() {
               <span className="accent-pill-label text-white-force" style={{ marginBottom: "20px" }}>
                 Sectors we serve
               </span>
-              <h2 className="text-white-force" style={{ fontSize: "46px", fontWeight: 900, letterSpacing: "-1.5px", lineHeight: "1.1", margin: "0 0 24px" }}>
+              <h2 className="text-white-force" style={{ fontSize: "clamp(32px, 6vw, 46px)", fontWeight: 900, letterSpacing: "-1.5px", lineHeight: "1.1", margin: "0 0 24px" }}>
                 Our Specialized <br/><span style={{ color: "var(--primary-color)" }}>Industries</span>
               </h2>
 
@@ -332,7 +332,7 @@ export default function Home() {
                      {/* Watermark Number */}
                      <div style={{
                        position: "absolute", top: "-40px", right: "0",
-                       fontSize: "180px", fontWeight: 900, lineHeight: 0.8,
+                       fontSize: "clamp(100px, 15vw, 180px)", fontWeight: 900, lineHeight: 0.8,
                        color: "transparent", WebkitTextStroke: "2px rgba(255,255,255,0.05)",
                        zIndex: 0, pointerEvents: "none"
                      }}>
@@ -342,8 +342,8 @@ export default function Home() {
                      <div style={{ position: "relative", zIndex: 1 }}>
 
                        
-                       {/* Description - Thinner, more elegant */}
-                       <p className="text-white-force-85" style={{ fontSize: "16px", fontWeight: 300, lineHeight: "1.8", marginBottom: "24px", fontStyle: "italic" }}>
+                       {/* Description */}
+                       <p className="text-white-force-85" style={{ fontSize: "16px", fontWeight: 400, lineHeight: "1.8", marginBottom: "24px", textShadow: "0 2px 4px rgba(0,0,0,0.6)" }}>
                          "{current.longDesc}"
                        </p>
       
@@ -449,7 +449,8 @@ export default function Home() {
       <RecruitmentProcess />
 
       {/* ===== SECTION 10: ACCREDITATIONS & STATS ===== */}
-      <section style={{ padding: "120px 0", backgroundColor: "var(--secondary-color)", color: "#ffffff", position: "relative", overflow: "hidden" }}>
+      {/* ===== SECTION 10: ACCREDITATIONS & STATS ===== */}
+      <section style={{ padding: "clamp(60px, 8vw, 120px) 0", backgroundColor: "var(--secondary-color)", color: "#ffffff", position: "relative", overflow: "hidden" }}>
         
         {/* Decorative Background Elements & Geometric Shapes */}
         <div style={{ position: "absolute", top: "-20%", left: "-10%", width: "50%", height: "150%", background: "radial-gradient(ellipse at center, rgba(0, 102, 204, 0.15) 0%, transparent 70%)", pointerEvents: "none" }}></div>
@@ -479,102 +480,71 @@ export default function Home() {
         </svg>
 
         <div className="widescreen-container" style={{ position: "relative", zIndex: 1 }}>
-          <div className="row align-items-center">
-            {/* Left Side: Rating & Award details */}
-            <div className="col-lg-5 mb-5 mb-lg-0 text-center text-lg-start">
-              <span className="accent-pill-label text-white-force">Accreditation</span>
-              <h2 className="text-white-force" style={{ fontSize: "40px", fontWeight: 900, margin: "15px 0 20px", letterSpacing: "-1px" }}>SLBFE 3-Star Golden Award</h2>
-              <p className="text-white-force-85" style={{ fontSize: "16px", marginBottom: "30px", lineHeight: "1.8" }}>
-                Proud recipient of the prestigious Sri Lanka Bureau of Foreign Employment (SLBFE) 3-Star Golden Award for outstanding performance and compliance in overseas consultancy — 2022/2023.
-              </p>
-              
-              <div style={{ 
-                display: "inline-flex", 
-                alignItems: "center", 
-                gap: "20px", 
-                backgroundColor: "#ffffff", 
-                padding: "16px 28px", 
-                borderRadius: "100px", 
-                boxShadow: "0 15px 35px rgba(0, 0, 0, 0.15)", 
-                border: "1px solid rgba(0,0,0,0.05)",
-                textAlign: "left",
-                marginTop: "10px"
-              }}>
-                {/* Colorful Google Icon SVG */}
-                <div style={{ flexShrink: 0, width: "36px", height: "36px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <svg width="100%" height="100%" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.7 17.74 9.5 24 9.5z"/>
-                    <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.14 7.09-10.36 7.09-17.65z"/>
-                    <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-                    <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-                  </svg>
-                </div>
-
-                <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                    <span style={{ fontSize: "19px", fontWeight: 900, color: "#202124", lineHeight: 1 }}>4.8</span>
-                    <div style={{ color: "#FBBC04", fontSize: "19px", letterSpacing: "2px", lineHeight: 1 }}>
-                      ★★★★★
-                    </div>
-                  </div>
-                  <span style={{ fontSize: "14px", fontWeight: 600, color: "#5f6368" }}>Google Reviewed Agency</span>
-                </div>
-              </div>
-
-              {/* Chairman & Award Images */}
-              <div style={{ position: "relative", marginTop: "50px", maxWidth: "450px" }}>
+          <div className="row align-items-center g-5">
+            
+            {/* Left Side: Chairman Receiving Award */}
+            <div className="col-lg-6 mb-5 mb-lg-0 px-4 px-lg-0 text-center">
+              <div style={{ position: "relative", overflow: "hidden", boxShadow: "0 25px 50px rgba(0,0,0,0.3)" }}>
                 <img 
-                  src="/assets/images/chairman_receiving_award.png" 
+                  src="/assets/images/restie.png" 
                   alt="Chairman receiving SLBFE award" 
-                  style={{ width: "100%", borderRadius: "12px", boxShadow: "0 20px 40px rgba(0,0,0,0.3)" }} 
-                />
-                <img 
-                  src="/assets/images/award_no_bg_white.png" 
-                  alt="3-Star Golden Award" 
-                  style={{ 
-                    position: "absolute", 
-                    bottom: "-30px", 
-                    right: "-30px", 
-                    width: "45%", 
-                    filter: "drop-shadow(0 15px 25px rgba(0,0,0,0.4))"
-                  }} 
+                  style={{ width: "100%", display: "block" }} 
                 />
               </div>
             </div>
 
-            {/* Right Side: Key Placement Numbers (Stats) */}
-            <div className="col-lg-7 ps-lg-5">
-              <div className="row text-center g-4">
-                {[
-                  { value: "1,200+", label: "Candidates Placed" },
-                  { value: "350+", label: "Partner Companies" },
-                  { value: "12+", label: "Industries Served" },
-                  { value: "98%", label: "Retention Rate" },
-                ].map((stat, i) => (
-                  <div key={i} className="col-sm-6">
-                    <div style={{ 
-                      padding: "45px 20px", 
-                      borderRadius: "20px", 
-                      backgroundColor: "rgba(255,255,255,0.06)", 
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.08)",
-                      backdropFilter: "blur(4px)",
-                      transition: "transform 0.3s ease, background-color 0.3s ease",
-                      cursor: "default"
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "translateY(-5px)";
-                      e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.09)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "translateY(0)";
-                      e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.06)";
-                    }}>
-                      <h3 className="text-white-force" style={{ fontSize: "48px", fontWeight: 900, margin: "0 0 10px" }}>{stat.value}</h3>
-                      <p className="text-white-force-85" style={{ fontSize: "16px", fontWeight: 500, margin: 0 }}>{stat.label}</p>
-                    </div>
+            {/* Right Side: Rating & Award details */}
+            <div className="col-lg-6 text-center text-lg-start">
+              <span className="accent-pill-label text-white-force" style={{ display: "inline-block", marginBottom: "20px" }}>Accreditation</span>
+              <h2 className="text-white-force" style={{ fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, margin: "0 0 20px", letterSpacing: "-1px" }}>SLBFE 3-Star Golden Award</h2>
+              <p className="text-white-force-85" style={{ fontSize: "16px", marginBottom: "30px", lineHeight: "1.8" }}>
+                Proud recipient of the prestigious Sri Lanka Bureau of Foreign Employment (SLBFE) 3-Star Golden Award for outstanding performance and compliance in overseas consultancy — 2022/2023.
+              </p>
+              
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "30px" }}>
+                <div style={{ 
+                  display: "inline-flex", 
+                  alignItems: "center", 
+                  gap: "20px", 
+                  backgroundColor: "#ffffff", 
+                  padding: "16px 28px", 
+                  borderRadius: "100px", 
+                  boxShadow: "0 15px 35px rgba(0, 0, 0, 0.15)", 
+                  border: "1px solid rgba(0,0,0,0.05)",
+                  textAlign: "left"
+                }}>
+                  {/* Colorful Google Icon SVG */}
+                  <div style={{ flexShrink: 0, width: "36px", height: "36px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <svg width="100%" height="100%" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                      <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.7 17.74 9.5 24 9.5z"/>
+                      <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.14 7.09-10.36 7.09-17.65z"/>
+                      <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                      <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                    </svg>
                   </div>
-                ))}
+
+                  <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                      <span style={{ fontSize: "19px", fontWeight: 900, color: "#202124", lineHeight: 1 }}>4.8</span>
+                      <div style={{ color: "#FBBC04", fontSize: "19px", letterSpacing: "2px", lineHeight: 1 }}>
+                        ★★★★★
+                      </div>
+                    </div>
+                    <span style={{ fontSize: "14px", fontWeight: 600, color: "#5f6368" }}>Google Reviewed Agency</span>
+                  </div>
+                </div>
+
+                {/* Standalone Award Image */}
+                <div style={{ maxWidth: "200px" }}>
+                  <img 
+                    src="/assets/images/background_new.png" 
+                    alt="3-Star Golden Award" 
+                    style={{ 
+                      width: "100%", 
+                      filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.5))"
+                    }} 
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -582,10 +552,10 @@ export default function Home() {
       </section>
 
       {/* ===== SECTION 9: CLIENT NETWORK & MARQUEE ===== */}
-      <section style={{ padding: "120px 0 180px", backgroundColor: "var(--bg-color-secondary)", overflow: "hidden" }}>
+      <section style={{ padding: "clamp(60px, 8vw, 120px) 0 clamp(80px, 10vw, 180px)", backgroundColor: "var(--bg-color-secondary)", overflow: "hidden" }}>
         <div className="widescreen-container" style={{ textAlign: "center", marginBottom: "60px" }}>
           <span className="accent-pill-label">Our client network</span>
-          <h2 style={{ fontSize: "40px", fontWeight: 900, marginBottom: "20px", lineHeight: "1.2", letterSpacing: "-1px" }}>
+          <h2 style={{ fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, marginBottom: "20px", lineHeight: "1.2", letterSpacing: "-1px" }}>
             Connecting across <span className="demo3-highlight">Middle East</span> & Beyond
           </h2>
           <p style={{ fontSize: "16px", color: "var(--text-secondary)", lineHeight: "1.8", maxWidth: "700px", margin: "0 auto" }}>

@@ -100,7 +100,7 @@ export default function Header() {
                         href={item.href}
                         style={{
                           color: isActive ? "var(--primary-color)" : "var(--text-primary)",
-                          fontWeight: 600,
+                          fontWeight: 400,
                           fontSize: "17px",
                           padding: "8px 16px",
                           transition: "all 0.2s ease"
@@ -191,7 +191,7 @@ export default function Header() {
                 href={item.href}
                 onClick={closeMobileMenu}
                 style={{
-                  fontWeight: 600, fontSize: "17px",
+                  fontWeight: 400, fontSize: "17px",
                   color: isActive ? "var(--primary-color)" : "var(--text-primary)",
                   padding: "14px 16px", borderRadius: "10px",
                   background: isActive ? "var(--primary-light)" : "transparent",

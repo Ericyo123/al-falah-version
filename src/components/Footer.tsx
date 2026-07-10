@@ -18,7 +18,7 @@ export default function Footer() {
         <div style={{
           background: "linear-gradient(135deg, var(--primary-color) 0%, #002244 100%)",
           borderRadius: "20px",
-          padding: "40px 50px", 
+          padding: "clamp(24px, 5vw, 40px) clamp(20px, 5vw, 50px)", 
           marginTop: "-80px", 
           boxShadow: "0 20px 40px rgba(0, 51, 102, 0.2)",
           position: "relative",
@@ -51,7 +51,7 @@ export default function Footer() {
             }}>Ready to Hire?</span>
             
             <h3 className="text-white-force" style={{ 
-              fontSize: "32px", 
+              fontSize: "clamp(24px, 5vw, 32px)", 
               fontWeight: 900, 
               marginBottom: "10px", 
               fontFamily: "var(--font-heading)",
