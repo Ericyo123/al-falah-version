@@ -112,7 +112,7 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Right Column: Office/Corporate Image & Features */}
+            {/* Right Column: Office/Corporate Image */}
             <div className="col-lg-6">
               <div style={{
                 position: "relative",
@@ -120,76 +120,9 @@ export default function Home() {
                 overflow: "hidden",
                 boxShadow: "0 15px 40px rgba(0, 51, 102, 0.08)",
                 border: "1px solid rgba(0, 102, 204, 0.1)",
-                height: "360px",
-                marginBottom: "36px"
+                height: "500px",
               }}>
                 <img src="/assets/images/about_us_corporate.png" alt="Corporate Consultant Consultation" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                
-                {/* Floating badge */}
-                <div style={{
-                  position: "absolute", bottom: "24px", left: "24px",
-                  backgroundColor: "rgba(0, 102, 204, 0.95)",
-                  backdropFilter: "blur(8px)",
-                  borderRadius: "16px",
-                  padding: "16px 24px", color: "#fff",
-                  boxShadow: "0 10px 30px rgba(0, 0, 0, 0.15)",
-                  border: "1px solid rgba(255, 255, 255, 0.1)"
-                }}>
-                  <div style={{ fontSize: "28px", fontWeight: 800, lineHeight: 1 }}>2888</div>
-                  <div style={{ fontSize: "12px", fontWeight: 600, opacity: 0.9, marginTop: "4px" }}>SLBFE Govt. License</div>
-                </div>
-              </div>
-
-              {/* Vetted parameters */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
-                <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                  <div style={{
-                    width: "28px", height: "28px", borderRadius: "50%",
-                    backgroundColor: "rgba(0,102,204,0.08)", color: "var(--primary-color)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    fontWeight: 700, fontSize: "13px", flexShrink: 0, marginTop: "2px"
-                  }}>✓</div>
-                  <div>
-                    <h5 style={{ fontSize: "15px", fontWeight: 700, margin: 0, color: "var(--text-primary)" }}>SLBFE Registered 2888</h5>
-                    <p style={{ fontSize: "13.5px", color: "var(--text-muted)", margin: "2px 0 0" }}>100% compliant recruitment processes.</p>
-                  </div>
-                </div>
-                <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                  <div style={{
-                    width: "28px", height: "28px", borderRadius: "50%",
-                    backgroundColor: "rgba(0,102,204,0.08)", color: "var(--primary-color)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    fontWeight: 700, fontSize: "13px", flexShrink: 0, marginTop: "2px"
-                  }}>✓</div>
-                  <div>
-                    <h5 style={{ fontSize: "15px", fontWeight: 700, margin: 0, color: "var(--text-primary)" }}>25+ Years of Trust</h5>
-                    <p style={{ fontSize: "13.5px", color: "var(--text-muted)", margin: "2px 0 0" }}>Decades of direct partner relationships.</p>
-                  </div>
-                </div>
-                <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                  <div style={{
-                    width: "28px", height: "28px", borderRadius: "50%",
-                    backgroundColor: "rgba(0,102,204,0.08)", color: "var(--primary-color)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    fontWeight: 700, fontSize: "13px", flexShrink: 0, marginTop: "2px"
-                  }}>✓</div>
-                  <div>
-                    <h5 style={{ fontSize: "15px", fontWeight: 700, margin: 0, color: "var(--text-primary)" }}>3,000+ Candidates Placed</h5>
-                    <p style={{ fontSize: "13.5px", color: "var(--text-muted)", margin: "2px 0 0" }}>Broad international placement network.</p>
-                  </div>
-                </div>
-                <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                  <div style={{
-                    width: "28px", height: "28px", borderRadius: "50%",
-                    backgroundColor: "rgba(0,102,204,0.08)", color: "var(--primary-color)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    fontWeight: 700, fontSize: "13px", flexShrink: 0, marginTop: "2px"
-                  }}>✓</div>
-                  <div>
-                    <h5 style={{ fontSize: "15px", fontWeight: 700, margin: 0, color: "var(--text-primary)" }}>Vetted & Verified Vocation</h5>
-                    <p style={{ fontSize: "13.5px", color: "var(--text-muted)", margin: "2px 0 0" }}>Rigorous trade and safety testing.</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -201,59 +134,95 @@ export default function Home() {
         <div style={{ width: "50%", height: "1px", backgroundColor: "rgba(0, 102, 204, 0.12)" }}></div>
       </div>
 
-      {/* ===== WHY CHOOSE US (IMAGE BENTO GRID) ===== */}
-      <section style={{ padding: "100px 0 160px", backgroundColor: "var(--bg-color-secondary)" }}>
-        <div className="widescreen-container">
-          <div className="bento-grid">
+      {/* ===== WHY CHOOSE US (HEXACORE DRIBBLLE BENTO GRID) ===== */}
+      <section style={{ padding: "100px 0 160px", backgroundColor: "var(--bg-color-secondary)", position: "relative", overflow: "hidden" }}>
+        
+        {/* Subtle background glowing orb */}
+        <div style={{ position: "absolute", top: "-10%", left: "50%", transform: "translateX(-50%)", width: "800px", height: "400px", background: "radial-gradient(ellipse at center, rgba(0, 102, 204, 0.05) 0%, rgba(255,255,255, 0) 70%)", pointerEvents: "none", zIndex: 0 }}></div>
 
-            {/* Card 1: Intro Text Block */}
-            <div className="bento-item text-block">
-              <span className="accent-pill-label" style={{ marginBottom: "16px", display: "inline-flex" }}>Why Choose Us</span>
-              <h2 style={{ fontSize: "40px", fontWeight: 900, color: "var(--text-primary)", letterSpacing: "-1px", lineHeight: "1.15", margin: "12px 0 20px" }}>
-                The Al Falah <br />Difference.
-              </h2>
-              <p style={{ fontSize: "16px", color: "var(--text-secondary)", lineHeight: "1.7", margin: 0 }}>
-                Sri Lanka&apos;s premier government-approved manpower recruitment consultant. We bridge aspirations with professional excellence and total transparency.
-              </p>
-            </div>
+        <div className="widescreen-container" style={{ position: "relative", zIndex: 1 }}>
+          
+          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+            <span className="accent-pill-label" style={{ marginBottom: "16px", display: "inline-flex" }}>Why Choose Us</span>
+            <h2 style={{ fontSize: "46px", fontWeight: 900, color: "var(--text-primary)", letterSpacing: "-1.5px", lineHeight: "1.1", margin: "12px 0 20px" }}>
+              The Al Falah Difference.
+            </h2>
+          </div>
 
-            {/* Card 2: Rigorous Screening — Image Card */}
-            <div className="bento-item image-bg">
-              <img src="/assets/images/bento_screening.png" alt="Rigorous Screening" className="bento-image" />
-              <div className="bento-overlay"></div>
-              <div className="bento-content-overlay">
-                <h3 className="bento-title">Rigorous Screening</h3>
-                <p className="bento-desc">Trade tests, medical clearances, and professional interviews ensure every candidate is perfectly qualified.</p>
+          <div className="hexa-bento-grid">
+            
+            {/* Card 1: Rigorous Screening */}
+            <div className="hexa-card hexa-span-2">
+              <div className="hexa-card-content">
+                <h3 className="hexa-title">Rigorous Screening</h3>
+                <p className="hexa-desc">Trade tests, medical clearances, and interviews ensure perfection.</p>
+              </div>
+              <div className="hexa-widget-container">
+                <div className="hexa-widget-avatar-stack">
+                  <div className="hexa-avatar"><i className="fas fa-user-check"></i></div>
+                  <div className="hexa-avatar"><i className="fas fa-file-medical"></i></div>
+                  <div className="hexa-avatar"><i className="fas fa-clipboard-list"></i></div>
+                </div>
               </div>
             </div>
 
-            {/* Card 3: GCC Partnerships — Tall Image Card */}
-            <div className="bento-item image-bg row-span-2">
-              <img src="/assets/images/bento_gcc.png" alt="GCC Nation Partnerships" className="bento-image" />
-              <div className="bento-overlay dark-overlay"></div>
-              <div className="bento-content-overlay">
-                <h3 className="bento-title">KSA, UAE, Qatar &amp; Kuwait</h3>
-                <p className="bento-desc">Direct recruitment partnerships with blue-chip companies and top-tier industrial corporations across 6 GCC nations.</p>
+            {/* Card 2: GCC Partnerships */}
+            <div className="hexa-card hexa-span-2">
+              <div className="hexa-card-content">
+                <h3 className="hexa-title">GCC Partnerships</h3>
+                <p className="hexa-desc">Direct recruitment across KSA, UAE, Qatar & Kuwait.</p>
+              </div>
+              <div className="hexa-widget-container">
+                 <div className="hexa-widget-globe">
+                    <i className="fas fa-globe-americas"></i>
+                 </div>
               </div>
             </div>
 
-            {/* Card 4: Zero Delays — Image Card */}
-            <div className="bento-item image-bg">
-              <img src="/assets/images/zerodelays.jpg" alt="Zero Delays Sourcing" className="bento-image" />
-              <div className="bento-overlay"></div>
-              <div className="bento-content-overlay">
-                <h3 className="bento-title">Zero Delays Sourcing</h3>
-                <p className="bento-desc">Optimized end-to-end processing and flight mobilization that keeps deployment times to an absolute minimum.</p>
+            {/* Card 3: Zero Delays */}
+            <div className="hexa-card hexa-span-2">
+              <div className="hexa-card-content">
+                <h3 className="hexa-title">Zero Delays</h3>
+                <p className="hexa-desc">Optimized end-to-end processing and flight mobilization.</p>
+              </div>
+              <div className="hexa-widget-container">
+                 <div className="hexa-widget-chart">
+                    <div className="chart-bar" style={{height: "40%"}}></div>
+                    <div className="chart-bar" style={{height: "70%"}}></div>
+                    <div className="chart-bar" style={{height: "100%", background: "var(--primary-color)", boxShadow: "0 0 10px rgba(0, 102, 204, 0.5)"}}></div>
+                    <div className="chart-bar" style={{height: "85%"}}></div>
+                 </div>
               </div>
             </div>
 
-            {/* Card 5: SLBFE Licensed — Image Card */}
-            <div className="bento-item image-bg">
-              <img src="/assets/images/bento_compliance.png" alt="SLBFE Licensed" className="bento-image" />
-              <div className="bento-overlay"></div>
-              <div className="bento-content-overlay">
-                <h3 className="bento-title">SLBFE License 2888</h3>
-                <p className="bento-desc">Fully government-approved. Proud recipient of the SLBFE 3-Star Golden Award for compliance and excellence.</p>
+            {/* Card 4: SLBFE License */}
+            <div className="hexa-card hexa-span-3 hexa-flex-row">
+              <div className="hexa-card-content">
+                <h3 className="hexa-title">SLBFE License 2888</h3>
+                <p className="hexa-desc">Fully government-approved. Proud recipient of the SLBFE 3-Star Golden Award for compliance and excellence.</p>
+              </div>
+              <div className="hexa-widget-container">
+                  <div className="hexa-widget-badge">
+                     <i className="fas fa-award"></i>
+                     <div className="badge-glow"></div>
+                  </div>
+              </div>
+            </div>
+
+            {/* Card 5: Dedicated Support */}
+            <div className="hexa-card hexa-span-3 hexa-flex-row">
+              <div className="hexa-card-content">
+                <h3 className="hexa-title">Dedicated Support</h3>
+                <p className="hexa-desc">We stay with you from the first consultation to post-deployment support and check-ins.</p>
+              </div>
+              <div className="hexa-widget-container">
+                  <div className="hexa-widget-chat">
+                     <div className="chat-bubble left">Your requirements?</div>
+                     <div className="chat-bubble right">We need 50 engineers.</div>
+                     <div className="chat-typing">
+                        <span></span><span></span><span></span>
+                     </div>
+                  </div>
               </div>
             </div>
 
@@ -534,7 +503,7 @@ export default function Home() {
           <div className="row align-items-center">
             {/* Left Side: Rating & Award details */}
             <div className="col-lg-5 mb-5 mb-lg-0 text-center text-lg-start">
-              <span className="accent-pill-label text-white-force" style={{ backgroundColor: "rgba(255,255,255,0.1)", border: "1px solid rgba(255, 255, 255, 0.2)", backdropFilter: "blur(4px)" }}>Accreditation</span>
+              <span className="accent-pill-label text-white-force">Accreditation</span>
               <h2 className="text-white-force" style={{ fontSize: "40px", fontWeight: 900, margin: "15px 0 20px", letterSpacing: "-1px" }}>SLBFE 3-Star Golden Award</h2>
               <p className="text-white-force-85" style={{ fontSize: "16px", marginBottom: "30px", lineHeight: "1.8" }}>
                 Proud recipient of the prestigious Sri Lanka Bureau of Foreign Employment (SLBFE) 3-Star Golden Award for outstanding performance and compliance in overseas consultancy — 2022/2023.

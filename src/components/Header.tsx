@@ -137,7 +137,7 @@ export default function Header() {
                 style={{
                   background: "none", border: "none", cursor: "pointer",
                   color: "var(--text-primary)", fontSize: "24px",
-                  display: "none", padding: "4px"
+                  padding: "4px"
                 }}
                 className="mobile-toggle-btn"
               >

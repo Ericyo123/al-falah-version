@@ -1,0 +1,245 @@
+$pbmit_xhyre-font: "pbmit_xhyre";
+
+@font-face {
+    font-family: "pbmit_xhyre";
+    src: url("./pbmit_xhyre.woff2?c33a5f338ac59d5e96a8d3626845407c") format("woff2"),
+url("./pbmit_xhyre.woff?c33a5f338ac59d5e96a8d3626845407c") format("woff"),
+url("./pbmit_xhyre.eot?c33a5f338ac59d5e96a8d3626845407c#iefix") format("embedded-opentype"),
+url("./pbmit_xhyre.ttf?c33a5f338ac59d5e96a8d3626845407c") format("truetype"),
+url("./pbmit_xhyre.svg?c33a5f338ac59d5e96a8d3626845407c#pbmit_xhyre") format("svg")
+}
+
+i[class^="pbmit_xhyre-"]:before, i[class*="pbmit-xhyre-icon-"]:before {
+    font-family: pbmit_xhyre !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$pbmit_xhyre-map: (
+    "job-search": "\f101",
+    "people": "\f102",
+    "cv": "\f103",
+    "job-search-1": "\f104",
+    "job-description": "\f105",
+    "part-time": "\f106",
+    "job-search-2": "\f107",
+    "unemployed": "\f108",
+    "recruiment": "\f109",
+    "recruitment": "\f10a",
+    "recruitment-1": "\f10b",
+    "recruitment-2": "\f10c",
+    "selection-process": "\f10d",
+    "job-offer": "\f10e",
+    "recruitment-3": "\f10f",
+    "human-resources": "\f110",
+    "talent-management": "\f111",
+    "talent-search": "\f112",
+    "job-announcement": "\f113",
+    "recruitment-human": "\f114",
+    "strategy": "\f115",
+    "professional": "\f116",
+    "check": "\f117",
+    "leadership": "\f118",
+    "vacant": "\f119",
+    "assessment": "\f11a",
+    "cv-1": "\f11b",
+    "job-interview": "\f11c",
+    "staffing": "\f11d",
+    "part": "\f11e",
+    "achievement": "\f11f",
+    "management": "\f120",
+    "skills": "\f121",
+    "staffing-1": "\f122",
+    "talent-recognition": "\f123",
+    "competence": "\f124",
+    "communication": "\f125",
+    "hr-manager": "\f126",
+    "administrator": "\f127",
+    "factory": "\f128",
+    "healthcare": "\f129",
+    "tower-crane": "\f12a",
+    "accountant": "\f12b",
+    "bellboy": "\f12c",
+    "container": "\f12d",
+    "puzzle": "\f12e",
+    "mission": "\f12f",
+    "award": "\f130",
+    "target": "\f131",
+    "support": "\f132",
+    "quote": "\f133",
+    "phone": "\f134",
+    "search": "\f135",
+    "shopping-bag": "\f136",
+    "telegram": "\f137",
+);
+
+.pbmit-xhyre-icon-job-search:before {
+    content: map-get($pbmit_xhyre-map, "job-search");
+}
+.pbmit-xhyre-icon-people:before {
+    content: map-get($pbmit_xhyre-map, "people");
+}
+.pbmit-xhyre-icon-cv:before {
+    content: map-get($pbmit_xhyre-map, "cv");
+}
+.pbmit-xhyre-icon-job-search-1:before {
+    content: map-get($pbmit_xhyre-map, "job-search-1");
+}
+.pbmit-xhyre-icon-job-description:before {
+    content: map-get($pbmit_xhyre-map, "job-description");
+}
+.pbmit-xhyre-icon-part-time:before {
+    content: map-get($pbmit_xhyre-map, "part-time");
+}
+.pbmit-xhyre-icon-job-search-2:before {
+    content: map-get($pbmit_xhyre-map, "job-search-2");
+}
+.pbmit-xhyre-icon-unemployed:before {
+    content: map-get($pbmit_xhyre-map, "unemployed");
+}
+.pbmit-xhyre-icon-recruiment:before {
+    content: map-get($pbmit_xhyre-map, "recruiment");
+}
+.pbmit-xhyre-icon-recruitment:before {
+    content: map-get($pbmit_xhyre-map, "recruitment");
+}
+.pbmit-xhyre-icon-recruitment-1:before {
+    content: map-get($pbmit_xhyre-map, "recruitment-1");
+}
+.pbmit-xhyre-icon-recruitment-2:before {
+    content: map-get($pbmit_xhyre-map, "recruitment-2");
+}
+.pbmit-xhyre-icon-selection-process:before {
+    content: map-get($pbmit_xhyre-map, "selection-process");
+}
+.pbmit-xhyre-icon-job-offer:before {
+    content: map-get($pbmit_xhyre-map, "job-offer");
+}
+.pbmit-xhyre-icon-recruitment-3:before {
+    content: map-get($pbmit_xhyre-map, "recruitment-3");
+}
+.pbmit-xhyre-icon-human-resources:before {
+    content: map-get($pbmit_xhyre-map, "human-resources");
+}
+.pbmit-xhyre-icon-talent-management:before {
+    content: map-get($pbmit_xhyre-map, "talent-management");
+}
+.pbmit-xhyre-icon-talent-search:before {
+    content: map-get($pbmit_xhyre-map, "talent-search");
+}
+.pbmit-xhyre-icon-job-announcement:before {
+    content: map-get($pbmit_xhyre-map, "job-announcement");
+}
+.pbmit-xhyre-icon-recruitment-human:before {
+    content: map-get($pbmit_xhyre-map, "recruitment-human");
+}
+.pbmit-xhyre-icon-strategy:before {
+    content: map-get($pbmit_xhyre-map, "strategy");
+}
+.pbmit-xhyre-icon-professional:before {
+    content: map-get($pbmit_xhyre-map, "professional");
+}
+.pbmit-xhyre-icon-check:before {
+    content: map-get($pbmit_xhyre-map, "check");
+}
+.pbmit-xhyre-icon-leadership:before {
+    content: map-get($pbmit_xhyre-map, "leadership");
+}
+.pbmit-xhyre-icon-vacant:before {
+    content: map-get($pbmit_xhyre-map, "vacant");
+}
+.pbmit-xhyre-icon-assessment:before {
+    content: map-get($pbmit_xhyre-map, "assessment");
+}
+.pbmit-xhyre-icon-cv-1:before {
+    content: map-get($pbmit_xhyre-map, "cv-1");
+}
+.pbmit-xhyre-icon-job-interview:before {
+    content: map-get($pbmit_xhyre-map, "job-interview");
+}
+.pbmit-xhyre-icon-staffing:before {
+    content: map-get($pbmit_xhyre-map, "staffing");
+}
+.pbmit-xhyre-icon-part:before {
+    content: map-get($pbmit_xhyre-map, "part");
+}
+.pbmit-xhyre-icon-achievement:before {
+    content: map-get($pbmit_xhyre-map, "achievement");
+}
+.pbmit-xhyre-icon-management:before {
+    content: map-get($pbmit_xhyre-map, "management");
+}
+.pbmit-xhyre-icon-skills:before {
+    content: map-get($pbmit_xhyre-map, "skills");
+}
+.pbmit-xhyre-icon-staffing-1:before {
+    content: map-get($pbmit_xhyre-map, "staffing-1");
+}
+.pbmit-xhyre-icon-talent-recognition:before {
+    content: map-get($pbmit_xhyre-map, "talent-recognition");
+}
+.pbmit-xhyre-icon-competence:before {
+    content: map-get($pbmit_xhyre-map, "competence");
+}
+.pbmit-xhyre-icon-communication:before {
+    content: map-get($pbmit_xhyre-map, "communication");
+}
+.pbmit-xhyre-icon-hr-manager:before {
+    content: map-get($pbmit_xhyre-map, "hr-manager");
+}
+.pbmit-xhyre-icon-administrator:before {
+    content: map-get($pbmit_xhyre-map, "administrator");
+}
+.pbmit-xhyre-icon-factory:before {
+    content: map-get($pbmit_xhyre-map, "factory");
+}
+.pbmit-xhyre-icon-healthcare:before {
+    content: map-get($pbmit_xhyre-map, "healthcare");
+}
+.pbmit-xhyre-icon-tower-crane:before {
+    content: map-get($pbmit_xhyre-map, "tower-crane");
+}
+.pbmit-xhyre-icon-accountant:before {
+    content: map-get($pbmit_xhyre-map, "accountant");
+}
+.pbmit-xhyre-icon-bellboy:before {
+    content: map-get($pbmit_xhyre-map, "bellboy");
+}
+.pbmit-xhyre-icon-container:before {
+    content: map-get($pbmit_xhyre-map, "container");
+}
+.pbmit-xhyre-icon-puzzle:before {
+    content: map-get($pbmit_xhyre-map, "puzzle");
+}
+.pbmit-xhyre-icon-mission:before {
+    content: map-get($pbmit_xhyre-map, "mission");
+}
+.pbmit-xhyre-icon-award:before {
+    content: map-get($pbmit_xhyre-map, "award");
+}
+.pbmit-xhyre-icon-target:before {
+    content: map-get($pbmit_xhyre-map, "target");
+}
+.pbmit-xhyre-icon-support:before {
+    content: map-get($pbmit_xhyre-map, "support");
+}
+.pbmit-xhyre-icon-quote:before {
+    content: map-get($pbmit_xhyre-map, "quote");
+}
+.pbmit-xhyre-icon-phone:before {
+    content: map-get($pbmit_xhyre-map, "phone");
+}
+.pbmit-xhyre-icon-search:before {
+    content: map-get($pbmit_xhyre-map, "search");
+}
+.pbmit-xhyre-icon-shopping-bag:before {
+    content: map-get($pbmit_xhyre-map, "shopping-bag");
+}
+.pbmit-xhyre-icon-telegram:before {
+    content: map-get($pbmit_xhyre-map, "telegram");
+}

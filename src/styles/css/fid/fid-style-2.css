@@ -1,0 +1,89 @@
+.pbminfotech-ele-fid-style-2 .pbmit-fid-content {
+	text-align: center;
+}
+.pbminfotech-ele-fid-style-2 .pbmit-fid-inner {
+	font-size: 100px;
+	line-height: 100px;
+	margin: 0;
+	font-weight: 800;
+}
+.pbminfotech-ele-fid-style-2 .pbmit-fid-inner .pbmit-number-rotate {
+	color: transparent;
+	-webkit-text-stroke: 1px var(--pbmit-xhyre-blackish-color)
+}
+.pbminfotech-ele-fid-style-2 .pbmit-fid-inner .pbmit-fid-before span {
+	margin-right: -12px;
+}
+.rtl .pbminfotech-ele-fid-style-2 .pbmit-fid-inner .pbmit-fid-before span{
+	margin: 0 0 0 -12px;
+}
+.pbminfotech-ele-fid-style-2 .pbmit-fid-inner .pbmit-fid span {
+	margin-left: -12px;
+}
+.rtl .pbminfotech-ele-fid-style-2 .pbmit-fid-inner .pbmit-fid span{
+	margin: 0 -12px 0 0;
+}
+.pbminfotech-ele-fid-style-2 .pbmit-fid-sub {
+	font-size: 16px;
+	line-height: 24px;
+	margin-top: 12px;
+	color: var(--pbmit-xhyre-global-color);
+}
+.pbminfotech-ele-fid-style-2 .pbmit-fid-before,
+.pbminfotech-ele-fid-style-2 .pbmit-fid {
+	color: var(--pbmit-xhyre-global-color);
+}
+.pbminfotech-ele-fid-style-2 .pbmit-fid-inner sub,
+.pbminfotech-ele-fid-style-2 .pbmit-fid-inner sup {
+	font-size: 60px;
+	line-height: 60px;
+	bottom: 0;
+}
+.pbminfotech-ele-fid-style-2 .pbmit-fid-before sup,
+.pbminfotech-ele-fid-style-2 .pbmit-fid sup {
+	top: -30px;
+}
+.pbminfotech-ele-fid-style-2 .pbmit-fid sub,
+.pbminfotech-ele-fid-style-2 .pbmit-fid sup {
+	margin-left: -20px;
+}
+.rtl .pbminfotech-ele-fid-style-2 .pbmit-fid sub,
+.rtl .pbminfotech-ele-fid-style-2 .pbmit-fid sup{
+	margin: 0 -20px 0 0;
+}
+.pbminfotech-ele-fid-style-2 .pbmit-fid-before sup,
+.pbminfotech-ele-fid-style-2 .pbmit-fid-before sub {
+	margin-right: -20px;
+}
+.rtl .pbminfotech-ele-fid-style-2 .pbmit-fid-before sup,
+.rtl .pbminfotech-ele-fid-style-2 .pbmit-fid-before sub{
+	margin: 0 0 0 -20px;
+}
+/* special blackish */
+.pbmit-elementor-bg-color-blackish .pbminfotech-ele-fid-style-2 .pbmit-fid-content {
+	text-align: left;
+}
+.pbmit-elementor-bg-color-blackish .pbminfotech-ele-fid-style-2 .pbmit-fid-sub {
+	font-size: 18px;
+    line-height: 26px;
+    font-weight: 300;
+}
+/* Bg Color */
+.pbmit-elementor-bg-color-gradient .pbminfotech-ele-fid-style-2 .pbmit-fid-inner .pbmit-number-rotate,
+.pbmit-elementor-bg-color-globalcolor .pbminfotech-ele-fid-style-2 .pbmit-fid-inner .pbmit-number-rotate,
+.pbmit-elementor-bg-color-secondary .pbminfotech-ele-fid-style-2 .pbmit-fid-inner .pbmit-number-rotate,
+.pbmit-elementor-bg-color-blackish .pbminfotech-ele-fid-style-2 .pbmit-fid-inner .pbmit-number-rotate {
+	-webkit-text-stroke: 1px var(--pbmit-xhyre-white-color);
+}
+.pbmit-elementor-bg-color-gradient .pbminfotech-ele-fid-style-2 .pbmit-fid-sub,
+.pbmit-elementor-bg-color-globalcolor .pbminfotech-ele-fid-style-2 .pbmit-fid-sub,
+.pbmit-elementor-bg-color-blackish .pbminfotech-ele-fid-style-2 .pbmit-fid-sub,
+.pbmit-elementor-bg-color-secondary .pbminfotech-ele-fid-style-2 .pbmit-fid-sub {
+	color: rgba(var(--pbmit-xhyre-white-color-rgb), 0.8);
+}
+.pbmit-elementor-bg-color-gradient .pbminfotech-ele-fid-style-2 .pbmit-fid-before,
+.pbmit-elementor-bg-color-gradient .pbminfotech-ele-fid-style-2 .pbmit-fid,
+.pbmit-elementor-bg-color-globalcolor .pbminfotech-ele-fid-style-2 .pbmit-fid-before,
+.pbmit-elementor-bg-color-globalcolor .pbminfotech-ele-fid-style-2 .pbmit-fid {
+	color: var(--pbmit-xhyre-blackish-color);
+}
