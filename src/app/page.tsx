@@ -561,7 +561,7 @@ export default function Home() {
       </section>
 
       {/* ===== SECTION 9: CLIENT NETWORK & MARQUEE ===== */}
-      <section style={{ padding: "clamp(60px, 8vw, 120px) 0 clamp(80px, 10vw, 180px)", backgroundColor: "var(--bg-color-secondary)", overflow: "hidden" }}>
+      <section style={{ padding: "clamp(60px, 8vw, 120px) 0 clamp(140px, 12vw, 220px)", backgroundColor: "var(--bg-color-secondary)", overflow: "hidden" }}>
         <div className="widescreen-container" style={{ textAlign: "center", marginBottom: "60px" }}>
           <span className="accent-pill-label">Our client network</span>
           <h2 style={{ fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, marginBottom: "20px", lineHeight: "1.2", letterSpacing: "-1px" }}>
