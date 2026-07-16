@@ -1285,10 +1285,10 @@
    Mobile Responsiveness
    ========================================= */
 @media (max-width: 991px) {
-  .pageWrapper { padding: 0 15px; overflow-x: hidden; }
+  .pageWrapper { overflow-x: hidden; }
   .pageHeader { padding: 40px 0; }
   .pageHeader h1 { font-size: 30px !important; margin-bottom: 5px; }
-  .whoWeAre { padding: 40px 0; }
+  .whoWeAre { padding: 40px 15px; }
   
   /* Optimize Image Grid: Hide secondary images and overlay the experience box */
   .imageGridMasonry { padding-right: 0; display: block; margin-bottom: 30px; }
