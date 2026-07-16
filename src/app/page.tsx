@@ -95,7 +95,7 @@ export default function Home() {
         <div className="widescreen-container">
           <div className="row align-items-center">
             {/* Left Column: Corporate Content */}
-            <div className="col-lg-6 mb-5 mb-lg-0" style={{ paddingRight: "40px" }}>
+            <div className="col-lg-6 mb-5 mb-lg-0 px-4 pe-lg-5 ps-lg-0">
               <span className="accent-pill-label" style={{ marginBottom: "16px", display: "inline-flex" }}>Who we are</span>
               <h2 style={{ fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "var(--text-primary)", letterSpacing: "-1px", lineHeight: "1.2", margin: "12px 0 24px" }}>
                 Sri Lanka's Premier <br />Overseas Recruitment Partner
@@ -148,7 +148,7 @@ export default function Home() {
           <div className="row align-items-center">
             
             {/* Left Features */}
-            <div className="col-lg-4">
+            <div className="col-lg-4 px-4 px-lg-0">
               <div className={styles.featureItemLeft}>
                 <div className={styles.featTextBox}>
                   <h4 className={styles.featTitleBox}>Government-approved</h4>
@@ -182,7 +182,7 @@ export default function Home() {
             </div>
 
             {/* Right Features */}
-            <div className="col-lg-4">
+            <div className="col-lg-4 px-4 px-lg-0">
               <div className={styles.featureItemRight}>
                 <div className={styles.featIconBox}><i className="fas fa-hand-holding-usd"></i></div>
                 <div className={styles.featTextBox}>
@@ -246,7 +246,7 @@ export default function Home() {
           <div className="row align-items-center">
             
             {/* Left Column: Massive Typography List */}
-            <div className="col-lg-7">
+            <div className="col-lg-7 px-4 px-lg-0">
               <span className="accent-pill-label text-white-force" style={{ marginBottom: "20px" }}>
                 Sectors we serve
               </span>
@@ -291,7 +291,7 @@ export default function Home() {
             </div>
 
             {/* Right Column: Dynamic Description Panel */}
-            <div className="col-lg-5">
+            <div className="col-lg-5 px-4 px-lg-0">
                {(() => {
                  const current = [
                   {
@@ -484,7 +484,7 @@ export default function Home() {
             
             {/* Left Side: Chairman Receiving Award */}
             <div className="col-lg-5 mb-5 mb-lg-0 px-4 px-lg-0 text-center">
-              <div style={{ position: "relative", overflow: "hidden", borderRadius: "24px", boxShadow: "0 25px 50px rgba(0,0,0,0.3)", border: "1px solid rgba(255,255,255,0.1)" }}>
+              <div style={{ position: "relative", overflow: "hidden", boxShadow: "0 25px 50px rgba(0,0,0,0.3)" }}>
                 <img 
                   src="/assets/images/restie.png" 
                   alt="Chairman receiving SLBFE award" 
@@ -494,7 +494,7 @@ export default function Home() {
             </div>
 
             {/* Right Side: Rating & Award details */}
-            <div className="col-lg-6 text-center text-lg-start">
+            <div className="col-lg-6 px-4 px-lg-0 text-center text-lg-start">
               <span className="accent-pill-label text-white-force" style={{ display: "inline-block", marginBottom: "20px" }}>Accreditation</span>
               <h2 className="text-white-force" style={{ fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, margin: "0 0 20px", letterSpacing: "-1px" }}>SLBFE 3-Star Golden Award</h2>
               <p className="text-white-force-85" style={{ fontSize: "clamp(15px, 4vw, 16px)", marginBottom: "30px", lineHeight: "1.8" }}>

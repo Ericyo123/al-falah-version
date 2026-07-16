@@ -500,10 +500,10 @@ input::placeholder, textarea::placeholder {
 .accent-pill-label {
   display: inline-block;
   color: var(--primary-color); /* Removed important so it can be overridden */
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-  font-size: 14px;
-  font-weight: 400 !important; /* Regular */
-  letter-spacing: 1px;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 13px;
+  font-weight: 600 !important; /* Semi-bold */
+  letter-spacing: 0.5px;
   text-transform: uppercase !important; /* Force uppercase everywhere */
   margin-bottom: 12px;
 }
@@ -1970,7 +1970,7 @@ input[type="submit"] {
     margin-top: 10px !important;
   }
   
-  #hero-glass-counter-mobile, #hero-glass-counter-desktop {
+  #hero-glass-counter-mobile {
     position: relative !important;
     top: auto !important;
     bottom: auto !important;
@@ -2255,10 +2255,10 @@ input[type="submit"] {
 }
 
 @media (max-width: 480px) {
-  .widescreen-container { padding: 0 16px !important; }
+  .widescreen-container { padding: 0 24px !important; }
   .execora-hero-card { height: calc(100vh - 60px) !important; min-height: 550px !important; border-radius: 0 !important; }
   .execora-hero-section { padding: 0 !important; }
-  .execora-hero-content { padding: 0 16px !important; }
+  .execora-hero-content { padding: 0 24px !important; }
   .execora-hero-title { font-size: 30px !important; letter-spacing: -1px !important; line-height: 1.2 !important; }
   .execora-hero-desc { font-size: 14px !important; margin-bottom: 24px !important; }
   .execora-hero-btn { padding: 14px 28px !important; font-size: 14px !important; border-radius: 10px !important; }

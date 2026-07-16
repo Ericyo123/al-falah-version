@@ -100,7 +100,7 @@ export default function RecruitmentProcess() {
   ];
 
   return (
-    <section style={{ padding: "140px 0", backgroundColor: "#fcfaf8", position: "relative", overflow: "hidden" }}>
+    <section style={{ padding: "clamp(60px, 8vw, 100px) 0", backgroundColor: "#fcfaf8", position: "relative", overflow: "hidden" }}>
       
       {/* ===== ICON ANIMATIONS ===== */}
       <style>{`
@@ -154,7 +154,7 @@ export default function RecruitmentProcess() {
       {/* ===== MAIN CONTENT ===== */}
       <div className="widescreen-container" style={{ position: "relative", zIndex: 1 }}>
         {/* Centered Header */}
-        <div style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto 80px" }}>
+        <div style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto clamp(40px, 6vw, 60px)" }}>
           <h2 style={{ fontSize: "38px", fontWeight: 800, margin: "0", color: "var(--text-primary)", lineHeight: 1.35 }}>
             Steps of Recruitment Process
           </h2>
