@@ -141,7 +141,7 @@ export default function Home() {
           <div className={styles.sectionHeaderCentered} style={{ marginBottom: '60px' }}>
             <span className="accent-pill-label">Why choose us</span>
             <h2 className={styles.titleAlt} style={{ fontSize: '42px', margin: '0', lineHeight: '1.2' }}>
-              Why Choose <br className="d-block d-sm-none" />Al Falah Travels & Tours?
+              Why choose Al Falah Travels & Tours?
             </h2>
           </div>
 
