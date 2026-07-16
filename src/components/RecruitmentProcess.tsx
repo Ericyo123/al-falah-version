@@ -296,7 +296,7 @@ export default function RecruitmentProcess() {
           
           .process-section { padding: 40px 0; }
           .process-header { margin: 0 auto 40px; padding: 0 15px; }
-          .process-heading { font-size: 28px; }
+          .process-heading { font-size: 24px; }
           .process-underline { width: 250px; height: 16px; }
           .desktop-break { display: none; }
           
@@ -305,6 +305,8 @@ export default function RecruitmentProcess() {
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             padding-bottom: 30px;
+            padding-left: calc(50vw - 125px);
+            padding-right: calc(50vw - 125px);
             gap: 15px;
             scrollbar-width: none; /* Firefox */
           }
