@@ -175,9 +175,7 @@ export default function Home() {
             {/* Center Image */}
             <div className="col-lg-4 px-4 px-lg-0 mt-5 mt-lg-0 mb-5 mb-lg-0">
               <div className={styles.centerImageWrapper}>
-                <div className={styles.bgShape1}></div>
-                <div className={styles.bgShape2}></div>
-                <img src="/assets/images/why_choose_us.png" alt="Center Human Resources" className={styles.centerImg} />
+                <img src="/assets/images/why_choose_us.png" alt="Center Human Resources" className={styles.centerImg} style={{ transform: 'none' }} />
               </div>
             </div>
 
