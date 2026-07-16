@@ -1330,18 +1330,18 @@
   .whyChooseUsCenter { padding: 40px 0; }
   .whyChooseHeader { margin-bottom: 35px; }
   .whyChooseTitle { font-size: 28px; line-height: 1.2; margin: 0; }
-  /* Mobile Optimization for Why Choose Us */
-  .whyChooseUsCenter .row {
+  /* Mobile Optimization for Why Choose Us (Scoped to About page only) */
+  .pageWrapper .whyChooseUsCenter .row {
     display: flex;
     flex-direction: column;
   }
-  .whyChooseUsCenter .col-lg-4 {
+  .pageWrapper .whyChooseUsCenter .col-lg-4 {
     display: contents;
   }
-  .centerImageWrapper { display: none; }
-  .featDescBox { display: none; }
+  .pageWrapper .centerImageWrapper { display: none; }
+  .pageWrapper .featDescBox { display: none; }
   
-  .featureItemLeft, .featureItemRight { 
+  .pageWrapper .featureItemLeft, .pageWrapper .featureItemRight { 
     width: 100%; 
     display: flex;
     align-items: center;
@@ -1355,12 +1355,12 @@
   }
   
   /* Mirror the left items so the icon is always on the left */
-  .featureItemLeft { flex-direction: row-reverse; justify-content: flex-end; text-align: left; }
-  .featureItemRight { flex-direction: row; text-align: left; }
+  .pageWrapper .featureItemLeft { flex-direction: row-reverse; justify-content: flex-end; text-align: left; }
+  .pageWrapper .featureItemRight { flex-direction: row; text-align: left; }
   
-  .featTextBox { text-align: left; flex: 1; }
-  .featTitleBox { margin: 0; font-size: 16px; }
-  .featIconBox { margin: 0; width: 45px; height: 45px; font-size: 18px; }
+  .pageWrapper .featTextBox { text-align: left; flex: 1; }
+  .pageWrapper .featTitleBox { margin: 0; font-size: 16px; }
+  .pageWrapper .featIconBox { margin: 0; width: 45px; height: 45px; font-size: 18px; }
   .testimonialsSection { padding: 40px 0; }
   .feedbackTitle { font-size: 28px; }
   .testimonialMarqueeTrack { padding-left: 15px; padding-right: 15px; }
