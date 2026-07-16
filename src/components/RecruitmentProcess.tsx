@@ -194,7 +194,7 @@ export default function RecruitmentProcess() {
                 </h3>
                 
                 {/* Desc */}
-                <p style={{ fontSize: "15px", color: "#6b7a90", lineHeight: "1.7", margin: "0 auto", maxWidth: "260px" }}>
+                <p style={{ fontSize: "15px", color: "var(--text-secondary)", lineHeight: "1.7", margin: "0 auto", maxWidth: "260px" }}>
                   {step.desc}
                 </p>
 
