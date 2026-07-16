@@ -82,10 +82,10 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" onClick={closeMobileMenu} style={{ display: "flex", alignItems: "center" }}>
               <img
-                src="/assets/images/logo.svg"
+                src="/assets/images/logo.png"
                 alt="Al-Falah Travels and Tours"
                 className="header-logo-img"
-                style={{ height: isSticky ? "clamp(36px, 8vw, 44px)" : "clamp(42px, 10vw, 52px)", width: "auto", objectFit: "contain", transition: "height 0.3s ease" }}
+                style={{ height: isSticky ? "clamp(32px, 6vw, 40px)" : "clamp(38px, 8vw, 48px)", width: "auto", objectFit: "contain", transition: "height 0.3s ease" }}
               />
             </Link>
 
@@ -176,7 +176,7 @@ export default function Header() {
         display: "flex", flexDirection: "column"
       }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "40px" }}>
-          <img src="/assets/images/logo.svg" alt="Al-Falah" style={{ height: "35px", width: "auto", objectFit: "contain" }} />
+          <img src="/assets/images/logo.png" alt="Al-Falah" style={{ height: "26px", width: "auto", objectFit: "contain" }} />
           <button onClick={closeMobileMenu} style={{
             background: "none", border: "none",
             cursor: "pointer", color: "var(--text-primary)", transition: "color 0.2s ease",
