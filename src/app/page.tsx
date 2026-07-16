@@ -214,7 +214,7 @@ export default function Home() {
         
         {/* Dynamic Backgrounds */}
         {[
-          { num: "01", name: "Hospitality & Service", desc: "Chefs, stewards, baristas, room attendants & drivers.", img: "industry_hospitality.avif" },
+          { num: "01", name: "Hospitality & Service", desc: "Chefs, stewards, baristas, room attendants & drivers.", img: "industry_hospitality.png" },
           { num: "02", name: "Construction & Civil", desc: "Civil engineers, supervisors, electricians & welders.", img: "industry_construction.png" },
           { num: "03", name: "Production & Industrial", desc: "Machine operators, packers, mechanics & general labors.", img: "industry_production.png" },
           { num: "04", name: "Transport & Logistics", desc: "Heavy machine drivers, delivery riders & dispatchers.", img: "industry_transport.png" },
@@ -256,7 +256,7 @@ export default function Home() {
 
               <div style={{ display: "flex", flexDirection: "column" }}>
                 {[
-                  { num: "01", name: "Hospitality & Service", desc: "Chefs, stewards, baristas, room attendants & drivers.", img: "industry_hospitality.avif" },
+                  { num: "01", name: "Hospitality & Service", desc: "Chefs, stewards, baristas, room attendants & drivers.", img: "industry_hospitality.png" },
                   { num: "02", name: "Construction & Civil", desc: "Civil engineers, supervisors, electricians & welders.", img: "industry_construction.png" },
                   { num: "03", name: "Production & Industrial", desc: "Machine operators, packers, mechanics & general labors.", img: "industry_production.png" },
                   { num: "04", name: "Transport & Logistics", desc: "Heavy machine drivers, delivery riders & dispatchers.", img: "industry_transport.png" },

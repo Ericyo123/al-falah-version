@@ -82,10 +82,10 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" onClick={closeMobileMenu} style={{ display: "flex", alignItems: "center" }}>
               <img
-                src="/assets/images/logo.png"
+                src="/assets/images/logo.svg"
                 alt="Al-Falah Travels and Tours"
                 className="header-logo-img"
-                style={{ height: isSticky ? "48px" : "55px", width: "auto", objectFit: "contain", transition: "height 0.3s ease" }}
+                style={{ height: isSticky ? "clamp(36px, 8vw, 44px)" : "clamp(42px, 10vw, 52px)", width: "auto", objectFit: "contain", transition: "height 0.3s ease" }}
               />
             </Link>
 
@@ -176,11 +176,21 @@ export default function Header() {
         display: "flex", flexDirection: "column"
       }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "40px" }}>
-          <img src="/assets/images/logo.png" alt="Al-Falah" style={{ height: "40px" }} />
+          <img src="/assets/images/logo.svg" alt="Al-Falah" style={{ height: "35px", width: "auto", objectFit: "contain" }} />
           <button onClick={closeMobileMenu} style={{
-            background: "none", border: "none", fontSize: "28px",
-            cursor: "pointer", color: "var(--text-primary)", lineHeight: 1
-          }}>×</button>
+            background: "none", border: "none",
+            cursor: "pointer", color: "var(--text-primary)", transition: "color 0.2s ease",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            padding: "8px"
+          }}
+          onMouseEnter={(e)=>e.currentTarget.style.color="var(--primary-color)"}
+          onMouseLeave={(e)=>e.currentTarget.style.color="var(--text-primary)"}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
         </div>
         <nav style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
           {navItems.map((item) => {
