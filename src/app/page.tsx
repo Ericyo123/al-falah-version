@@ -223,10 +223,10 @@ export default function Home() {
         ].map((sec, i) => (
           <div 
             key={i}
+            className={`industry-bg-img industry-bg-${sec.num}`}
             style={{
               position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
               backgroundImage: `url(/assets/images/${sec.img})`,
-              backgroundSize: "cover", backgroundPosition: "center",
               opacity: activeIndustry === i ? 1 : 0,
               transform: activeIndustry === i ? "scale(1)" : "scale(1.05)",
               transition: "opacity 0.8s ease, transform 1.5s ease",
@@ -343,7 +343,7 @@ export default function Home() {
 
                        
                        {/* Description */}
-                       <p className="text-white-force-85" style={{ fontSize: "16px", fontWeight: 400, lineHeight: "1.8", marginBottom: "24px", textShadow: "0 2px 4px rgba(0,0,0,0.6)" }}>
+                       <p className="text-white-force-85 d-none d-lg-block" style={{ fontSize: "16px", fontWeight: 400, lineHeight: "1.8", marginBottom: "24px", textShadow: "0 2px 4px rgba(0,0,0,0.6)" }}>
                          "{current.longDesc}"
                        </p>
       
@@ -356,8 +356,17 @@ export default function Home() {
                          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
                            {current.roles.map((role, idx) => (
                              <div key={idx} style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "24px", height: "24px", borderRadius: "50%", backgroundColor: "rgba(0,102,204,0.15)", border: "1px solid rgba(0,102,204,0.3)" }}>
-                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                               <div style={{ 
+                                  display: "flex", 
+                                  alignItems: "center", 
+                                  justifyContent: "center", 
+                                  width: "20px", 
+                                  height: "20px", 
+                                  borderRadius: "50%", 
+                                  backgroundColor: "var(--primary-color)", 
+                                  flexShrink: 0 
+                                }}>
+                                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                                    <polyline points="20 6 9 17 4 12"></polyline>
                                  </svg>
                                </div>
