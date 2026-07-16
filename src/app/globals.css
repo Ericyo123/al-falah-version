@@ -1712,7 +1712,7 @@ input[type="submit"] {
   overflow: hidden;
   user-select: none;
   gap: 2rem;
-  padding: 2rem 0;
+  padding: 0.6rem 0;
   mask-image: linear-gradient(
     to right,
     hsl(0 0% 0% / 0),
@@ -1756,10 +1756,11 @@ input[type="submit"] {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 10px 16px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
+  padding: 14px 20px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 102, 204, 0.06);
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   min-width: 240px;
   cursor: default;
 }

@@ -573,7 +573,7 @@ export default function Home() {
         </div>
 
         {/* Marquee Track 1 */}
-        <div className="marquee-container" style={{ paddingTop: "1rem" }}>
+        <div className="marquee-container" style={{ paddingTop: "0.5rem" }}>
           <div className="marquee-content">
             {companies.slice(0, Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={idx} className="client-card-modern">
@@ -604,7 +604,7 @@ export default function Home() {
         </div>
 
         {/* Marquee Track 2 (Reverse direction) */}
-        <div className="marquee-container" style={{ paddingBottom: "1rem", marginTop: "-1rem" }}>
+        <div className="marquee-container" style={{ paddingBottom: "0.5rem", marginTop: "-0.4rem" }}>
           <div className="marquee-content" style={{ animationDirection: "reverse", animationDuration: "45s" }}>
             {companies.slice(Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={idx} className="client-card-modern">
