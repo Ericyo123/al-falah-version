@@ -116,7 +116,7 @@
 
 .select {
   width: 100%;
-  padding: 12px 16px;
+  padding: 12px 40px 12px 16px;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -126,10 +126,19 @@
   outline: none;
   cursor: pointer;
   transition: border-color 0.2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
 }
 
 .select:focus {
   border-color: var(--primary-color);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0,102,204,0.08);
 }
 
 /* Jobs Listings */
@@ -160,7 +169,7 @@
   background-color: #ffffff;
   border: 1px solid rgba(0, 102, 204, 0.15);
   border-radius: 16px;
-  padding: 28px 32px;
+  padding: 32px 32px 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -176,12 +185,13 @@
 .jobDetails {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .jobTitle {
   font-size: 20px;
   font-weight: 700;
+  margin-bottom: 4px;
 }
 
 .jobMeta {
@@ -189,6 +199,20 @@
   gap: 20px;
   font-size: 14px;
   color: var(--text-muted);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.jobMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jobMeta span svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .jobTags {
