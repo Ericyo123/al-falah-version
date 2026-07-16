@@ -100,7 +100,7 @@ export default function RecruitmentProcess() {
   ];
 
   return (
-    <section style={{ padding: "clamp(60px, 8vw, 100px) 0", backgroundColor: "#fcfaf8", position: "relative", overflow: "hidden" }}>
+    <section className="process-section" style={{ backgroundColor: "#fcfaf8", position: "relative", overflow: "hidden" }}>
       
       {/* ===== ICON ANIMATIONS ===== */}
       <style>{`
@@ -154,13 +154,14 @@ export default function RecruitmentProcess() {
       {/* ===== MAIN CONTENT ===== */}
       <div className="widescreen-container" style={{ position: "relative", zIndex: 1 }}>
         {/* Centered Header */}
-        <div style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto clamp(40px, 6vw, 60px)" }}>
-          <h2 style={{ fontSize: "38px", fontWeight: 800, margin: "0", color: "var(--text-primary)", lineHeight: 1.35 }}>
-            Steps of Recruitment Process
+        <div className="process-header" style={{ textAlign: "center", maxWidth: "700px" }}>
+          <h2 className="process-heading" style={{ fontWeight: 800, margin: "0", color: "var(--text-primary)", lineHeight: 1.35 }}>
+            Steps of Recruitment Process: Our <br className="desktop-break" />
+            Deployment <span style={{ color: "var(--primary-color)" }}>Advantages.</span>
           </h2>
           {/* Hand-drawn SVG underline */}
           <div style={{ display: "flex", justifyContent: "center", marginTop: "8px" }}>
-            <svg width="380" height="24" viewBox="0 0 380 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="process-underline" viewBox="0 0 380 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               {/* Thick upper stroke */}
               <path d="M6 10C95 5 245 3 374 8" stroke="#1a2b3c" strokeWidth="4.5" strokeLinecap="round" />
               {/* Thinner lower stroke */}
@@ -171,7 +172,13 @@ export default function RecruitmentProcess() {
 
         {/* Minimalist Horizontal Grid */}
         <div style={{ position: "relative", maxWidth: "1200px", margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "30px" }}>
+          
+          {/* Mobile Swipe Indicator */}
+          <div className="mobile-swipe-indicator">
+            <i className="fas fa-arrows-alt-h"></i> Swipe to explore steps
+          </div>
+          
+          <div className="process-grid">
             {steps.map((step, idx) => (
               <div 
                 key={idx} 
@@ -247,6 +254,69 @@ export default function RecruitmentProcess() {
         }
         .process-card:hover .process-title {
           color: var(--primary-color) !important;
+        }
+        
+        /* Layout Classes */
+        .process-section { padding: 100px 0; }
+        .process-header { margin: 0 auto 80px; }
+        .process-heading { font-size: 38px; }
+        .process-underline { width: 380px; height: 24px; }
+        
+        /* Mobile Optimization: Horizontal Scrolling to prevent vertical stacking */
+        .process-grid {
+          display: grid; 
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+          gap: 30px;
+        }
+        .mobile-swipe-indicator { display: none; }
+        
+        @keyframes swipeHintAnim {
+          0%, 100% { transform: translateX(0); opacity: 0.5; }
+          50% { transform: translateX(5px); opacity: 1; }
+        }
+        
+        @media (max-width: 991px) {
+          .mobile-swipe-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #8b99ab;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+          .mobile-swipe-indicator i {
+            animation: swipeHintAnim 2s ease-in-out infinite;
+            color: var(--primary-color);
+            font-size: 16px;
+          }
+          
+          .process-section { padding: 40px 0; }
+          .process-header { margin: 0 auto 40px; padding: 0 15px; }
+          .process-heading { font-size: 28px; }
+          .process-underline { width: 250px; height: 16px; }
+          .desktop-break { display: none; }
+          
+          .process-grid {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 30px;
+            gap: 15px;
+            scrollbar-width: none; /* Firefox */
+          }
+          .process-grid::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+          }
+          .process-card {
+            min-width: 250px;
+            scroll-snap-align: center;
+            flex-shrink: 0;
+            padding: 20px 10px;
+          }
         }
       `}</style>
     </section>

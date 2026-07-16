@@ -1285,6 +1285,7 @@
    Mobile Responsiveness
    ========================================= */
 @media (max-width: 991px) {
+  .pageWrapper { padding: 0 15px; overflow-x: hidden; }
   .pageHeader { padding: 40px 0; }
   .pageHeader h1 { font-size: 30px !important; margin-bottom: 5px; }
   .whoWeAre { padding: 40px 0; }
