@@ -563,7 +563,7 @@
 
 /* Testimonials */
 .testimonialsSection {
-  padding: 100px 0 180px;
+  padding: 100px 0;
 }
 
 .testimonialCard {
@@ -1105,7 +1105,7 @@
 
 /* Testimonials Flow Layout */
 .testimonialsSection {
-  padding: 40px 0 140px;
+  padding: 40px 0 60px;
   background: #f8fafc; /* Slightly lighter premium grey */
   overflow: hidden;
   position: relative;
@@ -1140,6 +1140,12 @@
   align-items: flex-end;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+.feedbackTitle {
+  font-size: 42px;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .sliderArrows {
@@ -1268,100 +1274,120 @@
   }
 }
 
-/* ========================================================
-   MOBILE OPTIMIZATIONS (ADDED)
-   ======================================================== */
 
+/* =========================================
+   Why Choose Us Responsive Classes
+   ========================================= */
+.whyChooseHeader { margin-bottom: 60px; }
+.whyChooseTitle { font-size: 42px; margin: 0; line-height: 1.2; }
+
+/* =========================================
+   Mobile Responsiveness
+   ========================================= */
 @media (max-width: 991px) {
-  .title {
-    font-size: 32px;
-  }
+  .pageHeader { padding: 40px 0; }
+  .pageHeader h1 { font-size: 30px !important; margin-bottom: 5px; }
+  .whoWeAre { padding: 40px 0; }
   
-  .titleAlt {
-    font-size: 32px;
-  }
-  
-  .imageGridMasonry {
-    flex-direction: column;
-    padding-right: 0;
-  }
-  
-  .gridColLeft, .gridColRight {
-    width: 100%;
-  }
-  
-  .tabsArea {
-    flex-direction: column;
-  }
-  
-  .tabsList, .tabContentPanel {
-    width: 100%;
-  }
-  
-  .contactRow {
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .imageGrid {
-    flex-direction: column;
-  }
-  
-  .imgLeft, .imgRight {
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-  
-  .whyMainImg {
-    width: 100%;
-    height: auto;
-    min-height: 350px;
-  }
-  
-  .halfCircleShape {
-    display: none;
-  }
-  
-  .whyContentWrapper {
-    padding-left: 0;
-    margin-top: 30px;
-  }
-  
-  .featuresList .listStyle {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 767px) {
-  .pageHeader h1 {
-    font-size: 36px;
-  }
-  
-  .pageHeader {
-    padding: 60px 0 40px;
-  }
-  
-  .btnGroup {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .btnPrimary, .btnSecondary, .btnOutline {
-    width: 100%;
-    justify-content: center;
-  }
+  /* Optimize Image Grid: Hide secondary images and overlay the experience box */
+  .imageGridMasonry { padding-right: 0; display: block; margin-bottom: 30px; }
+  .gridColLeft { display: none; /* Hide the two left images */ }
+  .gridColRight { width: 100%; position: relative; display: block; }
+  .gridImgTallest { height: 320px; width: 100%; object-fit: cover; border-radius: 12px; }
   
   .experienceBox {
+    position: absolute;
+    bottom: -15px;
+    right: 15px;
     height: auto;
-    padding: 20px;
+    padding: 15px 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    z-index: 2;
+    border-radius: 12px;
   }
   
-  .expNumber {
-    font-size: 60px;
+  .titleAlt, .title { font-size: 28px !important; }
+  .descAlt { font-size: 15px; margin-bottom: 25px; line-height: 1.6; text-align: justify; }
+  
+  .tabsArea { flex-direction: column; gap: 15px; margin-bottom: 25px; }
+  .tabsList { 
+    flex-direction: column; 
+    width: 100%; 
+    gap: 10px; 
+    padding-bottom: 0; 
+  }
+  .tabItem { white-space: normal; padding: 14px 20px; font-size: 14px; text-align: center; width: 100%; }
+  .tabContentPanel { width: 100%; padding-top: 10px; }
+  .tabContentPanel p { font-size: 14px; line-height: 1.6; }
+  .checkList li { font-size: 14px; margin-bottom: 10px; }
+  .ring, .avatar { display: none; }
+  .orbitalTeam { padding: 30px 0; }
+  .orbitalCenter { transform: none; top: 0; left: 0; padding: 0 15px; }
+  
+  .marqueeSection { padding: 30px 0; }
+  .marqueeItem { font-size: 28px; }
+  
+  .whyChooseUsCenter { padding: 40px 0; }
+  .whyChooseHeader { margin-bottom: 35px; }
+  .whyChooseTitle { font-size: 28px; line-height: 1.2; margin: 0; }
+  /* Mobile Optimization for Why Choose Us */
+  .whyChooseUsCenter .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .whyChooseUsCenter .col-lg-4 {
+    display: contents;
+  }
+  .centerImageWrapper { display: none; }
+  .featDescBox { display: none; }
+  
+  .featureItemLeft, .featureItemRight { 
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 12px; /* slightly rounded corner */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid #edf2f7;
+    margin-bottom: 12px;
+    gap: 15px;
   }
   
-  .testimonialCard {
-    padding: 20px;
-  }
+  /* Mirror the left items so the icon is always on the left */
+  .featureItemLeft { flex-direction: row-reverse; justify-content: flex-end; text-align: left; }
+  .featureItemRight { flex-direction: row; text-align: left; }
+  
+  .featTextBox { text-align: left; flex: 1; }
+  .featTitleBox { margin: 0; font-size: 16px; }
+  .featIconBox { margin: 0; width: 45px; height: 45px; font-size: 18px; }
+  .testimonialsSection { padding: 40px 0; }
+  .feedbackTitle { font-size: 28px; }
+  .testimonialMarqueeTrack { padding-left: 15px; padding-right: 15px; }
+  .tCardFlow { width: 280px; padding: 20px; white-space: normal; }
+  
+  .expNumber { font-size: 50px; }
+  .expPlus { font-size: 24px; }
+  .expText { font-size: 16px; }
+  
+  .contactRow { flex-direction: column; gap: 15px; padding-top: 15px; }
 }
+
+@media (max-width: 575px) {
+  .pageHeader h1 { font-size: 24px !important; }
+  .titleAlt, .title { font-size: 24px !important; }
+  .marqueeItem { font-size: 24px; }
+  .btnGroupCenter { flex-direction: column; gap: 10px; }
+  .btnGroupCenter a { width: 100%; text-align: center; justify-content: center; }
+  
+  .experienceBox {
+    padding: 10px 15px;
+    bottom: -10px;
+    right: 10px;
+    gap: 10px;
+  }
+  .expNumber { font-size: 38px; }
+  .expPlus { font-size: 18px; margin-top: 3px; margin-left: 2px; }
+  .expText { font-size: 13px; }
+}
+

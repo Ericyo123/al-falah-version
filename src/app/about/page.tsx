@@ -94,7 +94,7 @@ export default function AboutPage() {
             {/* RIGHT SIDE: Content */}
             <div className="col-lg-6">
               <div className={styles.sectionHeaderAlt}>
-                <span className="accent-pill-label" style={{ marginBottom: '15px' }}>Who we are</span>
+                <span className={styles.subtitleAlt}>/ WHO ARE WE /</span>
                 <h2 className={styles.titleAlt}>
                   Global Manpower <span className={styles.textBlueAlt}>Recruitment</span><br/>
                   <span className={styles.textBlueAlt}>Agency</span> in Sri Lanka.
@@ -223,7 +223,7 @@ export default function AboutPage() {
 
           {/* Center Content */}
           <div className={styles.orbitalCenter}>
-            <span className="accent-pill-label" style={{ marginBottom: '15px' }}>Recognition</span>
+            <span className={styles.subtitleAlt} style={{ display: 'inline-block', marginBottom: '15px' }}>/ RECOGNITION /</span>
             <h2 className={styles.titleAlt} style={{ fontSize: '54px', marginBottom: '25px', lineHeight: '1.2' }}>
               SLBFE 3-Star <br/><span className={styles.textBlueAlt}>Golden Award</span>
             </h2>
@@ -244,9 +244,9 @@ export default function AboutPage() {
       <section className={styles.whyChooseUsCenter}>
         <div className="container">
           
-          <div className={styles.sectionHeaderCentered} style={{ marginBottom: '60px' }}>
-            <span className="accent-pill-label" style={{ marginBottom: '15px' }}>Why choose us</span>
-            <h2 className={styles.titleAlt} style={{ fontSize: '42px', margin: '0', lineHeight: '1.2' }}>
+          <div className={`${styles.sectionHeaderCentered} ${styles.whyChooseHeader}`}>
+            <span className={styles.subtitleAlt} style={{ display: 'inline-block', marginBottom: '15px' }}>/ WHY CHOOSE US? /</span>
+            <h2 className={`${styles.titleAlt} ${styles.whyChooseTitle}`}>
               Why Choose Al Falah Travels & Tours?
             </h2>
           </div>
@@ -279,11 +279,11 @@ export default function AboutPage() {
             </div>
 
             {/* Center Image */}
-            <div className="col-lg-4 px-4 px-lg-0 mt-5 mt-lg-0 mb-5 mb-lg-0">
+            <div className="col-lg-4">
               <div className={styles.centerImageWrapper}>
                 <div className={styles.bgShape1}></div>
                 <div className={styles.bgShape2}></div>
-                <img src="/assets/images/why_choose_us.png" alt="Center Human Resources" className={styles.centerImg} />
+                <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/about02-img-03.jpg" alt="Center Human Resources" className={styles.centerImg} />
               </div>
             </div>
 
@@ -326,7 +326,7 @@ export default function AboutPage() {
           <div className={styles.sectionHeaderFlex}>
             <div>
               <span className={styles.subtitleAlt} style={{ display: 'inline-block', marginBottom: '15px' }}>/ FEEDBACK /</span>
-              <h2 className={styles.titleAlt} style={{ fontSize: '42px', margin: '0', lineHeight: '1.2' }}>
+              <h2 className={`${styles.titleAlt} ${styles.feedbackTitle}`}>
                 What Our Happy <span className={styles.textBlueAlt}>Client</span> Say<br/> About Us
               </h2>
             </div>
