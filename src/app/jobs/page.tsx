@@ -197,9 +197,7 @@ function JobsListContent() {
                   <span className={styles.tag}>{job.category}</span>
                 </div>
               </div>
-              <Link href="/contact" className="btn btn-outline">
-                Apply Now
-              </Link>
+              <Link href="/contact" className="btn-modern-outline">Apply Now</Link>
             </div>
           ))
         ) : (
