@@ -568,7 +568,7 @@ export default function Home() {
           <div className="marquee-content">
             {companies.slice(0, Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={idx} className="client-card-modern">
-                <div className="client-logo-placeholder" style={{ background: `linear-gradient(135deg, hsl(${(idx * 40) % 360}, 10%, 95%), #fff)` }}>
+                <div className="client-logo-placeholder">
                   {renderIndustryIcon(company.industry)}
                 </div>
                 <div className="client-info-modern">
@@ -582,7 +582,7 @@ export default function Home() {
           <div className="marquee-content" aria-hidden="true">
             {companies.slice(0, Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={`dup-${idx}`} className="client-card-modern">
-                <div className="client-logo-placeholder" style={{ background: `linear-gradient(135deg, hsl(${(idx * 40) % 360}, 10%, 95%), #fff)` }}>
+                <div className="client-logo-placeholder">
                   {renderIndustryIcon(company.industry)}
                 </div>
                 <div className="client-info-modern">
@@ -599,7 +599,7 @@ export default function Home() {
           <div className="marquee-content" style={{ animationDirection: "reverse", animationDuration: "45s" }}>
             {companies.slice(Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={idx} className="client-card-modern">
-                <div className="client-logo-placeholder" style={{ background: `linear-gradient(135deg, hsl(${((idx + 10) * 40) % 360}, 10%, 95%), #fff)` }}>
+                <div className="client-logo-placeholder">
                   {renderIndustryIcon(company.industry)}
                 </div>
                 <div className="client-info-modern">
@@ -613,7 +613,7 @@ export default function Home() {
           <div className="marquee-content" aria-hidden="true" style={{ animationDirection: "reverse", animationDuration: "45s" }}>
             {companies.slice(Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={`dup2-${idx}`} className="client-card-modern">
-                <div className="client-logo-placeholder" style={{ background: `linear-gradient(135deg, hsl(${((idx + 10) * 40) % 360}, 10%, 95%), #fff)` }}>
+                <div className="client-logo-placeholder">
                   {renderIndustryIcon(company.industry)}
                 </div>
                 <div className="client-info-modern">

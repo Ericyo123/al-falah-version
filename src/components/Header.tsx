@@ -85,7 +85,7 @@ export default function Header() {
                 src="/assets/images/logo.png"
                 alt="Al-Falah Travels and Tours"
                 className="header-logo-img"
-                style={{ height: isSticky ? "clamp(32px, 6vw, 40px)" : "clamp(38px, 8vw, 48px)", width: "auto", objectFit: "contain", transition: "height 0.3s ease" }}
+                style={{ height: isSticky ? "clamp(38px, 6vw, 42px)" : "clamp(38px, 8vw, 46px)", width: "auto", objectFit: "contain", transition: "height 0.3s ease" }}
               />
             </Link>
 
