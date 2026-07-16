@@ -39,7 +39,7 @@ export default function HeroSlider() {
         </div>
 
         {/* Desktop-Only Floating Glass Stat Counter */}
-        <div className="execora-floating-glass d-none d-lg-flex" id="hero-glass-counter-desktop">
+        <div className="execora-floating-glass d-none d-lg-flex flex-column align-items-center" id="hero-glass-counter-desktop">
           <div className="execora-avatar-stack">
             <img src="/assets/images/avatar1.png" alt="Candidate 1" className="execora-avatar" />
             <img src="/assets/images/avatar2.png" alt="Candidate 2" className="execora-avatar" />

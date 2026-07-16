@@ -91,7 +91,7 @@ export default function Home() {
       <HeroSlider />
 
       {/* ===== SECTION 2: WHO WE ARE (ABOUT US) ===== */}
-      <section style={{ padding: "clamp(60px, 8vw, 120px) 0 clamp(40px, 6vw, 60px)", backgroundColor: "var(--bg-color)" }}>
+      <section style={{ padding: "clamp(60px, 8vw, 120px) 0 clamp(40px, 6vw, 60px)", backgroundColor: "var(--bg-color)", overflow: "hidden" }}>
         <div className="widescreen-container">
           <div className="row align-items-center">
             {/* Left Column: Corporate Content */}
@@ -480,11 +480,11 @@ export default function Home() {
         </svg>
 
         <div className="widescreen-container" style={{ position: "relative", zIndex: 1 }}>
-          <div className="row align-items-center g-5">
+          <div className="row align-items-center justify-content-between g-5">
             
             {/* Left Side: Chairman Receiving Award */}
-            <div className="col-lg-6 mb-5 mb-lg-0 px-4 px-lg-0 text-center">
-              <div style={{ position: "relative", overflow: "hidden", boxShadow: "0 25px 50px rgba(0,0,0,0.3)" }}>
+            <div className="col-lg-5 mb-5 mb-lg-0 px-4 px-lg-0 text-center">
+              <div style={{ position: "relative", overflow: "hidden", borderRadius: "24px", boxShadow: "0 25px 50px rgba(0,0,0,0.3)", border: "1px solid rgba(255,255,255,0.1)" }}>
                 <img 
                   src="/assets/images/restie.png" 
                   alt="Chairman receiving SLBFE award" 
@@ -497,24 +497,24 @@ export default function Home() {
             <div className="col-lg-6 text-center text-lg-start">
               <span className="accent-pill-label text-white-force" style={{ display: "inline-block", marginBottom: "20px" }}>Accreditation</span>
               <h2 className="text-white-force" style={{ fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, margin: "0 0 20px", letterSpacing: "-1px" }}>SLBFE 3-Star Golden Award</h2>
-              <p className="text-white-force-85" style={{ fontSize: "16px", marginBottom: "30px", lineHeight: "1.8" }}>
+              <p className="text-white-force-85" style={{ fontSize: "clamp(15px, 4vw, 16px)", marginBottom: "30px", lineHeight: "1.8" }}>
                 Proud recipient of the prestigious Sri Lanka Bureau of Foreign Employment (SLBFE) 3-Star Golden Award for outstanding performance and compliance in overseas consultancy — 2022/2023.
               </p>
               
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "30px" }}>
+              <div className="d-flex flex-column align-items-center align-items-lg-start" style={{ gap: "30px" }}>
                 <div style={{ 
                   display: "inline-flex", 
                   alignItems: "center", 
-                  gap: "20px", 
+                  gap: "clamp(12px, 3vw, 20px)", 
                   backgroundColor: "#ffffff", 
-                  padding: "16px 28px", 
+                  padding: "clamp(12px, 3vw, 16px) clamp(20px, 4vw, 28px)", 
                   borderRadius: "100px", 
                   boxShadow: "0 15px 35px rgba(0, 0, 0, 0.15)", 
                   border: "1px solid rgba(0,0,0,0.05)",
                   textAlign: "left"
                 }}>
                   {/* Colorful Google Icon SVG */}
-                  <div style={{ flexShrink: 0, width: "36px", height: "36px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div style={{ flexShrink: 0, width: "clamp(28px, 6vw, 36px)", height: "clamp(28px, 6vw, 36px)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <svg width="100%" height="100%" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                       <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.7 17.74 9.5 24 9.5z"/>
                       <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.14 7.09-10.36 7.09-17.65z"/>
@@ -525,17 +525,17 @@ export default function Home() {
 
                   <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                      <span style={{ fontSize: "19px", fontWeight: 900, color: "#202124", lineHeight: 1 }}>4.8</span>
-                      <div style={{ color: "#FBBC04", fontSize: "19px", letterSpacing: "2px", lineHeight: 1 }}>
+                      <span style={{ fontSize: "clamp(16px, 4vw, 19px)", fontWeight: 900, color: "#202124", lineHeight: 1 }}>4.8</span>
+                      <div style={{ color: "#FBBC04", fontSize: "clamp(14px, 4vw, 19px)", letterSpacing: "2px", lineHeight: 1 }}>
                         ★★★★★
                       </div>
                     </div>
-                    <span style={{ fontSize: "14px", fontWeight: 600, color: "#5f6368" }}>Google Reviewed Agency</span>
+                    <span style={{ fontSize: "clamp(12px, 3vw, 14px)", fontWeight: 600, color: "#5f6368" }}>Google Reviewed Agency</span>
                   </div>
                 </div>
 
                 {/* Standalone Award Image */}
-                <div style={{ maxWidth: "200px" }}>
+                <div style={{ maxWidth: "clamp(140px, 40vw, 200px)" }}>
                   <img 
                     src="/assets/images/background_new.png" 
                     alt="3-Star Golden Award" 
