@@ -1349,6 +1349,9 @@
   .pageWrapper .whyChooseUsCenter .col-lg-4 {
     display: contents;
   }
+  .pageWrapper .whyChooseUsCenter .col-lg-4:nth-child(2) {
+    display: none;
+  }
   .pageWrapper .centerImageWrapper { display: none; }
   .pageWrapper .featDescBox { display: none; }
   
@@ -1373,7 +1376,7 @@
   .pageWrapper .featTextBox { text-align: left; flex: 1; }
   .pageWrapper .featTitleBox { margin: 0; font-size: 16px; }
   .pageWrapper .featIconBox { margin: 0; width: 45px; height: 45px; font-size: 18px; }
-  .testimonialsSection { padding: 40px 0; }
+  .testimonialsSection { padding: 40px 0 80px; }
   .feedbackTitle { font-size: 28px; }
   .testimonialMarqueeTrack { padding-left: 15px; padding-right: 15px; }
   .tCardFlow { width: 280px; padding: 20px; white-space: normal; }
