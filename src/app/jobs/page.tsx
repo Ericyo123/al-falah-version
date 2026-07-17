@@ -370,12 +370,29 @@ function JobsListContent() {
             {!applySuccess ? (
               <>
                 <div className={styles.applyHeader}>
-                  <div>
+                  <div style={{ width: '100%' }}>
                     <h2>Apply for this Position</h2>
-                    <p className={styles.applyJobTitle}>{applyingJob.title}</p>
-                    <p className={styles.applyJobCompany}>{applyingJob.company} — {applyingJob.location}</p>
+                    <div style={{ marginTop: '12px', background: '#f8fafc', padding: '14px 18px', borderRadius: '10px', border: '1px solid #e2e8f0', width: '100%' }}>
+                      <p className={styles.applyJobTitle} style={{ fontSize: '16px', fontWeight: '800', color: 'var(--primary-color)', margin: '0 0 6px' }}>
+                        {applyingJob.title}
+                      </p>
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 16px', fontSize: '13px', color: '#4b5563' }}>
+                        <div>
+                          <strong>Company:</strong> {applyingJob.company}
+                        </div>
+                        <div>
+                          <strong>Location:</strong> {applyingJob.location}
+                        </div>
+                        <div>
+                          <strong>Salary:</strong> <span style={{ color: '#059669', fontWeight: '700' }}>{applyingJob.salary}</span>
+                        </div>
+                        <div>
+                          <strong>Job Type:</strong> {applyingJob.type}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <button className={styles.applyClose} onClick={() => setShowApplyModal(false)} style={{ fontSize: '18px', fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4b5563' }}>
+                  <button className={styles.applyClose} onClick={() => setShowApplyModal(false)} style={{ fontSize: '18px', fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4b5563', marginLeft: '16px' }}>
                     ✕
                   </button>
                 </div>
