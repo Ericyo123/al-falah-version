@@ -223,8 +223,10 @@ export default function AdminDashboard() {
 
   // ── Logout ──
   const handleLogout = () => {
-    localStorage.removeItem("admin_token");
-    router.push("/admin/login");
+    if (window.confirm("Are you sure you want to log out?")) {
+      localStorage.removeItem("admin_token");
+      router.push("/admin/login");
+    }
   };
 
   if (!token) return null;
@@ -514,14 +516,40 @@ export default function AdminDashboard() {
                   />
                 </div>
                 <div className={styles.formGroup}>
-                  <label>Salary *</label>
-                  <input
-                    type="text"
-                    value={jobForm.salary}
-                    onChange={(e) => setJobForm({ ...jobForm, salary: e.target.value })}
-                    placeholder="e.g. 3,200 - 4,000 SAR / Mo."
-                    required
-                  />
+                  <label>Salary & Currency *</label>
+                  <div style={{ display: 'flex', gap: '8px' }}>
+                    <input
+                      type="text"
+                      value={jobForm.salary.split(' ').slice(0, -1).join(' ') || jobForm.salary}
+                      onChange={(e) => {
+                        const amount = e.target.value;
+                        const currentCurrency = jobForm.salary.split(' ').pop() || 'USD';
+                        // If the existing string already had a valid currency at the end, keep it, otherwise default to USD
+                        const currencyToUse = ['USD', 'AED', 'SAR', 'QAR', 'BHD', 'KWD', 'LKR', 'OMR'].includes(currentCurrency) ? currentCurrency : 'USD';
+                        setJobForm({ ...jobForm, salary: `${amount} ${currencyToUse}` });
+                      }}
+                      placeholder="e.g. 3,200 - 4,000"
+                      required
+                      style={{ flex: 1 }}
+                    />
+                    <select
+                      value={['USD', 'AED', 'SAR', 'QAR', 'BHD', 'KWD', 'LKR', 'OMR'].includes(jobForm.salary.split(' ').pop() || '') ? (jobForm.salary.split(' ').pop() || 'USD') : 'USD'}
+                      onChange={(e) => {
+                        const amount = jobForm.salary.split(' ').slice(0, -1).join(' ') || jobForm.salary.replace(/(USD|AED|SAR|QAR|BHD|KWD|LKR|OMR)/g, '').trim();
+                        setJobForm({ ...jobForm, salary: `${amount} ${e.target.value}` });
+                      }}
+                      style={{ width: '100px', flexShrink: 0 }}
+                    >
+                      <option value="USD">USD</option>
+                      <option value="AED">AED</option>
+                      <option value="SAR">SAR</option>
+                      <option value="QAR">QAR</option>
+                      <option value="BHD">BHD</option>
+                      <option value="KWD">KWD</option>
+                      <option value="OMR">OMR</option>
+                      <option value="LKR">LKR</option>
+                    </select>
+                  </div>
                 </div>
                 <div className={styles.formGroup}>
                   <label>Category *</label>
