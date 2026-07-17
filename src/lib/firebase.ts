@@ -3,12 +3,12 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  apiKey: "AIzaSyBBWQFnX10MskUr6IuS-spai0aQ1Dgaeyw",
+  authDomain: "al-falah-c72fc.firebaseapp.com",
+  projectId: "al-falah-c72fc",
+  storageBucket: "al-falah-c72fc.firebasestorage.app",
+  messagingSenderId: "248185896286",
+  appId: "1:248185896286:web:cf75faa16100d0395223cf",
 };
 
 // Prevent re-initialization in development (hot reload)
