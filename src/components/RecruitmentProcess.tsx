@@ -318,6 +318,11 @@ export default function RecruitmentProcess() {
             scroll-snap-align: center;
             flex-shrink: 0;
             padding: 20px 10px;
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.05);
+          }
+          .process-card:hover {
+            transform: none;
           }
         }
       `}</style>
