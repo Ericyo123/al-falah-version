@@ -544,4 +544,11 @@
   .noResults p {
     font-size: 14px;
   }
+  .applyGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .applyForm {
+    padding: 20px 20px;
+  }
 }
