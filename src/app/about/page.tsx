@@ -320,7 +320,7 @@ export default function AboutPage() {
         <div className="container" style={{ marginBottom: '40px', position: 'relative', zIndex: 2 }}>
           <div className={styles.sectionHeaderFlex}>
             <div>
-              <span className={styles.subtitleAlt} style={{ display: 'inline-block', marginBottom: '15px' }}>/ FEEDBACK /</span>
+              <span className="accent-pill-label" style={{ marginBottom: '15px' }}>Feedback</span>
               <h2 className={`${styles.titleAlt} ${styles.feedbackTitle}`}>
                 What Our Happy <span className={styles.textBlueAlt}>Client</span> Say<br/> About Us
               </h2>

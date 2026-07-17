@@ -1342,8 +1342,9 @@
   .tabContentPanel p { font-size: 14px; line-height: 1.6; }
   .checkList li { font-size: 14px; margin-bottom: 10px; }
   .ring, .avatar { display: none; }
-  .orbitalTeam { padding: 40px 0; }
+  .orbitalTeam { padding: 40px 15px; }
   .orbitalCenter { transform: none; top: 0; left: 0; padding: 0 15px; }
+  .orbitalCenter .descAlt { text-align: justify !important; }
   
   .marqueeSection { padding: 40px 15px; }
   .marqueeItem { font-size: 28px; }
@@ -1362,15 +1363,15 @@
     padding-right: 0;
   }
   /* Mobile Optimization for Why Choose Us */
-  .whyChooseUsCenter .row {
+  .whyChooseUsCenter :global(.row) {
     display: flex;
     flex-direction: column;
   }
-  .whyChooseUsCenter .col-lg-4 {
+  .whyChooseUsCenter :global(.col-lg-4) {
     display: contents;
   }
-  .whyChooseUsCenter .col-lg-4:nth-child(2) {
-    display: none;
+  .whyChooseUsCenter :global(.col-lg-4):nth-child(2) {
+    display: none !important;
   }
   .centerImageWrapper { display: none; }
   .featDescBox { display: none; }
@@ -1414,7 +1415,7 @@
   .titleAlt, .title { font-size: 24px !important; }
   .marqueeItem { font-size: 24px; }
   .btnGroupCenter { flex-direction: column; gap: 10px; }
-  .btnGroupCenter a { width: 100%; text-align: center; justify-content: center; }
+  .btnGroupCenter a { text-align: center; justify-content: center; padding: 12px 28px; }
   
   .experienceBox {
     padding: 10px 15px;
