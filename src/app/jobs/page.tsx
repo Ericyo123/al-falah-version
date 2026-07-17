@@ -103,9 +103,37 @@ function JobsListContent() {
     nationality: "",
     experience: "",
     message: "",
+    cvBase64: "",
+    cvName: "",
   });
   const [applySubmitting, setApplySubmitting] = useState(false);
   const [applySuccess, setApplySuccess] = useState(false);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.size > 1024 * 1024) {
+      alert("CV file size must be less than 1MB. Please compress your PDF or upload a smaller file.");
+      e.target.value = ""; // Reset
+      setApplyForm((prev) => ({
+        ...prev,
+        cvBase64: "",
+        cvName: ""
+      }));
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      setApplyForm((prev) => ({
+        ...prev,
+        cvBase64: reader.result as string,
+        cvName: file.name
+      }));
+    };
+    reader.readAsDataURL(file);
+  };
 
   // ── Fetch jobs from API ──
   useEffect(() => {
@@ -180,6 +208,8 @@ function JobsListContent() {
       nationality: "",
       experience: "",
       message: "",
+      cvBase64: "",
+      cvName: "",
     });
     setApplySuccess(false);
     setShowApplyModal(true);
@@ -345,10 +375,8 @@ function JobsListContent() {
                     <p className={styles.applyJobTitle}>{applyingJob.title}</p>
                     <p className={styles.applyJobCompany}>{applyingJob.company} — {applyingJob.location}</p>
                   </div>
-                  <button className={styles.applyClose} onClick={() => setShowApplyModal(false)}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
-                    </svg>
+                  <button className={styles.applyClose} onClick={() => setShowApplyModal(false)} style={{ fontSize: '18px', fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4b5563' }}>
+                    ✕
                   </button>
                 </div>
                 <form onSubmit={submitApplication} className={styles.applyForm}>
@@ -401,6 +429,21 @@ function JobsListContent() {
                         onChange={(e) => setApplyForm({ ...applyForm, experience: e.target.value })}
                       />
                     </div>
+                  </div>
+                  <div className={styles.applyFieldFull} style={{ marginBottom: '16px' }}>
+                    <label>Upload CV / Resume (PDF or Doc - Max 1MB) *</label>
+                    <input
+                      type="file"
+                      accept=".pdf,.doc,.docx"
+                      onChange={handleFileChange}
+                      required
+                      style={{ padding: '8px 12px' }}
+                    />
+                    {applyForm.cvName && (
+                      <div style={{ color: '#059669', fontSize: '13px', marginTop: '6px', fontWeight: '500' }}>
+                        ✓ Selected: {applyForm.cvName}
+                      </div>
+                    )}
                   </div>
                   <div className={styles.applyFieldFull}>
                     <label>Cover Message</label>

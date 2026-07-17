@@ -422,6 +422,7 @@ export default function AdminDashboard() {
                       <th>Job Applied For</th>
                       <th>Nationality</th>
                       <th>Experience</th>
+                      <th>CV</th>
                       <th>Status</th>
                       <th>Date</th>
                     </tr>
@@ -441,6 +442,37 @@ export default function AdminDashboard() {
                         </td>
                         <td>{app.nationality || "—"}</td>
                         <td>{app.experience || "—"}</td>
+                        <td>
+                          {app.cvBase64 ? (
+                            <button
+                              onClick={() => {
+                                const link = document.createElement("a");
+                                link.href = app.cvBase64;
+                                link.download = app.cvName || `${app.fullName.replace(/\s+/g, '_')}_CV`;
+                                document.body.appendChild(link);
+                                link.click();
+                                document.body.removeChild(link);
+                              }}
+                              style={{
+                                padding: "6px 12px",
+                                background: "var(--primary-color, #0066cc)",
+                                color: "#ffffff",
+                                border: "none",
+                                borderRadius: "6px",
+                                fontSize: "12px",
+                                fontWeight: "600",
+                                cursor: "pointer",
+                                transition: "opacity 0.2s"
+                              }}
+                              onMouseOver={(e) => (e.currentTarget.style.opacity = "0.9")}
+                              onMouseOut={(e) => (e.currentTarget.style.opacity = "1")}
+                            >
+                              Download CV
+                            </button>
+                          ) : (
+                            <span style={{ color: "#9ca3af", fontSize: "13px" }}>No CV</span>
+                          )}
+                        </td>
                         <td>
                           <span
                             className={`${styles.statusBadge} ${
@@ -473,10 +505,8 @@ export default function AdminDashboard() {
           <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
             <div className={styles.modalHeader}>
               <h2>{editingJob ? "Edit Job" : "Add New Job"}</h2>
-              <button className={styles.modalClose} onClick={() => setShowJobModal(false)}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
+              <button className={styles.modalClose} onClick={() => setShowJobModal(false)} style={{ fontSize: '18px', fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#6b7280' }}>
+                ✕
               </button>
             </div>
             <form onSubmit={saveJob} className={styles.modalForm}>

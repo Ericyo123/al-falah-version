@@ -45,6 +45,8 @@ export async function POST(request: NextRequest) {
       nationality,
       experience,
       message,
+      cvBase64,
+      cvName,
     } = body;
 
     // Validate required fields
@@ -74,6 +76,8 @@ export async function POST(request: NextRequest) {
       nationality: nationality || "",
       experience: experience || "",
       message: message || "",
+      cvBase64: cvBase64 || "",
+      cvName: cvName || "",
       status: "new",
       submittedAt: new Date().toISOString(),
     };
