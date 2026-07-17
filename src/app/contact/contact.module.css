@@ -215,6 +215,14 @@
   font-size: 60px;
   margin-bottom: 20px;
   display: block;
+  animation: scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.mapSection {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 40px;
+  background: #f8fafc;
 }
 
 @media (max-width: 991px) {

@@ -144,6 +144,20 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* Full-width Map Section */}
+      <section className={styles.mapSection}>
+        <iframe
+          src="https://maps.google.com/maps?q=501,%202nd%20Division,%20Maradana,%20Colombo%2010,%20Sri%20Lanka&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="450"
+          style={{ border: 0, display: "block" }}
+          allowFullScreen={false}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Al-Falah Travels & Tours Location Map"
+        ></iframe>
+      </section>
     </>
   );
 }
