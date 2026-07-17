@@ -428,17 +428,39 @@ function JobsListContent() {
                     </div>
                   </div>
                   <div className={styles.applyFieldFull} style={{ marginBottom: '24px' }}>
-                    <label>Upload CV / Resume (PDF or Doc - Max 1MB) *</label>
+                    <label>Upload CV / Resume (PDF or Doc - Max 5MB) *</label>
                     <input
+                      id="cv-upload"
                       type="file"
                       accept=".pdf,.doc,.docx"
                       onChange={handleFileChange}
-                      required
+                      required={!applyForm.cvName}
                       style={{ padding: '8px 12px' }}
                     />
                     {applyForm.cvName && (
-                      <div style={{ color: '#059669', fontSize: '13px', marginTop: '6px', fontWeight: '500' }}>
-                        ✓ Selected: {applyForm.cvName}
+                      <div style={{ color: '#059669', fontSize: '13px', marginTop: '6px', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span>✓ Selected: {applyForm.cvName}</span>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setCvFile(null);
+                            setApplyForm({ ...applyForm, cvName: "" });
+                            const fileInput = document.getElementById('cv-upload') as HTMLInputElement;
+                            if (fileInput) fileInput.value = '';
+                          }}
+                          style={{
+                            background: 'transparent',
+                            border: 'none',
+                            color: '#ef4444',
+                            cursor: 'pointer',
+                            fontSize: '14px',
+                            fontWeight: 'bold',
+                            padding: '0 4px'
+                          }}
+                          title="Remove CV"
+                        >
+                          ✕
+                        </button>
                       </div>
                     )}
                   </div>
