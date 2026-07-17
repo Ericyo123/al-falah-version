@@ -150,7 +150,7 @@ export default function ContactPage() {
         <iframe
           src="https://maps.google.com/maps?q=501,%202nd%20Division,%20Maradana,%20Colombo%2010,%20Sri%20Lanka&t=&z=15&ie=UTF8&iwloc=&output=embed"
           width="100%"
-          height="450"
+          height="600"
           style={{ border: 0, display: "block" }}
           allowFullScreen={false}
           loading="lazy"

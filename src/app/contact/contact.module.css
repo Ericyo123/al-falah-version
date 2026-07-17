@@ -221,7 +221,7 @@
 .mapSection {
   width: 100%;
   overflow: hidden;
-  margin-top: 40px;
+  margin-top: 0;
   background: #f8fafc;
 }
 
