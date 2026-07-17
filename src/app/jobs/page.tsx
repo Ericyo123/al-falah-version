@@ -401,7 +401,7 @@ function JobsListContent() {
                         required
                       />
                     </div>
-                    <div className={styles.applyField}>
+                    <div className={styles.applyFieldFull}>
                       <label>Phone Number *</label>
                       <input
                         type="tel"
@@ -411,26 +411,8 @@ function JobsListContent() {
                         required
                       />
                     </div>
-                    <div className={styles.applyField}>
-                      <label>Nationality</label>
-                      <input
-                        type="text"
-                        placeholder="e.g. Sri Lankan"
-                        value={applyForm.nationality}
-                        onChange={(e) => setApplyForm({ ...applyForm, nationality: e.target.value })}
-                      />
-                    </div>
-                    <div className={styles.applyField}>
-                      <label>Years of Experience</label>
-                      <input
-                        type="text"
-                        placeholder="e.g. 5 years"
-                        value={applyForm.experience}
-                        onChange={(e) => setApplyForm({ ...applyForm, experience: e.target.value })}
-                      />
-                    </div>
                   </div>
-                  <div className={styles.applyFieldFull} style={{ marginBottom: '16px' }}>
+                  <div className={styles.applyFieldFull} style={{ marginBottom: '24px' }}>
                     <label>Upload CV / Resume (PDF or Doc - Max 1MB) *</label>
                     <input
                       type="file"
@@ -444,15 +426,6 @@ function JobsListContent() {
                         ✓ Selected: {applyForm.cvName}
                       </div>
                     )}
-                  </div>
-                  <div className={styles.applyFieldFull}>
-                    <label>Cover Message</label>
-                    <textarea
-                      placeholder="Tell us why you're a great fit for this role..."
-                      rows={4}
-                      value={applyForm.message}
-                      onChange={(e) => setApplyForm({ ...applyForm, message: e.target.value })}
-                    />
                   </div>
                   <button
                     type="submit"

@@ -372,7 +372,7 @@
   letter-spacing: 0.3px;
 }
 
-.applyField input, .applyFieldFull textarea {
+.applyField input, .applyFieldFull input, .applyFieldFull textarea {
   padding: 12px 14px;
   border: 1px solid #d1d5db;
   border-radius: 10px;
@@ -384,7 +384,7 @@
   background: #ffffff;
 }
 
-.applyField input:focus, .applyFieldFull textarea:focus {
+.applyField input:focus, .applyFieldFull input:focus, .applyFieldFull textarea:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
 }
