@@ -27,6 +27,9 @@ interface Application {
   nationality: string;
   experience: string;
   message: string;
+  cvUrl?: string;
+  cvBase64?: string;
+  cvName?: string;
   status: string;
   submittedAt: string;
 }
@@ -471,7 +474,7 @@ export default function AdminDashboard() {
                             <button
                               onClick={() => {
                                 const link = document.createElement("a");
-                                link.href = app.cvBase64;
+                                link.href = app.cvBase64 || "";
                                 link.download = app.cvName || `${app.fullName.replace(/\s+/g, '_')}_CV`;
                                 document.body.appendChild(link);
                                 link.click();
