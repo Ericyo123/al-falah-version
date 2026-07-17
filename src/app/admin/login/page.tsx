@@ -6,7 +6,7 @@ import styles from "../admin.module.css";
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [password, setPassword] = useState("admin123");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -76,6 +76,16 @@ export default function AdminLoginPage() {
               autoFocus
               className={styles.loginInput}
             />
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-10px' }}>
+            <button 
+              type="button"
+              onClick={() => alert("Password reset functionality will be implemented soon.")}
+              style={{ background: 'none', border: 'none', color: '#00a3e0', fontSize: '13px', cursor: 'pointer', padding: 0 }}
+            >
+              Forgot Password?
+            </button>
           </div>
 
           <button
