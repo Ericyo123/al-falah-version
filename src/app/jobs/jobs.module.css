@@ -266,6 +266,185 @@
   display: block;
 }
 
+/* ── Apply Now Modal ── */
+.applyOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+}
+
+.applyModal {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.applyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 28px 28px 20px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.applyHeader h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  color: #111827;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  text-transform: none !important;
+  letter-spacing: -0.3px !important;
+}
+
+.applyJobTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 4px;
+}
+
+.applyJobCompany {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.applyClose {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #6b7280;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.applyClose:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.applyForm {
+  padding: 24px 28px;
+}
+
+.applyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.applyField, .applyFieldFull {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.applyFieldFull {
+  margin-bottom: 24px;
+}
+
+.applyField label, .applyFieldFull label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.applyField input, .applyFieldFull textarea {
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #ffffff;
+}
+
+.applyField input:focus, .applyFieldFull textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.applyFieldFull textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.applySubmitBtn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0066cc, #0052a3);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.applySubmitBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0077ee, #0066cc);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
+}
+
+.applySubmitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.applySuccessState {
+  padding: 48px 36px;
+  text-align: center;
+}
+
+.applySuccessIcon {
+  color: #059669;
+  margin-bottom: 16px;
+}
+
+.applySuccessState h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 12px;
+  color: #111827;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  text-transform: none !important;
+}
+
+.applySuccessState p {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+
 @media (max-width: 991px) {
   .titlebar {
     min-height: 250px;
