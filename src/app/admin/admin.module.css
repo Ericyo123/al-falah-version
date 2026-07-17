@@ -433,6 +433,7 @@
   border-radius: 8px;
   border: 1px solid #e5e7eb;
   background: #ffffff;
+  color: #4b5563 !important;
   display: flex;
   align-items: center;
   justify-content: center;
