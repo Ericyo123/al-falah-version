@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.14.4",
+    "@opentelemetry/api": "^1.9.1",
     "firebase": "^12.16.0",
     "firebase-admin": "^14.2.0",
     "jose": "^6.2.3",
