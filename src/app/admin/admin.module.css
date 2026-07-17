@@ -428,8 +428,9 @@
 }
 
 .editBtn, .deleteBtn {
-  width: 36px;
-  height: 36px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
   border-radius: 8px;
   border: 1px solid #e5e7eb;
   background: #ffffff;
