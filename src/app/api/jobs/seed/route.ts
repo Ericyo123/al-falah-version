@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { adminDb } from "@/lib/firebase-admin";
+import { getAdminDb } from "@/lib/firebase-admin";
 import { verifyAdmin } from "@/lib/auth";
 
 const FALLBACK_JOBS = [
@@ -66,6 +66,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
+    const adminDb = getAdminDb();
     if (!adminDb) {
       return NextResponse.json(
         { error: "Firebase Admin is not configured. Please add the FIREBASE_SERVICE_ACCOUNT_KEY." },
