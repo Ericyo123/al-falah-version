@@ -3,6 +3,8 @@
 import React, { useState, useEffect, Suspense, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 import styles from "./jobs.module.css";
+import { storage } from "@/lib/firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 // ── Types ──
 interface Job {
@@ -106,6 +108,7 @@ function JobsListContent() {
     cvBase64: "",
     cvName: "",
   });
+  const [cvFile, setCvFile] = useState<File | null>(null);
   const [applySubmitting, setApplySubmitting] = useState(false);
   const [applySuccess, setApplySuccess] = useState(false);
 
@@ -113,26 +116,22 @@ function JobsListContent() {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    if (file.size > 1024 * 1024) {
-      alert("CV file size must be less than 1MB. Please compress your PDF or upload a smaller file.");
+    if (file.size > 5 * 1024 * 1024) {
+      alert("CV file size must be less than 5MB.");
       e.target.value = ""; // Reset
+      setCvFile(null);
       setApplyForm((prev) => ({
         ...prev,
-        cvBase64: "",
         cvName: ""
       }));
       return;
     }
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      setApplyForm((prev) => ({
-        ...prev,
-        cvBase64: reader.result as string,
-        cvName: file.name
-      }));
-    };
-    reader.readAsDataURL(file);
+    setCvFile(file);
+    setApplyForm((prev) => ({
+      ...prev,
+      cvName: file.name
+    }));
   };
 
   // ── Fetch jobs from API ──
@@ -201,6 +200,7 @@ function JobsListContent() {
   // ── Apply Handlers ──
   const openApplyModal = (job: Job) => {
     setApplyingJob(job);
+    setCvFile(null);
     setApplyForm({
       fullName: "",
       email: "",
@@ -221,6 +221,13 @@ function JobsListContent() {
     setApplySubmitting(true);
 
     try {
+      let cvUrl = "";
+      if (cvFile) {
+        const storageRef = ref(storage, `cvs/${Date.now()}_${cvFile.name}`);
+        const uploadResult = await uploadBytes(storageRef, cvFile);
+        cvUrl = await getDownloadURL(uploadResult.ref);
+      }
+
       const res = await fetch("/api/applications", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -228,6 +235,7 @@ function JobsListContent() {
           jobId: applyingJob.id,
           jobTitle: applyingJob.title,
           ...applyForm,
+          cvUrl,
         }),
       });
 
@@ -236,8 +244,9 @@ function JobsListContent() {
       } else {
         alert("Failed to submit application. Please try again.");
       }
-    } catch {
-      alert("Network error. Please try again.");
+    } catch (error) {
+      console.error("Error submitting application:", error);
+      alert("Network or upload error. Please try again.");
     } finally {
       setApplySubmitting(false);
     }
@@ -371,15 +380,14 @@ function JobsListContent() {
               <>
                 <div className={styles.applyHeader}>
                   <div>
-                    <h2>Apply for this Position</h2>
-                    <p style={{ margin: '4px 0 2px', fontSize: '16px', fontWeight: '700', color: 'var(--primary-color)' }}>
-                      {applyingJob.title}
-                    </p>
-                    <p style={{ margin: '2px 0', fontSize: '14px', color: '#4b5563' }}>
+                    <h2 style={{ fontSize: '26px', fontWeight: '900', color: 'var(--primary-color)', margin: '0 0 6px', letterSpacing: '-0.5px' }}>
+                      Apply to {applyingJob.title}
+                    </h2>
+                    <p style={{ margin: '4px 0', fontSize: '14px', color: '#4b5563', fontWeight: '500' }}>
                       {applyingJob.company} &bull; {applyingJob.location}
                     </p>
-                    <p style={{ margin: '2px 0', fontSize: '14px', color: '#4b5563' }}>
-                      Salary: <span style={{ color: '#059669', fontWeight: '600' }}>{applyingJob.salary}</span> &bull; {applyingJob.type}
+                    <p style={{ margin: '2px 0', fontSize: '14px', color: '#374151', fontWeight: '500' }}>
+                      Salary: <span style={{ color: '#059669', fontWeight: '700' }}>{applyingJob.salary}</span> &bull; {applyingJob.type}
                     </p>
                   </div>
                   <button className={styles.applyClose} onClick={() => setShowApplyModal(false)} style={{ fontSize: '18px', fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4b5563' }}>

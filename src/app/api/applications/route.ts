@@ -46,6 +46,7 @@ export async function POST(request: NextRequest) {
       experience,
       message,
       cvBase64,
+      cvUrl,
       cvName,
     } = body;
 
@@ -77,6 +78,7 @@ export async function POST(request: NextRequest) {
       experience: experience || "",
       message: message || "",
       cvBase64: cvBase64 || "",
+      cvUrl: cvUrl || "",
       cvName: cvName || "",
       status: "new",
       submittedAt: new Date().toISOString(),

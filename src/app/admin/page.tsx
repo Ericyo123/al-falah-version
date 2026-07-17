@@ -443,7 +443,31 @@ export default function AdminDashboard() {
                         <td>{app.nationality || "—"}</td>
                         <td>{app.experience || "—"}</td>
                         <td>
-                          {app.cvBase64 ? (
+                          {app.cvUrl ? (
+                            <a
+                              href={app.cvUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{
+                                display: "inline-block",
+                                padding: "6px 12px",
+                                background: "var(--primary-color, #0066cc)",
+                                color: "#ffffff",
+                                border: "none",
+                                borderRadius: "6px",
+                                fontSize: "12px",
+                                fontWeight: "600",
+                                cursor: "pointer",
+                                textDecoration: "none",
+                                textAlign: "center",
+                                transition: "opacity 0.2s"
+                              }}
+                              onMouseOver={(e) => (e.currentTarget.style.opacity = "0.9")}
+                              onMouseOut={(e) => (e.currentTarget.style.opacity = "1")}
+                            >
+                              View/Download CV
+                            </a>
+                          ) : app.cvBase64 ? (
                             <button
                               onClick={() => {
                                 const link = document.createElement("a");
