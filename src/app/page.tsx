@@ -100,10 +100,10 @@ export default function Home() {
               <h2 style={{ fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "var(--text-primary)", letterSpacing: "-1px", lineHeight: "1.2", margin: "12px 0 24px" }}>
                 Sri Lanka's Premier <br />Overseas Recruitment Partner
               </h2>
-              <p style={{ fontSize: "16.5px", color: "var(--text-secondary)", lineHeight: "1.8", marginBottom: "20px", textAlign: "justify" }}>
+              <p style={{ fontSize: "16.5px", color: "var(--text-secondary)", lineHeight: "1.8", marginBottom: "20px", textAlign: "left" }}>
                 <strong>AL-FALAH TRAVELS & TOURS</strong> is a trusted recruitment and manpower consultancy firm approved by the Sri Lanka Bureau of Foreign Employment (<strong>SLBFE License 2888</strong>). For over two decades, we have partnered with foreign employers to bridge local talent with global career opportunities.
               </p>
-              <p style={{ fontSize: "16.5px", color: "var(--text-secondary)", lineHeight: "1.8", marginBottom: "40px", textAlign: "justify" }}>
+              <p style={{ fontSize: "16.5px", color: "var(--text-secondary)", lineHeight: "1.8", marginBottom: "40px", textAlign: "left" }}>
                 Our rigorous trade vetting, compliance expertise, and client-first commitment ensure a reliable and highly transparent deployment process for professional, technical, and trade categories.
               </p>
 
