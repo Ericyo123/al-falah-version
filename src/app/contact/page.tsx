@@ -32,13 +32,8 @@ export default function ContactPage() {
       {/* Titlebar Banner */}
       <section className={styles.titlebar}>
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          <span className="accent-pill-label text-white-force">Get In Touch</span>
+          <span className="accent-pill-label text-white-force" style={{ marginBottom: "16px", display: "inline-block" }}>Get In Touch</span>
           <h1>Contact Us</h1>
-          <div className={styles.breadcrumb}>
-            <Link href="/" style={{ color: "rgba(255,255,255,0.7)" }}>Home</Link>
-            <span style={{ color: "rgba(255,255,255,0.4)" }}>/</span>
-            <strong style={{ color: "#fff" }}>Contact</strong>
-          </div>
         </div>
       </section>
 

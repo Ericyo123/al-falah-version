@@ -3,7 +3,10 @@
   background-image: linear-gradient(135deg, rgba(0,51,102,0.92) 0%, rgba(0,102,204,0.82) 100%), url('/assets/images/titlebar-bg.jpg');
   background-size: cover;
   background-position: center;
-  padding: 80px 0 60px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: #ffffff;
   text-align: center;
   overflow: hidden;
@@ -28,28 +31,39 @@
   font-weight: 800;
   margin-bottom: 12px;
   letter-spacing: -0.5px;
+  text-transform: none !important;
 }
 
 .breadcrumb {
-  font-size: 15px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
+  font-size: 15px;
   font-weight: 500;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 24px;
+  border-radius: 30px;
+  backdrop-filter: blur(4px);
+  margin-top: 12px;
 }
 
 .breadcrumb a {
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s ease;
 }
 
-.breadcrumb span {
-  color: rgba(255,255,255,0.4);
+.breadcrumb a:hover {
+  color: #ffffff;
+}
+
+.breadcrumb span, .breadcrumb strong {
+  color: #ffffff;
   margin: 0;
 }
 
-.breadcrumb strong {
-  color: #ffffff;
+.breadcrumb .separator {
+  color: rgba(255,255,255,0.4);
 }
 
 /* Page Layout */
@@ -66,13 +80,16 @@
 
 /* Sidebar Filter */
 .sidebar {
-  background-color: #ffffff;
-  border: 1px solid var(--border-color);
+  background-color: var(--primary-color);
+  border: none;
   border-radius: 20px;
   padding: 32px 28px;
   align-self: start;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  box-shadow: 0 10px 30px rgba(0, 51, 102, 0.15);
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  position: sticky;
+  top: 100px;
+  color: #ffffff;
 }
 
 .filterGroup {
@@ -83,12 +100,16 @@
   margin-bottom: 0;
 }
 
-.filterGroup h3 {
+.filterGroup h3, .filterHeading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff !important;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   letter-spacing: 0 !important;
   text-transform: none !important;
@@ -97,18 +118,18 @@
 .input {
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #cbd5e1 !important;
   border-radius: 10px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   margin-bottom: 12px;
   outline: none;
-  background-color: #f7f9fc;
+  background-color: #ffffff !important;
   color: var(--text-primary);
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.input:focus {
+.input:focus, .select:focus {
   border-color: var(--primary-color);
   background-color: #ffffff;
   box-shadow: 0 0 0 3px rgba(0,102,204,0.08);
@@ -117,15 +138,16 @@
 .select {
   width: 100%;
   padding: 12px 40px 12px 16px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #cbd5e1 !important;
   border-radius: 10px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
-  background-color: #f7f9fc;
+  background-color: #ffffff !important;
   color: var(--text-primary);
   outline: none;
+  transition: all 0.2s ease;
+  padding-right: 40px;
   cursor: pointer;
-  transition: border-color 0.2s ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -133,12 +155,6 @@
   background-repeat: no-repeat;
   background-position: right 14px center;
   background-size: 14px;
-}
-
-.select:focus {
-  border-color: var(--primary-color);
-  background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(0,102,204,0.08);
 }
 
 /* Jobs Listings */
@@ -169,7 +185,7 @@
   background-color: #ffffff;
   border: 1px solid rgba(0, 102, 204, 0.15);
   border-radius: 16px;
-  padding: 32px 32px 28px;
+  padding: 40px 32px 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -218,7 +234,7 @@
 .jobTags {
   display: flex;
   gap: 10px;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .tag {
@@ -252,11 +268,12 @@
 
 @media (max-width: 991px) {
   .titlebar {
-    padding: 60px 0 35px;
+    min-height: 250px;
+    padding: 0;
   }
   .titlebar h1 {
-    font-size: 26px !important;
-    margin-bottom: 6px;
+    font-size: 36px !important;
+    margin-bottom: 12px;
     letter-spacing: 0;
   }
   .contentArea {
@@ -298,8 +315,8 @@
   .jobCard {
     flex-direction: column;
     align-items: stretch;
-    gap: 12px;
-    padding: 16px 18px;
+    gap: 20px;
+    padding: 36px 24px 24px;
     border-radius: 12px;
   }
   .jobDetails {

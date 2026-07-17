@@ -120,7 +120,10 @@ function JobsListContent() {
       {/* Sidebar Filter Panel */}
       <aside className={styles.sidebar}>
         <div className={styles.filterGroup}>
-          <h3>Search Jobs</h3>
+          <h3 className={styles.filterHeading}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            Search Jobs
+          </h3>
           <input
             type="text"
             placeholder="Keywords (e.g. React)..."
@@ -138,7 +141,10 @@ function JobsListContent() {
         </div>
 
         <div className={styles.filterGroup}>
-          <h3>Industry</h3>
+          <h3 className={styles.filterHeading}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            Industry
+          </h3>
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
@@ -154,7 +160,10 @@ function JobsListContent() {
         </div>
 
         <div className={styles.filterGroup}>
-          <h3>Job Type</h3>
+          <h3 className={styles.filterHeading}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            Job Type
+          </h3>
           <select
             value={jobType}
             onChange={(e) => setJobType(e.target.value)}
@@ -194,7 +203,7 @@ function JobsListContent() {
                     {job.salary}
                   </span>
                 </div>
-                <p style={{ marginTop: "10px", fontSize: "15px" }}>{job.desc}</p>
+                <p style={{ margin: 0, fontSize: "15px" }}>{job.desc}</p>
                 <div className={styles.jobTags}>
                   <span className={`${styles.tag} ${styles.tagPrimary}`}>{job.type}</span>
                   <span className={styles.tag}>{job.category}</span>
@@ -223,13 +232,8 @@ export default function JobsPage() {
       {/* Titlebar Banner */}
       <section className={styles.titlebar}>
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          <span className="accent-pill-label text-white-force">Careers</span>
-          <h1>Explore Job Opportunities</h1>
-          <div className={styles.breadcrumb}>
-            <Link href="/" style={{ color: "rgba(255,255,255,0.7)" }}>Home</Link>
-            <span style={{ color: "rgba(255,255,255,0.4)" }}>/</span>
-            <strong style={{ color: "#fff" }}>Jobs</strong>
-          </div>
+          <span className="accent-pill-label text-white-force" style={{ marginBottom: "16px", display: "inline-block" }}>Find Jobs</span>
+          <h1>Explore Job<br />Opportunities</h1>
         </div>
       </section>
 

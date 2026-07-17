@@ -56,13 +56,8 @@ export default function AboutPage() {
       {/* 1. Page Header */}
       <section className={styles.pageHeader}>
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          <span className="section-label" style={{ color: "rgba(255,255,255,0.7)" }}>About Us</span>
-          <h1>About Our Company</h1>
-          <div className={styles.breadcrumb}>
-            <Link href="/" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>Home</Link>
-            <span style={{ color: "rgba(255,255,255,0.4)" }}>/</span>
-            <strong style={{ color: "#fff" }}>About Us</strong>
-          </div>
+          <span className="accent-pill-label text-white-force" style={{ marginBottom: "16px", display: "inline-block" }}>About Us</span>
+          <h1>Our Story</h1>
         </div>
       </section>
 
