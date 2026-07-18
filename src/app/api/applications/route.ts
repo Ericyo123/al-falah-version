@@ -43,8 +43,6 @@ export async function POST(request: NextRequest) {
     const fullName = formData.get("fullName") as string;
     const email = formData.get("email") as string;
     const phone = formData.get("phone") as string;
-    const nationality = formData.get("nationality") as string || "";
-    const experience = formData.get("experience") as string || "";
     const message = formData.get("message") as string || "";
     
     const cvFile = formData.get("cvFile") as File | null;
@@ -102,14 +100,6 @@ export async function POST(request: NextRequest) {
               <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Phone Number:</strong></td>
               <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${phone}</td>
             </tr>
-            <tr>
-              <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Nationality:</strong></td>
-              <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${nationality || "Not provided"}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Experience:</strong></td>
-              <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${experience || "Not provided"}</td>
-            </tr>
           </table>
 
           ${message ? `
@@ -134,8 +124,6 @@ export async function POST(request: NextRequest) {
       fullName,
       email,
       phone,
-      nationality,
-      experience,
       message,
       cvName,
       cvUrl: "",

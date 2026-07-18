@@ -423,8 +423,6 @@ export default function AdminDashboard() {
                       <th>Email</th>
                       <th>Phone</th>
                       <th>Job Applied For</th>
-                      <th>Nationality</th>
-                      <th>Experience</th>
                       <th>CV</th>
                       <th>Status</th>
                       <th>Date</th>
@@ -443,8 +441,6 @@ export default function AdminDashboard() {
                         <td>
                           <span className={styles.categoryBadge}>{app.jobTitle}</span>
                         </td>
-                        <td>{app.nationality || "—"}</td>
-                        <td>{app.experience || "—"}</td>
                         <td>
                           {app.cvUrl ? (
                             <a

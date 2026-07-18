@@ -101,8 +101,6 @@ function JobsListContent() {
     fullName: "",
     email: "",
     phone: "",
-    nationality: "",
-    experience: "",
     message: "",
     cvBase64: "",
     cvName: "",
@@ -204,8 +202,6 @@ function JobsListContent() {
       fullName: "",
       email: "",
       phone: "",
-      nationality: "",
-      experience: "",
       message: "",
       cvBase64: "",
       cvName: "",
@@ -226,8 +222,6 @@ function JobsListContent() {
       formData.append("fullName", applyForm.fullName);
       formData.append("email", applyForm.email);
       formData.append("phone", applyForm.phone);
-      formData.append("nationality", applyForm.nationality);
-      formData.append("experience", applyForm.experience);
       formData.append("message", applyForm.message);
       if (cvFile) {
         formData.append("cvFile", cvFile);
