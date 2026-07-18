@@ -4,7 +4,6 @@ import React, { useState, useEffect, Suspense, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 import styles from "./jobs.module.css";
 import { storage } from "@/lib/firebase";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 // ── Types ──
 interface Job {
@@ -116,8 +115,8 @@ function JobsListContent() {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    if (file.size > 5 * 1024 * 1024) {
-      alert("CV file size must be less than 5MB.");
+    if (file.size > 3 * 1024 * 1024) {
+      alert("CV file size must be less than 3MB.");
       e.target.value = ""; // Reset
       setCvFile(null);
       setApplyForm((prev) => ({
@@ -221,22 +220,22 @@ function JobsListContent() {
     setApplySubmitting(true);
 
     try {
-      let cvUrl = "";
+      const formData = new FormData();
+      formData.append("jobId", applyingJob.id);
+      formData.append("jobTitle", applyingJob.title);
+      formData.append("fullName", applyForm.fullName);
+      formData.append("email", applyForm.email);
+      formData.append("phone", applyForm.phone);
+      formData.append("nationality", applyForm.nationality);
+      formData.append("experience", applyForm.experience);
+      formData.append("message", applyForm.message);
       if (cvFile) {
-        const storageRef = ref(storage, `cvs/${Date.now()}_${cvFile.name}`);
-        const uploadResult = await uploadBytes(storageRef, cvFile);
-        cvUrl = await getDownloadURL(uploadResult.ref);
+        formData.append("cvFile", cvFile);
       }
 
       const res = await fetch("/api/applications", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          jobId: applyingJob.id,
-          jobTitle: applyingJob.title,
-          ...applyForm,
-          cvUrl,
-        }),
+        body: formData,
       });
 
       if (res.ok) {
@@ -428,7 +427,7 @@ function JobsListContent() {
                     </div>
                   </div>
                   <div className={styles.applyFieldFull} style={{ marginBottom: '24px' }}>
-                    <label>Upload CV / Resume (PDF or Doc - Max 5MB) *</label>
+                    <label>Upload CV / Resume (PDF or Doc - Max 3MB) *</label>
                     <input
                       id="cv-upload"
                       type="file"

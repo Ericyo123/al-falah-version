@@ -496,6 +496,10 @@ export default function AdminDashboard() {
                             >
                               Download CV
                             </button>
+                          ) : app.cvName ? (
+                            <span style={{ color: "#059669", fontSize: "12px", fontWeight: "600", padding: "6px 10px", background: "rgba(16, 185, 129, 0.1)", borderRadius: "6px", display: "inline-block", textAlign: "center" }}>
+                              Sent via Email
+                            </span>
                           ) : (
                             <span style={{ color: "#9ca3af", fontSize: "13px" }}>No CV</span>
                           )}

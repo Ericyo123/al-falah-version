@@ -5,6 +5,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { getAdminDb } from "@/lib/firebase-admin";
 import { verifyAdmin } from "@/lib/auth";
 
+import nodemailer from "nodemailer";
+
 export async function GET(request: NextRequest) {
   try {
     const isAdmin = await verifyAdmin(request);
@@ -35,37 +37,95 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const {
-      jobId,
-      jobTitle,
-      fullName,
-      email,
-      phone,
-      nationality,
-      experience,
-      message,
-      cvBase64,
-      cvUrl,
-      cvName,
-    } = body;
+    const formData = await request.formData();
+    const jobId = formData.get("jobId") as string;
+    const jobTitle = formData.get("jobTitle") as string;
+    const fullName = formData.get("fullName") as string;
+    const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const nationality = formData.get("nationality") as string || "";
+    const experience = formData.get("experience") as string || "";
+    const message = formData.get("message") as string || "";
+    
+    const cvFile = formData.get("cvFile") as File | null;
 
-    // Validate required fields
     if (!jobId || !jobTitle || !fullName || !email || !phone) {
-      return NextResponse.json(
-        { error: "Required fields: jobId, jobTitle, fullName, email, phone" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Required fields missing" }, { status: 400 });
     }
 
-    // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: "Invalid email address" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
     }
+
+    let attachments = [];
+    let cvName = "";
+    if (cvFile) {
+      const arrayBuffer = await cvFile.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+      cvName = cvFile.name;
+      attachments.push({
+        filename: cvFile.name,
+        content: buffer,
+      });
+    }
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_APP_PASSWORD,
+      },
+    });
+
+    const mailOptions = {
+      from: `"${fullName}" <${process.env.EMAIL_USER}>`,
+      replyTo: email,
+      to: process.env.EMAIL_USER,
+      subject: `New Job Application: ${jobTitle}`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+          <h2 style="color: #0066cc;">New Job Application</h2>
+          <p>You have received a new application for the position of <strong>${jobTitle}</strong>.</p>
+          <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;" />
+          
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Applicant Name:</strong></td>
+              <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${fullName}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Email Address:</strong></td>
+              <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><a href="mailto:${email}">${email}</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Phone Number:</strong></td>
+              <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${phone}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Nationality:</strong></td>
+              <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${nationality || "Not provided"}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Experience:</strong></td>
+              <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${experience || "Not provided"}</td>
+            </tr>
+          </table>
+
+          ${message ? `
+          <h3 style="margin-top: 24px; color: #333;">Cover Letter / Message:</h3>
+          <div style="background: #f9f9f9; padding: 16px; border-left: 4px solid #0066cc; border-radius: 4px; white-space: pre-wrap; line-height: 1.5;">${message}</div>
+          ` : ''}
+
+          <p style="margin-top: 24px; color: #666; font-size: 14px;">
+            ${cvFile ? "The applicant's CV has been attached to this email." : "The applicant did not provide a CV."}
+          </p>
+        </div>
+      `,
+      attachments,
+    };
+
+    await transporter.sendMail(mailOptions);
 
     const db = getAdminDb();
     const applicationData = {
@@ -74,12 +134,12 @@ export async function POST(request: NextRequest) {
       fullName,
       email,
       phone,
-      nationality: nationality || "",
-      experience: experience || "",
-      message: message || "",
-      cvBase64: cvBase64 || "",
-      cvUrl: cvUrl || "",
-      cvName: cvName || "",
+      nationality,
+      experience,
+      message,
+      cvName,
+      cvUrl: "",
+      cvBase64: "",
       status: "new",
       submittedAt: new Date().toISOString(),
     };
@@ -87,10 +147,7 @@ export async function POST(request: NextRequest) {
     const docRef = await db.collection("applications").add(applicationData);
 
     return NextResponse.json(
-      {
-        id: docRef.id,
-        message: "Application submitted successfully",
-      },
+      { id: docRef.id, message: "Application submitted successfully" },
       { status: 201 }
     );
   } catch (error) {
