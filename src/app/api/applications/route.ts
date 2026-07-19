@@ -115,8 +115,6 @@ export async function POST(request: NextRequest) {
       attachments,
     };
 
-    await transporter.sendMail(mailOptions);
-
     const db = getAdminDb();
     const applicationData = {
       jobId,
@@ -132,7 +130,11 @@ export async function POST(request: NextRequest) {
       submittedAt: new Date().toISOString(),
     };
 
-    const docRef = await db.collection("applications").add(applicationData);
+    // Run both email sending and database insertion concurrently to reduce latency
+    const [, docRef] = await Promise.all([
+      transporter.sendMail(mailOptions),
+      db.collection("applications").add(applicationData)
+    ]);
 
     return NextResponse.json(
       { id: docRef.id, message: "Application submitted successfully" },
