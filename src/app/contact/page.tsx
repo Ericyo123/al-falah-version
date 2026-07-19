@@ -172,7 +172,7 @@ export default function ContactPage() {
                 </span>
                 <h3 style={{ fontSize: "26px", fontWeight: 800, marginBottom: "12px" }}>Message Sent!</h3>
                 <p style={{ marginTop: "8px", fontSize: "16px", lineHeight: "1.7" }}>
-                  Thank you, <strong>{formData.name}</strong>. A recruitment advisor will get in touch with you shortly.
+                  Thank you. A recruitment advisor will get in touch with you shortly.
                 </p>
                 <button onClick={() => setSubmitted(false)} className="btn-modern-outline" style={{ marginTop: "24px" }}>
                   Send Another Message

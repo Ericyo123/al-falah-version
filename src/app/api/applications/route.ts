@@ -115,6 +115,21 @@ export async function POST(request: NextRequest) {
       attachments,
     };
 
+    const userMailOptions = {
+      from: `"Al-Falah Travels & Tours" <${process.env.EMAIL_USER}>`,
+      to: email, // Applicant's email address
+      subject: `Application Received: ${jobTitle}`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+          <h2 style="color: #0066cc;">Thank you for your application!</h2>
+          <p>Dear ${fullName},</p>
+          <p>We have successfully received your application for the <strong>${jobTitle}</strong> position.</p>
+          <p>Our recruitment team will review your CV and get back to you if your qualifications match our current requirements.</p>
+          <p>Best regards,<br/><strong>Al-Falah Travels & Tours Team</strong></p>
+        </div>
+      `,
+    };
+
     const db = getAdminDb();
     const applicationData = {
       jobId,
@@ -131,8 +146,9 @@ export async function POST(request: NextRequest) {
     };
 
     // Run both email sending and database insertion concurrently to reduce latency
-    const [, docRef] = await Promise.all([
+    const [, , docRef] = await Promise.all([
       transporter.sendMail(mailOptions),
+      transporter.sendMail(userMailOptions), // Send to the applicant
       db.collection("applications").add(applicationData)
     ]);
 

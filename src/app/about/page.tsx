@@ -242,7 +242,7 @@ export default function AboutPage() {
           <div className={styles.sectionHeaderCentered} style={{ marginBottom: '60px' }}>
             <span className="accent-pill-label" style={{ marginBottom: '15px' }}>Why choose us</span>
             <h2 className={styles.titleAlt} style={{ fontSize: '42px', margin: '0', lineHeight: '1.2' }}>
-              Why Choose Al Falah Travels & Tours?
+              Why Choose Al Falah<br />Travels & Tours?
             </h2>
           </div>
 
@@ -322,7 +322,7 @@ export default function AboutPage() {
             <div>
               <span className="accent-pill-label" style={{ marginBottom: '15px' }}>Feedback</span>
               <h2 className={`${styles.titleAlt} ${styles.feedbackTitle}`}>
-                What Our Happy <span className={styles.textBlueAlt}>Client</span> Say<br/> About Us
+                What Our Happy <span className={styles.textBlueAlt}>Client</span> Say About Us
               </h2>
             </div>
           </div>
@@ -334,6 +334,8 @@ export default function AboutPage() {
           ref={scrollRef}
           onMouseEnter={() => (isHovered.current = true)}
           onMouseLeave={() => (isHovered.current = false)}
+          onTouchStart={() => (isHovered.current = true)}
+          onTouchEnd={() => (isHovered.current = false)}
         >
           <div className={styles.testimonialMarqueeTrack}>
             
