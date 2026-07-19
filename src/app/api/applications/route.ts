@@ -80,10 +80,10 @@ export async function POST(request: NextRequest) {
       from: `"${fullName}" <${process.env.EMAIL_USER}>`,
       replyTo: email,
       to: process.env.EMAIL_USER,
-      subject: `New Job Application: ${jobTitle}`,
+      subject: `New Application: ${jobTitle}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
-          <h2 style="color: #0066cc;">New Job Application</h2>
+          <h2 style="color: #0066cc;">${jobTitle}</h2>
           <p>You have received a new application for the position of <strong>${jobTitle}</strong>.</p>
           <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;" />
           
@@ -126,6 +126,14 @@ export async function POST(request: NextRequest) {
           <p>We have successfully received your application for the <strong>${jobTitle}</strong> position.</p>
           <p>Our recruitment team will review your CV and get back to you if your qualifications match our current requirements.</p>
           <p>Best regards,<br/><strong>Al-Falah Travels & Tours Team</strong></p>
+          
+          <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
+          <div style="text-align: center; margin-top: 20px;">
+            <img src="https://raw.githubusercontent.com/Ericyo123/al-falah-version/main/public/assets/images/logo.png" alt="Al-Falah Travels & Tours" style="height: 50px; width: auto; margin-bottom: 12px;" />
+            <p style="color: #555; font-size: 14px; margin: 4px 0;"><strong>Al-Falah Travels & Tours</strong></p>
+            <p style="color: #777; font-size: 12px; margin: 4px 0;">Connecting global talent with industry-leading companies in the GCC.</p>
+            <p style="color: #999; font-size: 11px; margin: 8px 0 0 0;">This is an automated message, please do not reply directly to this email.</p>
+          </div>
         </div>
       `,
     };
