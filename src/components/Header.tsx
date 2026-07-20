@@ -109,7 +109,7 @@ export default function Header() {
                         {item.label}
                       </Link>
                       {index < navItems.length - 1 && (
-                        <span style={{ color: "rgba(0,0,0,0.15)", fontSize: "12px", pointerEvents: "none" }}>•</span>
+                        <span style={{ color: "#000000", fontSize: "12px", pointerEvents: "none" }}>•</span>
                       )}
                     </React.Fragment>
                   );
