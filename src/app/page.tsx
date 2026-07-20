@@ -30,61 +30,6 @@ export default function Home() {
     { name: "MOHAIN COMPANY", industry: "Corporate" }
   ];
 
-  const renderIndustryIcon = (industry: string) => {
-    const main = "var(--primary-color)";
-    const sec = "rgba(0, 102, 204, 0.15)";
-    switch (industry) {
-      case "Hospitality":
-        return (
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 2v7c0 2.21 1.79 4 4 4h0c2.21 0 4-1.79 4-4V2" stroke={main} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M7 2v20" stroke={main} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M21 15V2v13z" fill={sec}/>
-            <path d="M21 15c0-4.42-3.58-8-8-8v15h8v-7z" stroke={main} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        );
-      case "Industrial":
-        return (
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 20h20" stroke={main} strokeWidth="2" strokeLinecap="round"/>
-            <path d="M4 20V8l7-3v15" fill={sec} stroke={main} strokeWidth="2" strokeLinejoin="round"/>
-            <path d="M11 20V5l5 4v11" fill={sec} stroke={main} strokeWidth="2" strokeLinejoin="round"/>
-            <path d="M16 20v-8l4 3v5" fill={sec} stroke={main} strokeWidth="2" strokeLinejoin="round"/>
-          </svg>
-        );
-      case "Transport":
-        return (
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="5" width="14" height="12" rx="1" fill={sec} stroke={main} strokeWidth="2"/>
-            <path d="M16 9h3.8a2 2 0 0 1 1.79 1.1l1.2 2.4a2 2 0 0 1 .21.9V17h-7V9z" fill={sec} stroke={main} strokeWidth="2"/>
-            <circle cx="6" cy="17" r="2" stroke={main} strokeWidth="2"/>
-            <circle cx="18" cy="17" r="2" stroke={main} strokeWidth="2"/>
-          </svg>
-        );
-      case "Healthcare":
-        return (
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" fill={sec} stroke={main} strokeWidth="2"/>
-            <path d="M12 8v8M8 12h8" stroke={main} strokeWidth="2" strokeLinecap="round"/>
-          </svg>
-        );
-      case "Construction":
-        return (
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 22h20M12 2v20M4 12h8M4 17h8M12 10h8M12 15h8M12 5h8" stroke={main} strokeWidth="2" strokeLinecap="round"/>
-            <rect x="4" y="2" width="8" height="20" fill={sec}/>
-          </svg>
-        );
-      default: // Corporate
-        return (
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="4" y="4" width="16" height="16" rx="2" fill={sec} stroke={main} strokeWidth="2"/>
-            <path d="M12 4v16M4 12h16" stroke={main} strokeWidth="2"/>
-          </svg>
-        );
-    }
-  };
-
   return (
     <>
       {/* ===== HERO SLIDER (EXECORA CARD STYLE) ===== */}
@@ -575,9 +520,6 @@ export default function Home() {
           <div className="marquee-content">
             {companies.slice(0, Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={idx} className="client-card-modern">
-                <div className="client-logo-placeholder">
-                  {renderIndustryIcon(company.industry)}
-                </div>
                 <div className="client-info-modern">
                   <h4 className="client-name-modern">{company.name}</h4>
                   <div className="client-category-modern">{company.industry}</div>
@@ -589,9 +531,6 @@ export default function Home() {
           <div className="marquee-content" aria-hidden="true">
             {companies.slice(0, Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={`dup-${idx}`} className="client-card-modern">
-                <div className="client-logo-placeholder">
-                  {renderIndustryIcon(company.industry)}
-                </div>
                 <div className="client-info-modern">
                   <h4 className="client-name-modern">{company.name}</h4>
                   <div className="client-category-modern">{company.industry}</div>
@@ -606,9 +545,6 @@ export default function Home() {
           <div className="marquee-content" style={{ animationDirection: "reverse", animationDuration: "45s" }}>
             {companies.slice(Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={idx} className="client-card-modern">
-                <div className="client-logo-placeholder">
-                  {renderIndustryIcon(company.industry)}
-                </div>
                 <div className="client-info-modern">
                   <h4 className="client-name-modern">{company.name}</h4>
                   <div className="client-category-modern">{company.industry}</div>
@@ -620,9 +556,6 @@ export default function Home() {
           <div className="marquee-content" aria-hidden="true" style={{ animationDirection: "reverse", animationDuration: "45s" }}>
             {companies.slice(Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={`dup2-${idx}`} className="client-card-modern">
-                <div className="client-logo-placeholder">
-                  {renderIndustryIcon(company.industry)}
-                </div>
                 <div className="client-info-modern">
                   <h4 className="client-name-modern">{company.name}</h4>
                   <div className="client-category-modern">{company.industry}</div>

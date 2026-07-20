@@ -1754,14 +1754,17 @@ input[type="submit"] {
 .client-card-modern {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding: 14px 20px;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+  padding: 16px 20px;
   background: #ffffff;
   border: 1px solid rgba(0, 102, 204, 0.06);
   border-radius: 14px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  min-width: 240px;
+  min-width: 200px;
   cursor: default;
 }
 
