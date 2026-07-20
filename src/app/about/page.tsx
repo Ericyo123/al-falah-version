@@ -79,7 +79,7 @@ export default function AboutPage() {
     <div className={styles.pageWrapper}>
       {/* 1. Page Header */}
       <section className={styles.pageHeader}>
-        <div className="container" style={{ position: "relative", zIndex: 2 }}>
+        <div className="container gsap-reveal-up" style={{ position: "relative", zIndex: 2 }}>
           <span className="accent-pill-label text-white-force" style={{ marginBottom: "16px", display: "inline-block" }}>About Us</span>
           <h1>Our Story</h1>
         </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
           <div className="row align-items-center g-5">
             
             {/* LEFT SIDE: Image Grid */}
-            <div className="col-lg-6">
+            <div className="col-lg-6 gsap-reveal-in">
                <div className={styles.imageGridMasonry}>
                  <div className={styles.gridColLeft}>
                    <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/about02-img-01.jpg" alt="Team Discussion" className={styles.gridImgTall} />
@@ -111,7 +111,7 @@ export default function AboutPage() {
             </div>
 
             {/* RIGHT SIDE: Content */}
-            <div className="col-lg-6">
+            <div className="col-lg-6 gsap-reveal-up">
               <div className={styles.sectionHeaderAlt}>
                 <span className="accent-pill-label" style={{ marginBottom: '15px' }}>Who we are</span>
                 <h2 className={styles.titleAlt}>

@@ -223,7 +223,7 @@ export default function Home() {
         <div className="widescreen-container">
           <div className="row align-items-center">
             {/* Left Column: Corporate Content */}
-            <div className="col-lg-6 mb-5 mb-lg-0 px-4 pe-lg-5 ps-lg-0">
+            <div className="col-lg-6 mb-5 mb-lg-0 px-4 pe-lg-5 ps-lg-0 gsap-reveal-up">
               <span className="accent-pill-label" style={{ marginBottom: "16px", display: "inline-flex" }}>Who we are</span>
               <h2 style={{ fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "var(--text-primary)", letterSpacing: "-1px", lineHeight: "1.2", margin: "12px 0 24px" }}>
                 Sri Lanka's Premier <br />Overseas Recruitment Partner
@@ -242,7 +242,7 @@ export default function Home() {
             </div>
             
             {/* Right Column: Office/Corporate Image */}
-            <div className="col-lg-6 px-4 px-lg-0 mt-5 mt-lg-0">
+            <div className="col-lg-6 px-4 px-lg-0 mt-5 mt-lg-0 gsap-reveal-in">
               <div style={{
                 position: "relative",
                 borderRadius: "24px",
@@ -266,32 +266,32 @@ export default function Home() {
       <section className={styles.whyChooseUsCenter} style={{ padding: "60px 0 120px" }}>
         <div className="container">
           
-          <div className={styles.sectionHeaderCentered} style={{ marginBottom: '60px' }}>
+          <div className={`${styles.sectionHeaderCentered} gsap-reveal-up`} style={{ marginBottom: '60px' }}>
             <span className="accent-pill-label">Why choose us</span>
             <h2 className={styles.titleAlt} style={{ fontSize: '42px', margin: '0', lineHeight: '1.2' }}>
               Why Choose Al Falah<br />Travels & Tours?
             </h2>
           </div>
 
-          <div className="row align-items-center">
+          <div className="row align-items-center gsap-stagger-container">
             
             {/* Left Features */}
             <div className="col-lg-4 px-4 px-lg-0">
-              <div className={styles.featureItemLeft}>
+              <div className={`${styles.featureItemLeft} gsap-stagger-item`}>
                 <div className={styles.featTextBox}>
                   <h4 className={styles.featTitleBox}>Government-approved</h4>
                   <p className={styles.featDescBox}>We are a fully licensed and Government-Approved Recruitment Agency.</p>
                 </div>
                 <div className={styles.featIconBox}><i className="fas fa-file-contract"></i></div>
               </div>
-              <div className={styles.featureItemLeft}>
+              <div className={`${styles.featureItemLeft} gsap-stagger-item`}>
                 <div className={styles.featTextBox}>
                   <h4 className={styles.featTitleBox}>Fast & Transparent</h4>
                   <p className={styles.featDescBox}>Experience a fast, transparent, and hassle-free hiring process.</p>
                 </div>
                 <div className={styles.featIconBox}><i className="fas fa-bolt"></i></div>
               </div>
-              <div className={styles.featureItemLeft}>
+              <div className={`${styles.featureItemLeft} gsap-stagger-item`}>
                 <div className={styles.featTextBox}>
                   <h4 className={styles.featTitleBox}>Skilled Candidates</h4>
                   <p className={styles.featDescBox}>We source highly skilled and thoroughly verified candidates for your roles.</p>
@@ -301,7 +301,7 @@ export default function Home() {
             </div>
 
             {/* Center Image */}
-            <div className="col-lg-4 px-4 px-lg-0 mt-5 mt-lg-0 mb-5 mb-lg-0">
+            <div className="col-lg-4 px-4 px-lg-0 mt-5 mt-lg-0 mb-5 mb-lg-0 gsap-stagger-item">
               <div className={styles.centerImageWrapper}>
                 <img src="/assets/images/why_choose_us.png" alt="Center Human Resources" className={styles.centerImg} style={{ transform: 'none' }} />
               </div>
@@ -309,21 +309,21 @@ export default function Home() {
 
             {/* Right Features */}
             <div className="col-lg-4 px-4 px-lg-0">
-              <div className={styles.featureItemRight}>
+              <div className={`${styles.featureItemRight} gsap-stagger-item`}>
                 <div className={styles.featIconBox}><i className="fas fa-hand-holding-usd"></i></div>
                 <div className={styles.featTextBox}>
                   <h4 className={styles.featTitleBox}>Cost-Effective</h4>
                   <p className={styles.featDescBox}>We offer highly competitive and cost-effective recruitment packages.</p>
                 </div>
               </div>
-              <div className={styles.featureItemRight}>
+              <div className={`${styles.featureItemRight} gsap-stagger-item`}>
                 <div className={styles.featIconBox}><i className="fas fa-globe-asia"></i></div>
                 <div className={styles.featTextBox}>
                   <h4 className={styles.featTitleBox}>Strong Network</h4>
                   <p className={styles.featDescBox}>Benefit from our massive and strong network across the Middle East.</p>
                 </div>
               </div>
-              <div className={styles.featureItemRight}>
+              <div className={`${styles.featureItemRight} gsap-stagger-item`}>
                 <div className={styles.featIconBox}><i className="fas fa-history"></i></div>
                 <div className={styles.featTextBox}>
                   <h4 className={styles.featTitleBox}>Decades of Experience</h4>
@@ -372,7 +372,7 @@ export default function Home() {
           <div className="row align-items-center">
             
             {/* Left Column: Massive Typography List */}
-            <div className="col-lg-7 px-4 px-lg-0">
+            <div className="col-lg-7 px-4 px-lg-0 gsap-reveal-up">
               <span className="accent-pill-label text-white-force" style={{ marginBottom: "20px" }}>
                 Sectors we serve
               </span>
@@ -618,7 +618,7 @@ export default function Home() {
           <div className="row align-items-center justify-content-between g-5">
             
             {/* Left Side: Chairman Receiving Award */}
-            <div className="col-lg-5 mb-4 mb-lg-0 px-4 px-lg-0 text-center" style={{ position: "relative" }}>
+            <div className="col-lg-5 mb-4 mb-lg-0 px-4 px-lg-0 text-center gsap-reveal-in" style={{ position: "relative" }}>
               {/* Golden Ambient Glow behind the photo */}
               <div style={{
                 position: "absolute",
@@ -648,7 +648,7 @@ export default function Home() {
             </div>
 
             {/* Right Side: Rating & Award details */}
-            <div className="col-lg-6 px-4 px-lg-0 text-center text-lg-start">
+            <div className="col-lg-6 px-4 px-lg-0 text-center text-lg-start gsap-reveal-up">
               <span className="accent-pill-label text-white-force" style={{ display: "inline-block", marginBottom: "20px" }}>Accreditation</span>
               <h2 className="text-white-force" style={{ fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, margin: "0 0 20px", letterSpacing: "-1px" }}>SLBFE 3-Star Golden Award</h2>
               <p className="text-white-force-85" style={{ fontSize: "clamp(15px, 4vw, 16px)", marginBottom: "30px", lineHeight: "1.8" }}>
@@ -709,7 +709,7 @@ export default function Home() {
 
       {/* ===== SECTION 9: CLIENT NETWORK & MARQUEE ===== */}
       <section style={{ padding: "clamp(60px, 8vw, 120px) 0 clamp(140px, 12vw, 220px)", backgroundColor: "var(--bg-color-secondary)", overflow: "hidden" }}>
-        <div className="widescreen-container" style={{ textAlign: "center", marginBottom: "60px" }}>
+        <div className="widescreen-container gsap-reveal-up" style={{ textAlign: "center", marginBottom: "60px" }}>
           <span className="accent-pill-label">Our client network</span>
           <h2 style={{ fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, marginBottom: "20px", lineHeight: "1.2", letterSpacing: "-1px" }}>
             Connecting across <span className="demo3-highlight">Middle East</span> & Beyond

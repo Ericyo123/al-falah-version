@@ -62,7 +62,7 @@ export default function ContactPage() {
     <>
       {/* Titlebar Banner */}
       <section className={styles.titlebar}>
-        <div className="container" style={{ position: "relative", zIndex: 2 }}>
+        <div className="container gsap-reveal-up" style={{ position: "relative", zIndex: 2 }}>
           <span className="accent-pill-label text-white-force" style={{ marginBottom: "16px", display: "inline-block" }}>Get In Touch</span>
           <h1>Contact Us</h1>
         </div>
@@ -72,7 +72,7 @@ export default function ContactPage() {
       <section className={styles.section}>
         <div className={`container ${styles.layout}`}>
           {/* Info Column */}
-          <div className={styles.infoColumn}>
+          <div className={`${styles.infoColumn} gsap-reveal-in`}>
             <div>
               <h2>Let&apos;s Start a Conversation</h2>
               <p>Have a question about job positions or need recruitment solutions for your enterprise? Our team is ready to help.</p>
@@ -119,7 +119,7 @@ export default function ContactPage() {
           </div>
 
           {/* Form Column */}
-          <div className={styles.formColumn}>
+          <div className={`${styles.formColumn} gsap-reveal-up`}>
             {!submitted ? (
               <>
                 <h3>Send Us a Message</h3>
