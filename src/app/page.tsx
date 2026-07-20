@@ -10,13 +10,208 @@ export default function Home() {
   const [activeIndustry, setActiveIndustry] = React.useState(0);
 
   const companies = [
+    { name: "AL NOOSY", industry: "Corporate", logo: "" },
+    { name: "SHULALAIL HOTEL", industry: "Hospitality", logo: "" },
+    { name: "AFIFI WOOD", industry: "Industrial", logo: "" },
+    { name: "SCMC", industry: "Healthcare", logo: "" },
+    { name: "AL HIJAZI RESTAURANT", industry: "Hospitality", logo: "" },
+    { name: "AL HOOR MARBLE FACTORY", industry: "Industrial", logo: "" },
+    { name: "JAWADHA", industry: "Corporate", logo: "/assets/images/logo_jawadha.png" },
+    { name: "JALAL OTHAIBI", industry: "Corporate", logo: "" },
+    { name: "NIJUMI TRANSPORT", industry: "Transport", logo: "" },
+    { name: "HAFCOGLABCO", industry: "Industrial", logo: "" },
+    { name: "HASSAN SHAKTHI", industry: "Construction", logo: "" },
+    { name: "QANNAS", industry: "Corporate", logo: "" },
+    { name: "AJWA AHERA", industry: "Corporate", logo: "" },
+    { name: "KHAFJI", industry: "Industrial", logo: "" },
+    { name: "YANBOO", industry: "Industrial", logo: "" },
+    { name: "WHITE CLOUD ABU THURKI", industry: "Corporate", logo: "" },
+    { name: "AMT", industry: "Corporate", logo: "" },
+    { name: "MOHAIN COMPANY", industry: "Corporate", logo: "" },
     { name: "AL AMRY GROUP", industry: "Corporate", logo: "/assets/images/logo_al_amry.png" },
     { name: "AL DOSSARY", industry: "Industrial", logo: "/assets/images/logo_al_dossary.png" },
     { name: "AL SHEYAL", industry: "Corporate", logo: "/assets/images/logo_al_sheyal.png" },
-    { name: "JAWADHA", industry: "Corporate", logo: "/assets/images/logo_jawadha.png" },
     { name: "KH LOGISTIC", industry: "Transport", logo: "/assets/images/logo_kh.png" },
     { name: "PTL GROUP", industry: "Industrial", logo: "/assets/images/logo_ptl.png" }
   ];
+
+  const renderCompanyLogo = (company: { name: string; industry: string; logo: string }) => {
+    if (company.logo) {
+      return (
+        <div className="client-logo-wrapper">
+          <img src={company.logo} alt={company.name} className="client-logo-img" />
+        </div>
+      );
+    }
+
+    switch (company.name) {
+      case "SHULALAIL HOTEL":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#fdfaf3", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 28L15 16L22 22L29 16L32 28H12Z" fill="#d4af37" />
+              <circle cx="22" cy="13" r="2" fill="#d4af37" />
+              <circle cx="15" cy="14" r="1.5" fill="#d4af37" />
+              <circle cx="29" cy="14" r="1.5" fill="#d4af37" />
+            </svg>
+          </div>
+        );
+      case "AL HIJAZI RESTAURANT":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#faf2f2", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 28H32V26C32 20 28 16 22 16C16 16 12 20 12 26V28Z" fill="#800020" />
+              <circle cx="22" cy="13" r="2.5" fill="#800020" />
+              <rect x="10" y="30" width="24" height="2" rx="1" fill="#800020" />
+            </svg>
+          </div>
+        );
+      case "SCMC":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#f5fafd", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 12H26V18H32V26H26V32H18V26H12V18H18V12Z" fill="#00a896" />
+              <circle cx="22" cy="22" r="14" stroke="#028090" strokeWidth="1.5" />
+            </svg>
+          </div>
+        );
+      case "AFIFI WOOD":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#f3faf6", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="22" r="12" fill="#2d6a4f" />
+              <path d="M22 14C22 14 16 20 16 24C16 27.3137 18.6863 30 22 30C25.3137 30 28 27.3137 28 24C28 20 22 14 22 14Z" fill="#52b788" />
+            </svg>
+          </div>
+        );
+      case "AL HOOR MARBLE FACTORY":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#f0faf7", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 10L34 22L22 34L10 22L22 10Z" fill="#1b4332" />
+              <path d="M22 10V34" stroke="#52b788" strokeWidth="1.5" />
+              <path d="M10 22H34" stroke="#52b788" strokeWidth="1.5" />
+            </svg>
+          </div>
+        );
+      case "NIJUMI TRANSPORT":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#f0f4fa", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 16H24L20 22H32L18 32L21 24H10L12 16Z" fill="#0056b3" />
+            </svg>
+          </div>
+        );
+      case "HASSAN SHAKTHI":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#fffaf0", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 14H32V18L24 22L32 26V30H12V26L20 22L12 18V14Z" fill="#d97706" />
+              <line x1="20" y1="14" x2="20" y2="30" stroke="#f59e0b" strokeWidth="2" />
+            </svg>
+          </div>
+        );
+      case "QANNAS":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#faf6f0", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 16C18 16 22 19 25 22C28 20 32 18 34 18C32 22 28 26 24 28C20 29 16 26 14 24C12 22 12 18 14 16Z" fill="#b45309" />
+              <circle cx="18" cy="20" r="2" fill="#fff" />
+            </svg>
+          </div>
+        );
+      case "KHAFJI":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#f0fafc", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 12C22 12 14 19.5 14 25.5C14 29.6421 17.5817 33 22 33C26.4183 33 30 29.6421 30 25.5C30 19.5 22 12 22 12Z" fill="#028090" />
+              <path d="M17 28C19 30 22 31 25 29" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </div>
+        );
+      case "YANBOO":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#f0faf5", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="22" r="12" stroke="#2a9d8f" strokeWidth="2" />
+              <path d="M14 24C17 21 21 21 24 24C27 27 30 23 30 23" stroke="#264653" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </div>
+        );
+      case "AJWA AHERA":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#faf5f0", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 32V20M22 20C18 16 14 18 14 18M22 20C26 16 30 18 30 18M22 20C22 14 20 12 20 12M22 20C22 14 24 12 24 12" stroke="#4f772d" strokeWidth="2.5" strokeLinecap="round" />
+            </svg>
+          </div>
+        );
+      case "AL NOOSY":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#f5f7fa", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 14V22C12 27.5 16.5 32 22 32C27.5 32 32 27.5 32 22V14H12Z" fill="#1e3a8a" />
+              <path d="M18 18H26V28" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+        );
+      case "JALAL OTHAIBI":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#faf7f2", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="14" y="14" width="16" height="16" rx="2" stroke="#b45309" strokeWidth="2" transform="rotate(45 22 22)" />
+              <circle cx="22" cy="22" r="4" fill="#b45309" />
+            </svg>
+          </div>
+        );
+      case "WHITE CLOUD ABU THURKI":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#f0fafc", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 26C12.8954 26 12 25.1046 12 24C12 21.5 14 20 17 20C17.5 17.5 20 15 23 15C26.5 15 29 17.5 29 21C31 21 32 22 32 23.5C32 25 30.5 26 29 26H14Z" fill="#028090" />
+            </svg>
+          </div>
+        );
+      case "HAFCOGLABCO":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#f5f7fa", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="22" r="10" stroke="#3b82f6" strokeWidth="3" />
+              <path d="M22 8V12M22 32V36M8 22H12M32 22H36" stroke="#3b82f6" strokeWidth="3" strokeLinecap="round" />
+            </svg>
+          </div>
+        );
+      case "AMT":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#f0fdf4", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 28L22 14L30 28" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M18 24H26" stroke="#10b981" strokeWidth="3" strokeLinecap="round" />
+            </svg>
+          </div>
+        );
+      case "MOHAIN COMPANY":
+        return (
+          <div className="client-logo-wrapper" style={{ background: "#faf5ff", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="22" r="10" stroke="#8b5cf6" strokeWidth="2" />
+              <circle cx="16" cy="16" r="3" fill="#8b5cf6" />
+              <circle cx="28" cy="28" r="3" fill="#8b5cf6" />
+            </svg>
+          </div>
+        );
+      default:
+        const initials = company.name.split(" ").map((n: string) => n[0]).join("").slice(0, 2);
+        return (
+          <div className="client-logo-wrapper" style={{ background: "rgba(0, 102, 204, 0.08)", padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="22" r="16" stroke="var(--primary-color)" strokeWidth="1.5" strokeDasharray="3 3" />
+              <text x="22" y="27" fill="var(--primary-color)" fontSize="14" fontWeight="bold" textAnchor="middle" style={{ fontFamily: "Inter, sans-serif" }}>{initials}</text>
+            </svg>
+          </div>
+        );
+    }
+  };
 
   return (
     <>
@@ -508,9 +703,7 @@ export default function Home() {
           <div className="marquee-content">
             {companies.slice(0, Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={idx} className="client-card-modern">
-                <div className="client-logo-wrapper">
-                  <img src={company.logo} alt={company.name} className="client-logo-img" />
-                </div>
+                {renderCompanyLogo(company)}
                 <div className="client-info-modern">
                   <h4 className="client-name-modern">{company.name}</h4>
                   <div className="client-category-modern">{company.industry}</div>
@@ -522,9 +715,7 @@ export default function Home() {
           <div className="marquee-content" aria-hidden="true">
             {companies.slice(0, Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={`dup-${idx}`} className="client-card-modern">
-                <div className="client-logo-wrapper">
-                  <img src={company.logo} alt={company.name} className="client-logo-img" />
-                </div>
+                {renderCompanyLogo(company)}
                 <div className="client-info-modern">
                   <h4 className="client-name-modern">{company.name}</h4>
                   <div className="client-category-modern">{company.industry}</div>
@@ -539,9 +730,7 @@ export default function Home() {
           <div className="marquee-content" style={{ animationDirection: "reverse", animationDuration: "45s" }}>
             {companies.slice(Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={idx} className="client-card-modern">
-                <div className="client-logo-wrapper">
-                  <img src={company.logo} alt={company.name} className="client-logo-img" />
-                </div>
+                {renderCompanyLogo(company)}
                 <div className="client-info-modern">
                   <h4 className="client-name-modern">{company.name}</h4>
                   <div className="client-category-modern">{company.industry}</div>
@@ -553,9 +742,7 @@ export default function Home() {
           <div className="marquee-content" aria-hidden="true" style={{ animationDirection: "reverse", animationDuration: "45s" }}>
             {companies.slice(Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={`dup2-${idx}`} className="client-card-modern">
-                <div className="client-logo-wrapper">
-                  <img src={company.logo} alt={company.name} className="client-logo-img" />
-                </div>
+                {renderCompanyLogo(company)}
                 <div className="client-info-modern">
                   <h4 className="client-name-modern">{company.name}</h4>
                   <div className="client-category-modern">{company.industry}</div>
