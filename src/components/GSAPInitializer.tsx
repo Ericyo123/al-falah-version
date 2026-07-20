@@ -11,8 +11,17 @@ export default function GSAPInitializer() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // Force scroll to top on every route change (prevents sticky scroll positions)
+    // Reset scroll positions immediately across all document containers (fail-safe reset)
     window.scrollTo(0, 0);
+    if (document.documentElement) document.documentElement.scrollTop = 0;
+    if (document.body) document.body.scrollTop = 0;
+
+    // Delayed reset for React mount / Next.js layout transitions
+    const scrollTimer = setTimeout(() => {
+      window.scrollTo(0, 0);
+      if (document.documentElement) document.documentElement.scrollTop = 0;
+      if (document.body) document.body.scrollTop = 0;
+    }, 100);
 
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
@@ -130,7 +139,10 @@ export default function GSAPInitializer() {
       ScrollTrigger.refresh();
     }, 150);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(scrollTimer);
+      clearTimeout(timer);
+    };
   }, [pathname]);
 
   return null;

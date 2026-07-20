@@ -199,9 +199,9 @@
 }
 
 .jobCard button {
-  flex-shrink: 0;
-  white-space: nowrap;
-  margin-left: 24px;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+  margin-left: 48px;
 }
 
 .jobDetails {
