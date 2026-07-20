@@ -4,6 +4,7 @@ import React, { useState, useEffect, Suspense, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 import styles from "./jobs.module.css";
 import { storage } from "@/lib/firebase";
+import gsap from "gsap";
 
 // ── Types ──
 interface Job {
@@ -223,6 +224,27 @@ function JobsListContent() {
   useEffect(() => {
     filterJobs();
   }, [filterJobs]);
+
+  useEffect(() => {
+    if (!loading && filteredJobs.length > 0) {
+      const timer = setTimeout(() => {
+        const selector = `.${styles.jobCard}`;
+        
+        gsap.set(selector, { opacity: 0, y: 15 });
+        
+        gsap.to(selector, {
+          opacity: 1,
+          y: 0,
+          duration: 0.45,
+          stagger: 0.08,
+          ease: "power2.out",
+          overwrite: "auto"
+        });
+      }, 30);
+
+      return () => clearTimeout(timer);
+    }
+  }, [filteredJobs, loading]);
 
   // ── Apply Handlers ──
   const openApplyModal = (job: Job) => {
