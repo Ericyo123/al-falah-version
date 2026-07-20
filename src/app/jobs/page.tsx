@@ -393,7 +393,7 @@ function JobsListContent() {
                       <label>Full Name *</label>
                       <input
                         type="text"
-                        placeholder="John Doe"
+                        placeholder="Kasun Perera"
                         value={applyForm.fullName}
                         onChange={(e) => setApplyForm({ ...applyForm, fullName: e.target.value })}
                         required
@@ -403,7 +403,7 @@ function JobsListContent() {
                       <label>Email Address *</label>
                       <input
                         type="email"
-                        placeholder="john@example.com"
+                        placeholder="kasun@example.com"
                         value={applyForm.email}
                         onChange={(e) => setApplyForm({ ...applyForm, email: e.target.value })}
                         required

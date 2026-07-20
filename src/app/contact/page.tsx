@@ -127,11 +127,11 @@ export default function ContactPage() {
                   <div className={styles.formGrid}>
                     <div className={styles.inputGroup}>
                       <label htmlFor="name" className={styles.label}>Full Name</label>
-                      <input type="text" id="name" name="name" required placeholder="John Doe" value={formData.name} onChange={handleChange} className={styles.input} />
+                      <input type="text" id="name" name="name" required placeholder="Kasun Perera" value={formData.name} onChange={handleChange} className={styles.input} />
                     </div>
                     <div className={styles.inputGroup}>
                       <label htmlFor="email" className={styles.label}>Email Address</label>
-                      <input type="email" id="email" name="email" required placeholder="john@example.com" value={formData.email} onChange={handleChange} className={styles.input} />
+                      <input type="email" id="email" name="email" required placeholder="kasun@example.com" value={formData.email} onChange={handleChange} className={styles.input} />
                     </div>
                     <div className={styles.inputGroup}>
                       <label htmlFor="phone" className={styles.label}>Phone Number</label>

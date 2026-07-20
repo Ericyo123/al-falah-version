@@ -4,6 +4,30 @@ import Link from "next/link";
 import RecruitmentProcess from "@/components/RecruitmentProcess";
 import styles from "./about.module.css";
 
+const testimonialsData = [
+  {
+    id: 1,
+    name: "Rohan Fernando",
+    role: "Quantity Surveyor (Placed in Doha, Qatar)",
+    text: "I am extremely grateful to Al-Falah for helping me secure a Quantity Surveyor position in Doha. Their guidance throughout the visa processing and interview stage was highly professional. They made the entire transition smooth and hassle-free.",
+    image: "/assets/images/avatar1.png"
+  },
+  {
+    id: 2,
+    name: "Dilrukshi Wijesinghe",
+    role: "Staff Nurse (Placed in Kuwait City)",
+    text: "The support I received from the Al-Falah team was outstanding. As a female candidate traveling abroad for the first time, I had many concerns, but they answered all my questions patiently and checked on me even after my arrival. Highly recommended!",
+    image: "/assets/images/avatar2.png"
+  },
+  {
+    id: 3,
+    name: "Mohamed Rizwan",
+    role: "Senior Technician (Placed in Riyadh, KSA)",
+    text: "Al-Falah is a very reliable agency. They provided clear information about the contract and job role, and there were no hidden charges. I have been working in Riyadh for 3 years now, and I always recommend Al-Falah to my friends in Sri Lanka.",
+    image: "/assets/images/avatar3.png"
+  }
+];
+
 export default function AboutPage() {
   const [experience, setExperience] = useState(0);
   const [activeTab, setActiveTab] = useState(1);
@@ -341,176 +365,78 @@ export default function AboutPage() {
             
             {/* Set 1 (Tracked for exact width) */}
             <div className={styles.marqueeSet} ref={setRef}>
-              <div className={styles.tCardFlow}>
-                <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
-                <p className={styles.tTextFlow}>
-                  "The recruitment process was seamless. They understood our requirements perfectly and found the right match. We are extremely pleased with the outcome and the quality of hires."
-                </p>
-                <div className={styles.tClientFlex}>
-                  <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/testimonial-img-01.jpg" alt="Client 1" className={styles.tClientAvatar} />
-                  <div className={styles.tClientMetaFlex}>
-                    <h5 className={styles.tName}>Evangeline Lee</h5>
-                    <span className={styles.tRole}>HR Manager</span>
+              {testimonialsData.map((item) => (
+                <div className={styles.tCardFlow} key={`set1-${item.id}`}>
+                  <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
+                  <p className={styles.tTextFlow}>
+                    "{item.text}"
+                  </p>
+                  <div className={styles.tClientFlex}>
+                    <img src={item.image} alt={item.name} className={styles.tClientAvatar} />
+                    <div className={styles.tClientMetaFlex}>
+                      <h5 className={styles.tName}>{item.name}</h5>
+                      <span className={styles.tRole}>{item.role}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              
-              <div className={styles.tCardFlow}>
-                <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
-                <p className={styles.tTextFlow}>
-                  "Highly professional team. They provided us with top-tier candidates and exceptional consultation services. They took the time to understand our culture and business needs."
-                </p>
-                <div className={styles.tClientFlex}>
-                  <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/testimonial-img-02.jpg" alt="Client 2" className={styles.tClientAvatar} />
-                  <div className={styles.tClientMetaFlex}>
-                    <h5 className={styles.tName}>Adeline Wood</h5>
-                    <span className={styles.tRole}>CEO, TechCorp</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.tCardFlow}>
-                <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
-                <p className={styles.tTextFlow}>
-                  "As a busy professional, I needed a program that would accommodate my schedule and provide relevant knowledge. This delivered on all fronts. The service was well-structured."
-                </p>
-                <div className={styles.tClientFlex}>
-                  <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/testimonial-img-03.jpg" alt="Client 3" className={styles.tClientAvatar} />
-                  <div className={styles.tClientMetaFlex}>
-                    <h5 className={styles.tName}>Naomi Violet</h5>
-                    <span className={styles.tRole}>Satisfied Client</span>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* Set 2 (Duplicate) */}
             <div className={styles.marqueeSet}>
-              <div className={styles.tCardFlow}>
-                <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
-                <p className={styles.tTextFlow}>
-                  "The recruitment process was seamless. They understood our requirements perfectly and found the right match. We are extremely pleased with the outcome and the quality of hires."
-                </p>
-                <div className={styles.tClientFlex}>
-                  <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/testimonial-img-01.jpg" alt="Client 1" className={styles.tClientAvatar} />
-                  <div className={styles.tClientMetaFlex}>
-                    <h5 className={styles.tName}>Evangeline Lee</h5>
-                    <span className={styles.tRole}>HR Manager</span>
+              {testimonialsData.map((item) => (
+                <div className={styles.tCardFlow} key={`set2-${item.id}`}>
+                  <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
+                  <p className={styles.tTextFlow}>
+                    "{item.text}"
+                  </p>
+                  <div className={styles.tClientFlex}>
+                    <img src={item.image} alt={item.name} className={styles.tClientAvatar} />
+                    <div className={styles.tClientMetaFlex}>
+                      <h5 className={styles.tName}>{item.name}</h5>
+                      <span className={styles.tRole}>{item.role}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className={styles.tCardFlow}>
-                <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
-                <p className={styles.tTextFlow}>
-                  "Highly professional team. They provided us with top-tier candidates and exceptional consultation services. They took the time to understand our culture and business needs."
-                </p>
-                <div className={styles.tClientFlex}>
-                  <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/testimonial-img-02.jpg" alt="Client 2" className={styles.tClientAvatar} />
-                  <div className={styles.tClientMetaFlex}>
-                    <h5 className={styles.tName}>Adeline Wood</h5>
-                    <span className={styles.tRole}>CEO, TechCorp</span>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.tCardFlow}>
-                <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
-                <p className={styles.tTextFlow}>
-                  "As a busy professional, I needed a program that would accommodate my schedule and provide relevant knowledge. This delivered on all fronts. The service was well-structured."
-                </p>
-                <div className={styles.tClientFlex}>
-                  <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/testimonial-img-03.jpg" alt="Client 3" className={styles.tClientAvatar} />
-                  <div className={styles.tClientMetaFlex}>
-                    <h5 className={styles.tName}>Naomi Violet</h5>
-                    <span className={styles.tRole}>Satisfied Client</span>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* Set 3 (Duplicate for deep infinite runway) */}
             <div className={styles.marqueeSet}>
-              <div className={styles.tCardFlow}>
-                <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
-                <p className={styles.tTextFlow}>
-                  "The recruitment process was seamless. They understood our requirements perfectly and found the right match. We are extremely pleased with the outcome and the quality of hires."
-                </p>
-                <div className={styles.tClientFlex}>
-                  <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/testimonial-img-01.jpg" alt="Client 1" className={styles.tClientAvatar} />
-                  <div className={styles.tClientMetaFlex}>
-                    <h5 className={styles.tName}>Evangeline Lee</h5>
-                    <span className={styles.tRole}>HR Manager</span>
+              {testimonialsData.map((item) => (
+                <div className={styles.tCardFlow} key={`set3-${item.id}`}>
+                  <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
+                  <p className={styles.tTextFlow}>
+                    "{item.text}"
+                  </p>
+                  <div className={styles.tClientFlex}>
+                    <img src={item.image} alt={item.name} className={styles.tClientAvatar} />
+                    <div className={styles.tClientMetaFlex}>
+                      <h5 className={styles.tName}>{item.name}</h5>
+                      <span className={styles.tRole}>{item.role}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className={styles.tCardFlow}>
-                <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
-                <p className={styles.tTextFlow}>
-                  "Highly professional team. They provided us with top-tier candidates and exceptional consultation services. They took the time to understand our culture and business needs."
-                </p>
-                <div className={styles.tClientFlex}>
-                  <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/testimonial-img-02.jpg" alt="Client 2" className={styles.tClientAvatar} />
-                  <div className={styles.tClientMetaFlex}>
-                    <h5 className={styles.tName}>Adeline Wood</h5>
-                    <span className={styles.tRole}>CEO, TechCorp</span>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.tCardFlow}>
-                <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
-                <p className={styles.tTextFlow}>
-                  "As a busy professional, I needed a program that would accommodate my schedule and provide relevant knowledge. This delivered on all fronts. The service was well-structured."
-                </p>
-                <div className={styles.tClientFlex}>
-                  <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/testimonial-img-03.jpg" alt="Client 3" className={styles.tClientAvatar} />
-                  <div className={styles.tClientMetaFlex}>
-                    <h5 className={styles.tName}>Naomi Violet</h5>
-                    <span className={styles.tRole}>Satisfied Client</span>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* Set 4 (Duplicate for deep infinite runway) */}
             <div className={styles.marqueeSet}>
-              <div className={styles.tCardFlow}>
-                <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
-                <p className={styles.tTextFlow}>
-                  "The recruitment process was seamless. They understood our requirements perfectly and found the right match. We are extremely pleased with the outcome and the quality of hires."
-                </p>
-                <div className={styles.tClientFlex}>
-                  <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/testimonial-img-01.jpg" alt="Client 1" className={styles.tClientAvatar} />
-                  <div className={styles.tClientMetaFlex}>
-                    <h5 className={styles.tName}>Evangeline Lee</h5>
-                    <span className={styles.tRole}>HR Manager</span>
+              {testimonialsData.map((item) => (
+                <div className={styles.tCardFlow} key={`set4-${item.id}`}>
+                  <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
+                  <p className={styles.tTextFlow}>
+                    "{item.text}"
+                  </p>
+                  <div className={styles.tClientFlex}>
+                    <img src={item.image} alt={item.name} className={styles.tClientAvatar} />
+                    <div className={styles.tClientMetaFlex}>
+                      <h5 className={styles.tName}>{item.name}</h5>
+                      <span className={styles.tRole}>{item.role}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className={styles.tCardFlow}>
-                <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
-                <p className={styles.tTextFlow}>
-                  "Highly professional team. They provided us with top-tier candidates and exceptional consultation services. They took the time to understand our culture and business needs."
-                </p>
-                <div className={styles.tClientFlex}>
-                  <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/testimonial-img-02.jpg" alt="Client 2" className={styles.tClientAvatar} />
-                  <div className={styles.tClientMetaFlex}>
-                    <h5 className={styles.tName}>Adeline Wood</h5>
-                    <span className={styles.tRole}>CEO, TechCorp</span>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.tCardFlow}>
-                <div className={styles.quoteIconBlue}><i className="fas fa-quote-left"></i></div>
-                <p className={styles.tTextFlow}>
-                  "As a busy professional, I needed a program that would accommodate my schedule and provide relevant knowledge. This delivered on all fronts. The service was well-structured."
-                </p>
-                <div className={styles.tClientFlex}>
-                  <img src="https://xhyre-demo.pbminfotech.com/demo3/wp-content/uploads/sites/5/2024/11/testimonial-img-03.jpg" alt="Client 3" className={styles.tClientAvatar} />
-                  <div className={styles.tClientMetaFlex}>
-                    <h5 className={styles.tName}>Naomi Violet</h5>
-                    <span className={styles.tRole}>Satisfied Client</span>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
 
           </div>
