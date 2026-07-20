@@ -637,8 +637,6 @@ export default function Home() {
                 position: "relative", 
                 zIndex: 1,
                 overflow: "hidden", 
-                borderRadius: "16px",
-                border: "1px solid rgba(255, 255, 255, 0.15)",
                 boxShadow: "0 25px 50px rgba(0,0,0,0.4)" 
               }}>
                 <img 
