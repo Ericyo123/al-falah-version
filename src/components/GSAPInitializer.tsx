@@ -11,6 +11,9 @@ export default function GSAPInitializer() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+    // Force scroll to top on every route change (prevents sticky scroll positions)
+    window.scrollTo(0, 0);
+
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
@@ -21,7 +24,6 @@ export default function GSAPInitializer() {
     const isInViewport = (el: HTMLElement) => {
       const rect = el.getBoundingClientRect();
       const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-      // If the top of the element is visible in the viewport, count it as in view
       return rect.top <= windowHeight;
     };
 
