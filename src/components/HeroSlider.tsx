@@ -1,9 +1,43 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
+import gsap from "gsap";
 
 export default function HeroSlider() {
+  useEffect(() => {
+    // 1. Initially set elements to transparent to prevent flash of unstyled content
+    gsap.set([".execora-hero-title", ".execora-hero-desc", ".execora-hero-btn", "#hero-glass-counter-desktop", "#hero-glass-counter-mobile"], { opacity: 0 });
+
+    // 2. Build sequenced timeline
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+    tl.fromTo(".execora-hero-card",
+      { scale: 0.96, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 1.0, delay: 0.1 }
+    )
+    .fromTo(".execora-hero-title",
+      { y: 35, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.7 },
+      "-=0.5"
+    )
+    .fromTo(".execora-hero-desc",
+      { y: 25, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.7 },
+      "-=0.5"
+    )
+    .fromTo(".execora-hero-btn",
+      { scale: 0.9, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.8)" },
+      "-=0.4"
+    )
+    .fromTo(["#hero-glass-counter-desktop", "#hero-glass-counter-mobile"],
+      { x: 30, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.7, ease: "back.out(1.5)" },
+      "-=0.4"
+    );
+  }, []);
+
   return (
     <section className="execora-hero-section">
       <div className="widescreen-container" style={{ position: "relative" }}>

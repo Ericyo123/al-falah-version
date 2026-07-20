@@ -154,7 +154,7 @@ export default function RecruitmentProcess() {
       {/* ===== MAIN CONTENT ===== */}
       <div className="widescreen-container" style={{ position: "relative", zIndex: 1 }}>
         {/* Centered Header */}
-        <div className="process-header" style={{ textAlign: "center", maxWidth: "700px" }}>
+        <div className="process-header gsap-reveal-up" style={{ textAlign: "center", maxWidth: "700px" }}>
           <h2 className="process-heading" style={{ fontWeight: 800, margin: "0", color: "var(--text-primary)", lineHeight: 1.35 }}>
             Steps of Recruitment Process: Our <br className="desktop-break" />
             Deployment <span style={{ color: "var(--primary-color)" }}>Advantages.</span>
@@ -178,11 +178,11 @@ export default function RecruitmentProcess() {
             <i className="fas fa-arrows-alt-h"></i> Swipe to explore steps
           </div>
           
-          <div className="process-grid">
+          <div className="process-grid gsap-stagger-container">
             {steps.map((step, idx) => (
               <div 
                 key={idx} 
-                className="process-card"
+                className="process-card gsap-stagger-item"
                 style={{ 
                   display: "flex", 
                   flexDirection: "column", 

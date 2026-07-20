@@ -14,58 +14,40 @@ export default function GSAPInitializer() {
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
-    // Refresh ScrollTrigger and clear existing instances on route change to prevent memory leaks
+    // Refresh ScrollTrigger and clear existing instances on route change to prevent duplicate triggers
     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+    // Helper to check if an element is already in the viewport on load
+    const isInViewport = (el: HTMLElement) => {
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      // If the top of the element is visible in the viewport, count it as in view
+      return rect.top <= windowHeight;
+    };
 
     // 1. Slide Up + Fade In (Subtle, professional scroll reveal)
     gsap.utils.toArray(".gsap-reveal-up").forEach((el: any) => {
-      gsap.fromTo(el, 
-        { opacity: 0, y: 30 },
-        { 
-          opacity: 1, 
-          y: 0, 
-          duration: 0.7, 
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 88%",
-            toggleActions: "play none none none"
+      if (isInViewport(el)) {
+        gsap.fromTo(el, 
+          { opacity: 0, y: 30 },
+          { 
+            opacity: 1, 
+            y: 0, 
+            duration: 0.8, 
+            ease: "power2.out",
+            delay: 0.05
           }
-        }
-      );
-    });
-
-    // 2. Fade In Only
-    gsap.utils.toArray(".gsap-reveal-in").forEach((el: any) => {
-      gsap.fromTo(el, 
-        { opacity: 0 },
-        { 
-          opacity: 1, 
-          duration: 0.9, 
-          ease: "power1.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 88%",
-            toggleActions: "play none none none"
-          }
-        }
-      );
-    });
-
-    // 3. Stagger Grid Items
-    gsap.utils.toArray(".gsap-stagger-container").forEach((container: any) => {
-      const items = container.querySelectorAll(".gsap-stagger-item");
-      if (items.length > 0) {
-        gsap.fromTo(items,
-          { opacity: 0, y: 25 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-            stagger: 0.12,
+        );
+      } else {
+        gsap.fromTo(el, 
+          { opacity: 0, y: 30 },
+          { 
+            opacity: 1, 
+            y: 0, 
+            duration: 0.8, 
             ease: "power2.out",
             scrollTrigger: {
-              trigger: container,
+              trigger: el,
               start: "top 88%",
               toggleActions: "play none none none"
             }
@@ -74,10 +56,77 @@ export default function GSAPInitializer() {
       }
     });
 
-    // Trigger a refresh after a tiny delay to ensure proper scroll heights
+    // 2. Fade In / Zoom In (Subtle)
+    gsap.utils.toArray(".gsap-reveal-in").forEach((el: any) => {
+      if (isInViewport(el)) {
+        gsap.fromTo(el, 
+          { opacity: 0, scale: 0.96 },
+          { 
+            opacity: 1, 
+            scale: 1, 
+            duration: 0.9, 
+            ease: "power2.out",
+            delay: 0.05
+          }
+        );
+      } else {
+        gsap.fromTo(el, 
+          { opacity: 0, scale: 0.96 },
+          { 
+            opacity: 1, 
+            scale: 1, 
+            duration: 0.9, 
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 88%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      }
+    });
+
+    // 3. Stagger Grid Items
+    gsap.utils.toArray(".gsap-stagger-container").forEach((container: any) => {
+      const items = container.querySelectorAll(".gsap-stagger-item");
+      if (items.length > 0) {
+        if (isInViewport(container)) {
+          gsap.fromTo(items,
+            { opacity: 0, y: 20 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.5,
+              stagger: 0.1,
+              ease: "power2.out",
+              delay: 0.1
+            }
+          );
+        } else {
+          gsap.fromTo(items,
+            { opacity: 0, y: 20 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.5,
+              stagger: 0.1,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: container,
+                start: "top 88%",
+                toggleActions: "play none none none"
+              }
+            }
+          );
+        }
+      }
+    });
+
+    // Trigger a refresh after DOM settles
     const timer = setTimeout(() => {
       ScrollTrigger.refresh();
-    }, 100);
+    }, 150);
 
     return () => clearTimeout(timer);
   }, [pathname]);
