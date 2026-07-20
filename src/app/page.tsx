@@ -10,24 +10,12 @@ export default function Home() {
   const [activeIndustry, setActiveIndustry] = React.useState(0);
 
   const companies = [
-    { name: "AL NOOSY", industry: "Corporate" },
-    { name: "SHULALAIL HOTEL", industry: "Hospitality" },
-    { name: "AFIFI WOOD", industry: "Industrial" },
-    { name: "SCMC", industry: "Healthcare" },
-    { name: "AL HIJAZI RESTAURANT", industry: "Hospitality" },
-    { name: "AL HOOR MARBLE FACTORY", industry: "Industrial" },
-    { name: "JAWADHA", industry: "Corporate" },
-    { name: "JALAL OTHAIBI", industry: "Corporate" },
-    { name: "NIJUMI TRANSPORT", industry: "Transport" },
-    { name: "HAFCOGLABCO", industry: "Industrial" },
-    { name: "HASSAN SHAKTHI", industry: "Construction" },
-    { name: "QANNAS", industry: "Corporate" },
-    { name: "AJWA AHERA", industry: "Corporate" },
-    { name: "KHAFJI", industry: "Industrial" },
-    { name: "YANBOO", industry: "Industrial" },
-    { name: "WHITE CLOUD ABU THURKI", industry: "Corporate" },
-    { name: "AMT", industry: "Corporate" },
-    { name: "MOHAIN COMPANY", industry: "Corporate" }
+    { name: "AL AMRY GROUP", industry: "Corporate", logo: "/assets/images/logo_al_amry.png" },
+    { name: "AL DOSSARY", industry: "Industrial", logo: "/assets/images/logo_al_dossary.png" },
+    { name: "AL SHEYAL", industry: "Corporate", logo: "/assets/images/logo_al_sheyal.png" },
+    { name: "JAWADHA", industry: "Corporate", logo: "/assets/images/logo_jawadha.png" },
+    { name: "KH LOGISTIC", industry: "Transport", logo: "/assets/images/logo_kh.png" },
+    { name: "PTL GROUP", industry: "Industrial", logo: "/assets/images/logo_ptl.png" }
   ];
 
   return (
@@ -520,6 +508,9 @@ export default function Home() {
           <div className="marquee-content">
             {companies.slice(0, Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={idx} className="client-card-modern">
+                <div className="client-logo-wrapper">
+                  <img src={company.logo} alt={company.name} className="client-logo-img" />
+                </div>
                 <div className="client-info-modern">
                   <h4 className="client-name-modern">{company.name}</h4>
                   <div className="client-category-modern">{company.industry}</div>
@@ -531,6 +522,9 @@ export default function Home() {
           <div className="marquee-content" aria-hidden="true">
             {companies.slice(0, Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={`dup-${idx}`} className="client-card-modern">
+                <div className="client-logo-wrapper">
+                  <img src={company.logo} alt={company.name} className="client-logo-img" />
+                </div>
                 <div className="client-info-modern">
                   <h4 className="client-name-modern">{company.name}</h4>
                   <div className="client-category-modern">{company.industry}</div>
@@ -545,6 +539,9 @@ export default function Home() {
           <div className="marquee-content" style={{ animationDirection: "reverse", animationDuration: "45s" }}>
             {companies.slice(Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={idx} className="client-card-modern">
+                <div className="client-logo-wrapper">
+                  <img src={company.logo} alt={company.name} className="client-logo-img" />
+                </div>
                 <div className="client-info-modern">
                   <h4 className="client-name-modern">{company.name}</h4>
                   <div className="client-category-modern">{company.industry}</div>
@@ -556,6 +553,9 @@ export default function Home() {
           <div className="marquee-content" aria-hidden="true" style={{ animationDirection: "reverse", animationDuration: "45s" }}>
             {companies.slice(Math.ceil(companies.length / 2)).map((company, idx) => (
               <div key={`dup2-${idx}`} className="client-card-modern">
+                <div className="client-logo-wrapper">
+                  <img src={company.logo} alt={company.name} className="client-logo-img" />
+                </div>
                 <div className="client-info-modern">
                   <h4 className="client-name-modern">{company.name}</h4>
                   <div className="client-category-modern">{company.industry}</div>

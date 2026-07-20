@@ -1754,18 +1754,35 @@ input[type="submit"] {
 .client-card-modern {
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 6px;
-  padding: 16px 20px;
+  gap: 16px;
+  padding: 12px 18px;
   background: #ffffff;
   border: 1px solid rgba(0, 102, 204, 0.06);
   border-radius: 14px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  min-width: 200px;
+  min-width: 250px;
   cursor: default;
+}
+
+.client-logo-wrapper {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f8fc;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 2px;
+  flex-shrink: 0;
+}
+
+.client-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .client-logo-placeholder {
