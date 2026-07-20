@@ -10,21 +10,35 @@ const testimonialsData = [
     name: "Rohan Fernando",
     role: "Quantity Surveyor (Placed in Doha, Qatar)",
     text: "I am extremely grateful to Al-Falah for helping me secure a Quantity Surveyor position in Doha. Their guidance throughout the visa processing and interview stage was highly professional. They made the entire transition smooth and hassle-free.",
-    image: "/assets/images/avatar1.png"
+    image: "/assets/images/srilankan_avatar_rohan.png"
   },
   {
     id: 2,
     name: "Dilrukshi Wijesinghe",
     role: "Staff Nurse (Placed in Kuwait City)",
     text: "The support I received from the Al-Falah team was outstanding. As a female candidate traveling abroad for the first time, I had many concerns, but they answered all my questions patiently and checked on me even after my arrival. Highly recommended!",
-    image: "/assets/images/avatar2.png"
+    image: "/assets/images/srilankan_avatar_dilrukshi.png"
   },
   {
     id: 3,
     name: "Mohamed Rizwan",
     role: "Senior Technician (Placed in Riyadh, KSA)",
     text: "Al-Falah is a very reliable agency. They provided clear information about the contract and job role, and there were no hidden charges. I have been working in Riyadh for 3 years now, and I always recommend Al-Falah to my friends in Sri Lanka.",
-    image: "/assets/images/avatar3.png"
+    image: "/assets/images/srilankan_avatar_rizwan.png"
+  },
+  {
+    id: 4,
+    name: "Sajith Perera",
+    role: "Heavy Vehicle Driver (Placed in Dubai, UAE)",
+    text: "Getting a job as a heavy vehicle driver in Dubai was my dream. Al-Falah guided me through the driving license approvals and visa processing seamlessly. The company Nesma is great, and my salary is paid on time.",
+    image: "/assets/images/srilankan_avatar_driver.png"
+  },
+  {
+    id: 5,
+    name: "Janaka Pathirana",
+    role: "Hospitality Steward (Placed in Manama, Bahrain)",
+    text: "I was looking for a job in the hospitality industry in the Middle East. Al-Falah matched me with an amazing hotel group in Bahrain. They handled all tickets, medical checks, and briefings very professionally.",
+    image: "/assets/images/srilankan_avatar_steward.png"
   }
 ];
 

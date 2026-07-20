@@ -57,9 +57,9 @@ export default function HeroSlider() {
             {/* Mobile-Only Floating Glass Stat Counter */}
             <div className="execora-floating-glass d-lg-none" id="hero-glass-counter-mobile">
               <div className="execora-avatar-stack">
-                <img src="/assets/images/avatar1.png" alt="Candidate 1" className="execora-avatar" />
-                <img src="/assets/images/avatar2.png" alt="Candidate 2" className="execora-avatar" />
-                <img src="/assets/images/avatar3.png" alt="Candidate 3" className="execora-avatar" />
+                <img src="/assets/images/srilankan_avatar_rohan.png" alt="Candidate 1" className="execora-avatar" />
+                <img src="/assets/images/srilankan_avatar_dilrukshi.png" alt="Candidate 2" className="execora-avatar" />
+                <img src="/assets/images/srilankan_avatar_rizwan.png" alt="Candidate 3" className="execora-avatar" />
                 <div className="execora-plus-badge">+</div>
               </div>
               <div className="execora-glass-count">3,000+</div>
@@ -75,9 +75,9 @@ export default function HeroSlider() {
         {/* Desktop-Only Floating Glass Stat Counter */}
         <div className="execora-floating-glass d-none d-lg-flex flex-column align-items-center" id="hero-glass-counter-desktop">
           <div className="execora-avatar-stack">
-            <img src="/assets/images/avatar1.png" alt="Candidate 1" className="execora-avatar" />
-            <img src="/assets/images/avatar2.png" alt="Candidate 2" className="execora-avatar" />
-            <img src="/assets/images/avatar3.png" alt="Candidate 3" className="execora-avatar" />
+            <img src="/assets/images/srilankan_avatar_rohan.png" alt="Candidate 1" className="execora-avatar" />
+            <img src="/assets/images/srilankan_avatar_dilrukshi.png" alt="Candidate 2" className="execora-avatar" />
+            <img src="/assets/images/srilankan_avatar_rizwan.png" alt="Candidate 3" className="execora-avatar" />
             <div className="execora-plus-badge">+</div>
           </div>
           <div className="execora-glass-count">3,000+</div>
