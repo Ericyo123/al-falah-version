@@ -198,10 +198,17 @@
   box-shadow: 0 10px 30px rgba(0, 102, 204, 0.08);
 }
 
+.jobCard button {
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-left: 24px;
+}
+
 .jobDetails {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex: 1;
 }
 
 .jobTitle {
@@ -526,13 +533,15 @@
     padding: 4px 12px;
     font-size: 11px;
   }
-  .jobCard a {
+  .jobCard a,
+  .jobCard button {
     width: 100%;
     text-align: center;
     padding: 12px 0;
     font-size: 14px;
     font-weight: 600;
     border-radius: 10px;
+    margin-left: 0;
   }
   .noResults {
     padding: 50px 20px;
