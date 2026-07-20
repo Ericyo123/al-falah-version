@@ -585,7 +585,7 @@ export default function Home() {
 
       {/* ===== SECTION 10: ACCREDITATIONS & STATS ===== */}
       {/* ===== SECTION 10: ACCREDITATIONS & STATS ===== */}
-      <section style={{ padding: "clamp(60px, 8vw, 120px) 0", backgroundColor: "var(--secondary-color)", color: "#ffffff", position: "relative", overflow: "hidden" }}>
+      <section style={{ padding: "clamp(60px, 8vw, 120px) 0", background: "linear-gradient(135deg, var(--secondary-color) 0%, #020b18 100%)", color: "#ffffff", position: "relative", overflow: "hidden" }}>
         
         {/* Decorative Background Elements & Geometric Shapes */}
         <div style={{ position: "absolute", top: "-20%", left: "-10%", width: "50%", height: "150%", background: "radial-gradient(ellipse at center, rgba(0, 102, 204, 0.15) 0%, transparent 70%)", pointerEvents: "none" }}></div>
@@ -618,8 +618,29 @@ export default function Home() {
           <div className="row align-items-center justify-content-between g-5">
             
             {/* Left Side: Chairman Receiving Award */}
-            <div className="col-lg-5 mb-5 mb-lg-0 px-4 px-lg-0 text-center">
-              <div style={{ position: "relative", overflow: "hidden", boxShadow: "0 25px 50px rgba(0,0,0,0.3)" }}>
+            <div className="col-lg-5 mb-4 mb-lg-0 px-4 px-lg-0 text-center" style={{ position: "relative" }}>
+              {/* Golden Ambient Glow behind the photo */}
+              <div style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "110%",
+                height: "110%",
+                background: "radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 65%)",
+                zIndex: 0,
+                pointerEvents: "none",
+                filter: "blur(30px)"
+              }}></div>
+
+              <div style={{ 
+                position: "relative", 
+                zIndex: 1,
+                overflow: "hidden", 
+                borderRadius: "16px",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
+                boxShadow: "0 25px 50px rgba(0,0,0,0.4)" 
+              }}>
                 <img 
                   src="/assets/images/restie.png" 
                   alt="Chairman receiving SLBFE award" 
@@ -636,7 +657,7 @@ export default function Home() {
                 Proud recipient of the prestigious Sri Lanka Bureau of Foreign Employment (SLBFE) 3-Star Golden Award for outstanding performance and compliance in overseas consultancy — 2022/2023.
               </p>
               
-              <div className="d-flex flex-column align-items-center align-items-lg-start" style={{ gap: "30px" }}>
+              <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start" style={{ gap: "24px", flexWrap: "wrap" }}>
                 <div style={{ 
                   display: "inline-flex", 
                   alignItems: "center", 
@@ -646,7 +667,8 @@ export default function Home() {
                   borderRadius: "100px", 
                   boxShadow: "0 15px 35px rgba(0, 0, 0, 0.15)", 
                   border: "1px solid rgba(0,0,0,0.05)",
-                  textAlign: "left"
+                  textAlign: "left",
+                  flexShrink: 0
                 }}>
                   {/* Colorful Google Icon SVG */}
                   <div style={{ flexShrink: 0, width: "clamp(28px, 6vw, 36px)", height: "clamp(28px, 6vw, 36px)", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -669,14 +691,15 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Standalone Award Image */}
-                <div style={{ maxWidth: "clamp(140px, 40vw, 200px)" }}>
+                {/* Standalone Award Image aligned side-by-side */}
+                <div style={{ width: "90px", flexShrink: 0 }}>
                   <img 
                     src="/assets/images/background_new.png" 
-                    alt="3-Star Golden Award" 
+                    alt="3-Star Golden Award Trophy" 
                     style={{ 
                       width: "100%", 
-                      filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.5))"
+                      height: "auto",
+                      filter: "drop-shadow(0 15px 25px rgba(0,0,0,0.35))"
                     }} 
                   />
                 </div>
