@@ -11,17 +11,29 @@ export default function GSAPInitializer() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // Reset scroll positions immediately across all document containers (fail-safe reset)
+    // Prevent browser native scroll restoration behavior
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    // Force instant scroll reset across all document layouts immediately
     window.scrollTo(0, 0);
     if (document.documentElement) document.documentElement.scrollTop = 0;
     if (document.body) document.body.scrollTop = 0;
 
-    // Delayed reset for React mount / Next.js layout transitions
-    const scrollTimer = setTimeout(() => {
+    // Forceful, repeated resets over a 400ms window to counteract asynchronous route rendering
+    const scrollInterval = setInterval(() => {
       window.scrollTo(0, 0);
       if (document.documentElement) document.documentElement.scrollTop = 0;
       if (document.body) document.body.scrollTop = 0;
-    }, 100);
+    }, 40);
+
+    const scrollTimer = setTimeout(() => {
+      clearInterval(scrollInterval);
+      window.scrollTo(0, 0);
+      if (document.documentElement) document.documentElement.scrollTop = 0;
+      if (document.body) document.body.scrollTop = 0;
+    }, 400);
 
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
@@ -140,6 +152,7 @@ export default function GSAPInitializer() {
     }, 150);
 
     return () => {
+      clearInterval(scrollInterval);
       clearTimeout(scrollTimer);
       clearTimeout(timer);
     };
